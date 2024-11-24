@@ -10,7 +10,7 @@ class Alumno: public Usuario{
         int cuatrimestre_, curso_, matricula_;
 
     public:
-        Alumno(std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, Sexo, edad, consulta){
+        Alumno(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta){
             carrera_ = carrera;
             asignaturas_ = asignaturas;
             cuatrimestre_ = cuatrimestre;
@@ -30,3 +30,5 @@ class Alumno: public Usuario{
         void SetUniversidad(std::vector<std::string> universidad);
         std::vector<std::string> GetUniversidad(){return universidad_;}
 };
+
+#endif

@@ -14,11 +14,11 @@ string
 vector
 -
 
-/workspaces/ISO-405/src/admin/admin.cc
-admin.h
-/workspaces/ISO-405/src/admin/admin.h
+/workspaces/ISO-405/src/alumno/alumno.cc
+alumno.h
+/workspaces/ISO-405/src/alumno/alumno.h
 
-/workspaces/ISO-405/src/admin/admin.h
+/workspaces/ISO-405/src/alumno/alumno.h
 usuario.h
-/workspaces/ISO-405/src/admin/usuario.h
+/workspaces/ISO-405/src/alumno/usuario.h
 
