@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/ISO-405/src/profesor 
+CXX_INCLUDES = -I/workspaces/ISO-405/src/profesor -I/workspaces/ISO-405/src/usuario 
 

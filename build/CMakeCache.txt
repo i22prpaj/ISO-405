@@ -215,6 +215,15 @@ ISO-405_BINARY_DIR:STATIC=/workspaces/ISO-405/build
 //Value Computed by CMake
 ISO-405_SOURCE_DIR:STATIC=/workspaces/ISO-405
 
+//Dependencies for the target
+admin_LIB_DEPENDS:STATIC=general;usuario;
+
+//Dependencies for the target
+alumno_LIB_DEPENDS:STATIC=general;usuario;
+
+//Dependencies for the target
+profesor_LIB_DEPENDS:STATIC=general;usuario;
+
 
 ########################
 # INTERNAL cache entries
