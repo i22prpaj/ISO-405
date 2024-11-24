@@ -17,7 +17,7 @@ void main(){
 
         switch(menu){
             case 1:
-                if(Registrarse()==false){
+                if(Registrarse(alumnos, profesores, administradores)==false){
                     std::cout<<"Error al registrarse"<<std::endl;
                     return;
                 };
