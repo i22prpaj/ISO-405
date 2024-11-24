@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 add_library(aplicacion aplicacion.cc aplicacion.h)
+=======
+add_library(aplicacion aplicacion.h)
+>>>>>>> 25f6136 (	modified:   src/admin/admin.h)
 target_link_libraries(aplicacion PUBLIC usuario)
 target_link_libraries(aplicacion PUBLIC alumno)
 target_link_libraries(aplicacion PUBLIC profesor)

@@ -4,6 +4,7 @@
 #include "alumno.h"
 #include "profesor.h"
 #include "admin.h"
+<<<<<<< HEAD
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
@@ -27,4 +28,11 @@ void HacerFormulario(Alumno &alumno);
 int EstadoSolicitud(Alumno alumno);
 
 void guardaAlumno(std::vector<Alumno>& alumnos);
+=======
+
+bool Registrarse();
+bool IniciarSesion();
+
+
+>>>>>>> 25f6136 (	modified:   src/admin/admin.h)
 #endif

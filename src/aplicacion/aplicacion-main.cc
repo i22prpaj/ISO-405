@@ -1,15 +1,22 @@
 #include "aplicacion.h"
 
 
+<<<<<<< HEAD
 int main(){
+=======
+void main(){
+>>>>>>> 25f6136 (	modified:   src/admin/admin.h)
 
     int menu=0;
     std::vector<Alumno> alumnos;
     std::vector<Profesor> profesores;
     std::vector<Admin> administradores;
 
+<<<<<<< HEAD
     cargarBD(alumnos, profesores, administradores);
 
+=======
+>>>>>>> 25f6136 (	modified:   src/admin/admin.h)
     while(menu!=3){
         std::cout<<"1 --> Registrarse"<<std::endl;
         std::cout<<"2 --> Iniciar Sesion"<<std::endl;
@@ -19,6 +26,7 @@ int main(){
 
         switch(menu){
             case 1:
+<<<<<<< HEAD
                 if(Registrarse(alumnos, profesores, administradores)==false){
                     std::cout<<"Error al registrarse"<<std::endl;
                 };
@@ -26,11 +34,23 @@ int main(){
             case 2:
                 if(IniciarSesion(alumnos, profesores, administradores)==false){
                     std::cout<<"Error al iniciar sesion"<<std::endl;
+=======
+                if(Registrarse()==false){
+                    std::cout<<"Error al registrarse"<<std::endl;
+                    return;
+                };
+                break;
+            case 2:
+                if(IniciarSesion()==false){
+                    std::cout<<"Error al iniciar sesion"<<std::endl;
+                    return;
+>>>>>>> 25f6136 (	modified:   src/admin/admin.h)
                 };
                 break;
                            
         }
     }
+<<<<<<< HEAD
 
     if (alumnos.empty()) {
        std::cout << "El vector de alumnos está vacío.\n";
@@ -85,4 +105,6 @@ int main(){
      }
 
     guardarBD(alumnos, profesores, administradores);
+=======
+>>>>>>> 25f6136 (	modified:   src/admin/admin.h)
 }

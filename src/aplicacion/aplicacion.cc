@@ -1,5 +1,6 @@
 #include "aplicacion.h"
 
+<<<<<<< HEAD
 bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
     std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, tipo_usuario;
     int edad, consulta=0;
@@ -376,3 +377,22 @@ void guardaAlumno(std::vector<Alumno>& alumnos){
         std::cout << "Error al abrir el archivo de alumnos para escribir.\n";
     }
 }
+=======
+void registrarse(){
+    std::string user, password;
+    std::cout << "Ingrese un nombre de usuario: ";
+    std::cin >> user;
+    std::cout << "Ingrese una contraseña: ";
+    std::cin >> password;
+
+    // Almacena las credenciales en un archivo
+    ofstream archivo("usuarios.txt", );
+    if (archivo.is_open()) {
+        archivo << user << " " << password << std::endl;
+        archivo.close();
+        std::cout << "Registro exitoso.\n";
+    } else {
+        std::cout << "Error al abrir el archivo de usuarios.\n";
+    }
+}
+>>>>>>> 25f6136 (	modified:   src/admin/admin.h)
