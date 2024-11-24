@@ -7,7 +7,7 @@ class Profesor: public Usuario{
         std::vector<std::string>  universidad_;
         int cuatrimestre_, curso_;
     public:
-        Profesor(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta){
+        Profesor(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string contraseña, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta, contraseña){
             universidad_ = universidad;
         }
         
