@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/ISO-405/src/usuario/usuario.cc
+iostream
+-
+usuario.h
+/workspaces/ISO-405/src/usuario/usuario.h
+
+/workspaces/ISO-405/src/usuario/usuario.h
+iostream
+-
+string
+-
+vector
+-
+
