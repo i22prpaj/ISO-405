@@ -27,6 +27,7 @@ void main(){
         switch(menu){
             case 1:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if(Registrarse(alumnos, profesores, administradores)==false){
                     std::cout<<"Error al registrarse"<<std::endl;
                 };
@@ -36,6 +37,9 @@ void main(){
                     std::cout<<"Error al iniciar sesion"<<std::endl;
 =======
                 if(Registrarse()==false){
+=======
+                if(Registrarse(alumnos, profesores, administradores)==false){
+>>>>>>> 3063a41 (	modified:   src/aplicacion/aplicacion-main.cc)
                     std::cout<<"Error al registrarse"<<std::endl;
                     return;
                 };

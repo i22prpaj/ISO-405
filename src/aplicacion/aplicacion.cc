@@ -406,6 +406,7 @@ bool Registrarse(){
 
     if(tipo_usuario == "Profesor"){
         Profesor profesor1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contraseña, universidad);
+        profesores.push_back(profesor1);
     }
     else if(tipo_usuario == "Alumno"){
         
@@ -413,23 +414,33 @@ bool Registrarse(){
 }
 
 bool IniciarSesion(){
-    std::string nombre_usario, contraseña;
+    std::string nombre_usuario, contraseña;
     std::cout << "Ingrese su nombre de usuario: ";
-    std::cin >> nombre_usario;
+    std::cin >> nombre_usuario;
     std::cout << "Ingrese su contraseña: ";
     std::cin >> contraseña;
 }
 
 void cargarBD(){
-
+    std::string nombre_usuario, contraseña;
+    // Lee el archivo y verifica las credenciales
+    std::ifstream archivo("usuarios.txt");
+    if (archivo.is_open()) {
+        while(!archivo.eof()) {
+            archivo >> nombre_usuario >> contraseña;
+            //>> lee los datos del archivo hasta encontrar un espacio en blanco o un salto de línea.
+            std::cout << nombre_usuario << " " << contraseña << std::endl;
+        }
+    }
+    archivo.close();
 }
 
 void guardarBD(){
-    std::string nombre, contraseña, tipo_usuario;
+    std::string nombre_usuario, contraseña, tipo_usuario;
     // Almacena las credenciales en un archivo
     std::ofstream archivo("usuarios.txt");
     if (archivo.is_open()) {
-        archivo << nombre << " " << contraseña << std::endl;
+        archivo << nombre_usuario << " " << contraseña << std::endl;
         archivo.close();
         std::cout << "Registro exitoso.\n";
     } else {
