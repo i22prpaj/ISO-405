@@ -75,7 +75,10 @@ src/all: src/admin/all
 src/all: src/usuario/all
 src/all: src/alumno/all
 src/all: src/profesor/all
+<<<<<<< HEAD
 src/all: src/aplicacion/all
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 
 .PHONY : src/all
 
@@ -84,7 +87,10 @@ src/preinstall: src/admin/preinstall
 src/preinstall: src/usuario/preinstall
 src/preinstall: src/alumno/preinstall
 src/preinstall: src/profesor/preinstall
+<<<<<<< HEAD
 src/preinstall: src/aplicacion/preinstall
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 
 .PHONY : src/preinstall
 
@@ -93,7 +99,10 @@ src/clean: src/admin/clean
 src/clean: src/usuario/clean
 src/clean: src/alumno/clean
 src/clean: src/profesor/clean
+<<<<<<< HEAD
 src/clean: src/aplicacion/clean
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 
 .PHONY : src/clean
 
@@ -134,6 +143,7 @@ src/alumno/clean: src/alumno/CMakeFiles/alumno.dir/clean
 .PHONY : src/alumno/clean
 
 #=============================================================================
+<<<<<<< HEAD
 # Directory level rules for directory src/aplicacion
 
 # Recursive "all" directory target.
@@ -154,6 +164,8 @@ src/aplicacion/clean: src/aplicacion/CMakeFiles/aplicacion.dir/clean
 .PHONY : src/aplicacion/clean
 
 #=============================================================================
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 # Directory level rules for directory src/profesor
 
 # Recursive "all" directory target.
@@ -193,7 +205,11 @@ src/usuario/clean: src/usuario/CMakeFiles/usuario.dir/clean
 # Target rules for target src/admin/CMakeFiles/admin.dir
 
 # All Build rule for target.
+<<<<<<< HEAD
 src/admin/CMakeFiles/admin.dir/all: src/usuario/CMakeFiles/usuario.dir/all
+=======
+src/admin/CMakeFiles/admin.dir/all:
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 	$(MAKE) -f src/admin/CMakeFiles/admin.dir/build.make src/admin/CMakeFiles/admin.dir/depend
 	$(MAKE) -f src/admin/CMakeFiles/admin.dir/build.make src/admin/CMakeFiles/admin.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=1,2 "Built target admin"
@@ -201,7 +217,11 @@ src/admin/CMakeFiles/admin.dir/all: src/usuario/CMakeFiles/usuario.dir/all
 
 # Build rule for subdir invocation for target.
 src/admin/CMakeFiles/admin.dir/rule: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 2
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 	$(MAKE) -f CMakeFiles/Makefile2 src/admin/CMakeFiles/admin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
 .PHONY : src/admin/CMakeFiles/admin.dir/rule
@@ -223,7 +243,11 @@ src/admin/CMakeFiles/admin.dir/clean:
 src/usuario/CMakeFiles/usuario.dir/all:
 	$(MAKE) -f src/usuario/CMakeFiles/usuario.dir/build.make src/usuario/CMakeFiles/usuario.dir/depend
 	$(MAKE) -f src/usuario/CMakeFiles/usuario.dir/build.make src/usuario/CMakeFiles/usuario.dir/build
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=11,12 "Built target usuario"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=7,8 "Built target usuario"
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 .PHONY : src/usuario/CMakeFiles/usuario.dir/all
 
 # Build rule for subdir invocation for target.
@@ -247,7 +271,11 @@ src/usuario/CMakeFiles/usuario.dir/clean:
 # Target rules for target src/alumno/CMakeFiles/alumno.dir
 
 # All Build rule for target.
+<<<<<<< HEAD
 src/alumno/CMakeFiles/alumno.dir/all: src/usuario/CMakeFiles/usuario.dir/all
+=======
+src/alumno/CMakeFiles/alumno.dir/all:
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 	$(MAKE) -f src/alumno/CMakeFiles/alumno.dir/build.make src/alumno/CMakeFiles/alumno.dir/depend
 	$(MAKE) -f src/alumno/CMakeFiles/alumno.dir/build.make src/alumno/CMakeFiles/alumno.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=3,4 "Built target alumno"
@@ -255,7 +283,11 @@ src/alumno/CMakeFiles/alumno.dir/all: src/usuario/CMakeFiles/usuario.dir/all
 
 # Build rule for subdir invocation for target.
 src/alumno/CMakeFiles/alumno.dir/rule: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 2
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 	$(MAKE) -f CMakeFiles/Makefile2 src/alumno/CMakeFiles/alumno.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
 .PHONY : src/alumno/CMakeFiles/alumno.dir/rule
@@ -274,15 +306,26 @@ src/alumno/CMakeFiles/alumno.dir/clean:
 # Target rules for target src/profesor/CMakeFiles/profesor.dir
 
 # All Build rule for target.
+<<<<<<< HEAD
 src/profesor/CMakeFiles/profesor.dir/all: src/usuario/CMakeFiles/usuario.dir/all
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/depend
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=9,10 "Built target profesor"
+=======
+src/profesor/CMakeFiles/profesor.dir/all:
+	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/depend
+	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=5,6 "Built target profesor"
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 .PHONY : src/profesor/CMakeFiles/profesor.dir/all
 
 # Build rule for subdir invocation for target.
 src/profesor/CMakeFiles/profesor.dir/rule: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 2
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 	$(MAKE) -f CMakeFiles/Makefile2 src/profesor/CMakeFiles/profesor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
 .PHONY : src/profesor/CMakeFiles/profesor.dir/rule
@@ -298,6 +341,7 @@ src/profesor/CMakeFiles/profesor.dir/clean:
 .PHONY : src/profesor/CMakeFiles/profesor.dir/clean
 
 #=============================================================================
+<<<<<<< HEAD
 # Target rules for target src/aplicacion/CMakeFiles/aplicacion-main.dir
 
 # All Build rule for target.
@@ -359,6 +403,8 @@ src/aplicacion/CMakeFiles/aplicacion.dir/clean:
 .PHONY : src/aplicacion/CMakeFiles/aplicacion.dir/clean
 
 #=============================================================================
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

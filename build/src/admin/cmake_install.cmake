@@ -12,7 +12,11 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
+<<<<<<< HEAD
     set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+=======
+    set(CMAKE_INSTALL_CONFIG_NAME "")
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()

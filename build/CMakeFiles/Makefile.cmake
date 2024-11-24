@@ -33,7 +33,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/CMakeLists.txt"
   "../src/admin/CMakeLists.txt"
   "../src/alumno/CMakeLists.txt"
+<<<<<<< HEAD
   "../src/aplicacion/CMakeLists.txt"
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
   "../src/profesor/CMakeLists.txt"
   "../src/usuario/CMakeLists.txt"
   )
@@ -52,7 +55,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/usuario/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/alumno/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/profesor/CMakeFiles/CMakeDirectoryInformation.cmake"
+<<<<<<< HEAD
   "src/aplicacion/CMakeFiles/CMakeDirectoryInformation.cmake"
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
   )
 
 # Dependency information for all targets:
@@ -61,6 +67,9 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/usuario/CMakeFiles/usuario.dir/DependInfo.cmake"
   "src/alumno/CMakeFiles/alumno.dir/DependInfo.cmake"
   "src/profesor/CMakeFiles/profesor.dir/DependInfo.cmake"
+<<<<<<< HEAD
   "src/aplicacion/CMakeFiles/aplicacion-main.dir/DependInfo.cmake"
   "src/aplicacion/CMakeFiles/aplicacion.dir/DependInfo.cmake"
+=======
+>>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
   )
