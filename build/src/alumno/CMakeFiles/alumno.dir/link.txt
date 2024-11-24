@@ -1,0 +1,2 @@
+/usr/bin/ar qc libalumno.a  CMakeFiles/alumno.dir/alumno.cc.o
+/usr/bin/ranlib libalumno.a
