@@ -6,10 +6,10 @@
 
 class Usuario{
     private:
-        std::string dni_, nombre_, apellidos_, sexo_;
+        std::string dni_, nombre_, apellidos_, sexo_,contraseña_;
         int edad_, consulta_;
     public:
-        Usuario(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta){
+        Usuario(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string contraseña){
             dni_ = dni;
             nombre_ = nombre;
             apellidos_ = apellidos;
@@ -48,6 +48,9 @@ class Usuario{
         }
         void SetConsulta(int consulta){consulta_ = consulta;}
         int GetConsulta(){return consulta_;}
+
+        void SetContraseña(std::string contraseña){contraseña_ = contraseña;}
+        std::string GetContraseña(){return contraseña_;}
 };
 
 
