@@ -5,6 +5,7 @@
 #include "profesor.h"
 #include "admin.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
@@ -29,6 +30,12 @@ int EstadoSolicitud(Alumno alumno);
 
 void guardaAlumno(std::vector<Alumno>& alumnos);
 =======
+=======
+#include <fstream>
+
+void cargarBD();
+void guardarBD();
+>>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
 bool Registrarse();
 bool IniciarSesion();

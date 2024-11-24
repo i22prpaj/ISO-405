@@ -9,6 +9,7 @@ class Profesor: public Usuario{
     public:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Profesor(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena, std::vector<std::string> universidad): Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){
 =======
         Profesor(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta){
@@ -16,6 +17,9 @@ class Profesor: public Usuario{
 =======
         Profesor(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string contraseña, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta, contraseña){
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
+=======
+        Profesor(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contraseña, std::vector<std::string> universidad): Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contraseña){
+>>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
             universidad_ = universidad;
         }
         
