@@ -2,6 +2,7 @@
 #define USUARIO_H
 #include <iostream>
 #include <string> 
+#include <vector>
 
 class Usuario{
     private:

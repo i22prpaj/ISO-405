@@ -14,3 +14,5 @@ class Profesor: public Usuario{
         void SetUniversidad(std::vector<std::string> universidad);
         std::vector<std::string> GetUniversidad(){return universidad_;}
 };
+
+#endif
