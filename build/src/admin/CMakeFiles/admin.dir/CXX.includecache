@@ -6,6 +6,7 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 ../src/usuario/usuario.h
 iostream
 -
@@ -22,3 +23,5 @@ admin.h
 usuario.h
 /workspaces/ISO-405/src/admin/usuario.h
 
+=======
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)

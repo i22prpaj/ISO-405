@@ -206,10 +206,14 @@ src/usuario/clean: src/usuario/CMakeFiles/usuario.dir/clean
 
 # All Build rule for target.
 <<<<<<< HEAD
+<<<<<<< HEAD
 src/admin/CMakeFiles/admin.dir/all: src/usuario/CMakeFiles/usuario.dir/all
 =======
 src/admin/CMakeFiles/admin.dir/all:
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+src/admin/CMakeFiles/admin.dir/all: src/usuario/CMakeFiles/usuario.dir/all
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 	$(MAKE) -f src/admin/CMakeFiles/admin.dir/build.make src/admin/CMakeFiles/admin.dir/depend
 	$(MAKE) -f src/admin/CMakeFiles/admin.dir/build.make src/admin/CMakeFiles/admin.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=1,2 "Built target admin"
@@ -218,10 +222,14 @@ src/admin/CMakeFiles/admin.dir/all:
 # Build rule for subdir invocation for target.
 src/admin/CMakeFiles/admin.dir/rule: cmake_check_build_system
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
 =======
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 2
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 	$(MAKE) -f CMakeFiles/Makefile2 src/admin/CMakeFiles/admin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
 .PHONY : src/admin/CMakeFiles/admin.dir/rule
@@ -272,10 +280,14 @@ src/usuario/CMakeFiles/usuario.dir/clean:
 
 # All Build rule for target.
 <<<<<<< HEAD
+<<<<<<< HEAD
 src/alumno/CMakeFiles/alumno.dir/all: src/usuario/CMakeFiles/usuario.dir/all
 =======
 src/alumno/CMakeFiles/alumno.dir/all:
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+src/alumno/CMakeFiles/alumno.dir/all: src/usuario/CMakeFiles/usuario.dir/all
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 	$(MAKE) -f src/alumno/CMakeFiles/alumno.dir/build.make src/alumno/CMakeFiles/alumno.dir/depend
 	$(MAKE) -f src/alumno/CMakeFiles/alumno.dir/build.make src/alumno/CMakeFiles/alumno.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=3,4 "Built target alumno"
@@ -284,10 +296,14 @@ src/alumno/CMakeFiles/alumno.dir/all:
 # Build rule for subdir invocation for target.
 src/alumno/CMakeFiles/alumno.dir/rule: cmake_check_build_system
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
 =======
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 2
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 	$(MAKE) -f CMakeFiles/Makefile2 src/alumno/CMakeFiles/alumno.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
 .PHONY : src/alumno/CMakeFiles/alumno.dir/rule
@@ -307,12 +323,16 @@ src/alumno/CMakeFiles/alumno.dir/clean:
 
 # All Build rule for target.
 <<<<<<< HEAD
+<<<<<<< HEAD
 src/profesor/CMakeFiles/profesor.dir/all: src/usuario/CMakeFiles/usuario.dir/all
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/depend
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=9,10 "Built target profesor"
 =======
 src/profesor/CMakeFiles/profesor.dir/all:
+=======
+src/profesor/CMakeFiles/profesor.dir/all: src/usuario/CMakeFiles/usuario.dir/all
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/depend
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=5,6 "Built target profesor"
@@ -322,10 +342,14 @@ src/profesor/CMakeFiles/profesor.dir/all:
 # Build rule for subdir invocation for target.
 src/profesor/CMakeFiles/profesor.dir/rule: cmake_check_build_system
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
 =======
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 2
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 4
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 	$(MAKE) -f CMakeFiles/Makefile2 src/profesor/CMakeFiles/profesor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
 .PHONY : src/profesor/CMakeFiles/profesor.dir/rule

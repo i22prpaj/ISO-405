@@ -14,6 +14,10 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
+<<<<<<< HEAD
 CXX_INCLUDES = -I/workspaces/ISO-405/src/admin 
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+CXX_INCLUDES = -I/workspaces/ISO-405/src/admin -I/workspaces/ISO-405/src/usuario 
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 

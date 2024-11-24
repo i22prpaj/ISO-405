@@ -221,9 +221,12 @@ admin_LIB_DEPENDS:STATIC=general;usuario;
 alumno_LIB_DEPENDS:STATIC=general;usuario;
 
 //Dependencies for the target
+<<<<<<< HEAD
 aplicacion_LIB_DEPENDS:STATIC=general;usuario;general;alumno;general;profesor;general;admin;
 
 //Dependencies for the target
+=======
+>>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
 profesor_LIB_DEPENDS:STATIC=general;usuario;
 
 
