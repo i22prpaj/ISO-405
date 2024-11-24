@@ -1,0 +1,16 @@
+/workspaces/ISO-405/build/CMakeFiles/rebuild_cache.dir
+/workspaces/ISO-405/build/CMakeFiles/edit_cache.dir
+/workspaces/ISO-405/build/src/CMakeFiles/rebuild_cache.dir
+/workspaces/ISO-405/build/src/CMakeFiles/edit_cache.dir
+/workspaces/ISO-405/build/src/admin/CMakeFiles/rebuild_cache.dir
+/workspaces/ISO-405/build/src/admin/CMakeFiles/edit_cache.dir
+/workspaces/ISO-405/build/src/admin/CMakeFiles/admin.dir
+/workspaces/ISO-405/build/src/usuario/CMakeFiles/rebuild_cache.dir
+/workspaces/ISO-405/build/src/usuario/CMakeFiles/edit_cache.dir
+/workspaces/ISO-405/build/src/usuario/CMakeFiles/usuario.dir
+/workspaces/ISO-405/build/src/alumno/CMakeFiles/edit_cache.dir
+/workspaces/ISO-405/build/src/alumno/CMakeFiles/rebuild_cache.dir
+/workspaces/ISO-405/build/src/alumno/CMakeFiles/alumno.dir
+/workspaces/ISO-405/build/src/profesor/CMakeFiles/rebuild_cache.dir
+/workspaces/ISO-405/build/src/profesor/CMakeFiles/edit_cache.dir
+/workspaces/ISO-405/build/src/profesor/CMakeFiles/profesor.dir
