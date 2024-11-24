@@ -7,6 +7,9 @@
 #IncludeRegexTransform: 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f453b58 (	deleted:    build/CMakeFiles/Progress/1)
 ../src/usuario/usuario.h
 iostream
 -
@@ -23,5 +26,8 @@ admin.h
 usuario.h
 /workspaces/ISO-405/src/admin/usuario.h
 
+<<<<<<< HEAD
 =======
 >>>>>>> f39fc08 (Add CMake configuration files and progress markers for various modules)
+=======
+>>>>>>> f453b58 (	deleted:    build/CMakeFiles/Progress/1)

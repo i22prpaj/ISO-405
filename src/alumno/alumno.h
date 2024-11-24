@@ -10,7 +10,11 @@ class Alumno: public Usuario{
         int cuatrimestre_, curso_, matricula_;
 
     public:
+<<<<<<< HEAD
         Alumno(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena, std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){
+=======
+        Alumno(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta){
+>>>>>>> f453b58 (	deleted:    build/CMakeFiles/Progress/1)
             carrera_ = carrera;
             asignaturas_ = asignaturas;
             cuatrimestre_ = cuatrimestre;
@@ -32,8 +36,11 @@ class Alumno: public Usuario{
         std::vector<std::string> GetAsignaturas(){return asignaturas_;}
         void SetUniversidad(std::vector<std::string> universidad){universidad_ = universidad;};
         std::vector<std::string> GetUniversidad(){return universidad_;}
+<<<<<<< HEAD
         void SetCurso(int curso){curso_ = curso;}
         int GetCurso(){return curso_;}
+=======
+>>>>>>> f453b58 (	deleted:    build/CMakeFiles/Progress/1)
 };
 
 #endif
