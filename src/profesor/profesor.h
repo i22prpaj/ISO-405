@@ -7,11 +7,11 @@ class Profesor: public Usuario{
         std::vector<std::string>  universidad_;
         int cuatrimestre_, curso_;
     public:
-        Profesor(std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, Sexo, edad, consulta){
+        Profesor(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta){
             universidad_ = universidad;
         }
         
-        void SetUniversidad(std::vector<std::string> universidad);
+        void SetUniversidad(std::vector<std::string> universidad){universidad_=universidad;}
         std::vector<std::string> GetUniversidad(){return universidad_;}
 };
 
