@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaplicacion.a  
+/usr/bin/ranlib libaplicacion.a

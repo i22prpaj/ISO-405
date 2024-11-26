@@ -75,6 +75,7 @@ src/all: src/admin/all
 src/all: src/usuario/all
 src/all: src/alumno/all
 src/all: src/profesor/all
+src/all: src/aplicacion/all
 
 .PHONY : src/all
 
@@ -83,6 +84,7 @@ src/preinstall: src/admin/preinstall
 src/preinstall: src/usuario/preinstall
 src/preinstall: src/alumno/preinstall
 src/preinstall: src/profesor/preinstall
+src/preinstall: src/aplicacion/preinstall
 
 .PHONY : src/preinstall
 
@@ -91,6 +93,7 @@ src/clean: src/admin/clean
 src/clean: src/usuario/clean
 src/clean: src/alumno/clean
 src/clean: src/profesor/clean
+src/clean: src/aplicacion/clean
 
 .PHONY : src/clean
 
@@ -129,6 +132,26 @@ src/alumno/preinstall:
 src/alumno/clean: src/alumno/CMakeFiles/alumno.dir/clean
 
 .PHONY : src/alumno/clean
+
+#=============================================================================
+# Directory level rules for directory src/aplicacion
+
+# Recursive "all" directory target.
+src/aplicacion/all: src/aplicacion/CMakeFiles/aplicacion-main.dir/all
+src/aplicacion/all: src/aplicacion/CMakeFiles/aplicacion.dir/all
+
+.PHONY : src/aplicacion/all
+
+# Recursive "preinstall" directory target.
+src/aplicacion/preinstall:
+
+.PHONY : src/aplicacion/preinstall
+
+# Recursive "clean" directory target.
+src/aplicacion/clean: src/aplicacion/CMakeFiles/aplicacion-main.dir/clean
+src/aplicacion/clean: src/aplicacion/CMakeFiles/aplicacion.dir/clean
+
+.PHONY : src/aplicacion/clean
 
 #=============================================================================
 # Directory level rules for directory src/profesor
@@ -200,7 +223,7 @@ src/admin/CMakeFiles/admin.dir/clean:
 src/usuario/CMakeFiles/usuario.dir/all:
 	$(MAKE) -f src/usuario/CMakeFiles/usuario.dir/build.make src/usuario/CMakeFiles/usuario.dir/depend
 	$(MAKE) -f src/usuario/CMakeFiles/usuario.dir/build.make src/usuario/CMakeFiles/usuario.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=7,8 "Built target usuario"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=10,11 "Built target usuario"
 .PHONY : src/usuario/CMakeFiles/usuario.dir/all
 
 # Build rule for subdir invocation for target.
@@ -254,7 +277,7 @@ src/alumno/CMakeFiles/alumno.dir/clean:
 src/profesor/CMakeFiles/profesor.dir/all: src/usuario/CMakeFiles/usuario.dir/all
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/depend
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=5,6 "Built target profesor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=8,9 "Built target profesor"
 .PHONY : src/profesor/CMakeFiles/profesor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -273,6 +296,67 @@ profesor: src/profesor/CMakeFiles/profesor.dir/rule
 src/profesor/CMakeFiles/profesor.dir/clean:
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/clean
 .PHONY : src/profesor/CMakeFiles/profesor.dir/clean
+
+#=============================================================================
+# Target rules for target src/aplicacion/CMakeFiles/aplicacion-main.dir
+
+# All Build rule for target.
+src/aplicacion/CMakeFiles/aplicacion-main.dir/all: src/admin/CMakeFiles/admin.dir/all
+src/aplicacion/CMakeFiles/aplicacion-main.dir/all: src/usuario/CMakeFiles/usuario.dir/all
+src/aplicacion/CMakeFiles/aplicacion-main.dir/all: src/alumno/CMakeFiles/alumno.dir/all
+src/aplicacion/CMakeFiles/aplicacion-main.dir/all: src/profesor/CMakeFiles/profesor.dir/all
+src/aplicacion/CMakeFiles/aplicacion-main.dir/all: src/aplicacion/CMakeFiles/aplicacion.dir/all
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion-main.dir/build.make src/aplicacion/CMakeFiles/aplicacion-main.dir/depend
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion-main.dir/build.make src/aplicacion/CMakeFiles/aplicacion-main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=6,7 "Built target aplicacion-main"
+.PHONY : src/aplicacion/CMakeFiles/aplicacion-main.dir/all
+
+# Build rule for subdir invocation for target.
+src/aplicacion/CMakeFiles/aplicacion-main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 src/aplicacion/CMakeFiles/aplicacion-main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
+.PHONY : src/aplicacion/CMakeFiles/aplicacion-main.dir/rule
+
+# Convenience name for target.
+aplicacion-main: src/aplicacion/CMakeFiles/aplicacion-main.dir/rule
+
+.PHONY : aplicacion-main
+
+# clean rule for target.
+src/aplicacion/CMakeFiles/aplicacion-main.dir/clean:
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion-main.dir/build.make src/aplicacion/CMakeFiles/aplicacion-main.dir/clean
+.PHONY : src/aplicacion/CMakeFiles/aplicacion-main.dir/clean
+
+#=============================================================================
+# Target rules for target src/aplicacion/CMakeFiles/aplicacion.dir
+
+# All Build rule for target.
+src/aplicacion/CMakeFiles/aplicacion.dir/all: src/admin/CMakeFiles/admin.dir/all
+src/aplicacion/CMakeFiles/aplicacion.dir/all: src/usuario/CMakeFiles/usuario.dir/all
+src/aplicacion/CMakeFiles/aplicacion.dir/all: src/alumno/CMakeFiles/alumno.dir/all
+src/aplicacion/CMakeFiles/aplicacion.dir/all: src/profesor/CMakeFiles/profesor.dir/all
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/depend
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=5 "Built target aplicacion"
+.PHONY : src/aplicacion/CMakeFiles/aplicacion.dir/all
+
+# Build rule for subdir invocation for target.
+src/aplicacion/CMakeFiles/aplicacion.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 src/aplicacion/CMakeFiles/aplicacion.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/ISO-405/build/CMakeFiles 0
+.PHONY : src/aplicacion/CMakeFiles/aplicacion.dir/rule
+
+# Convenience name for target.
+aplicacion: src/aplicacion/CMakeFiles/aplicacion.dir/rule
+
+.PHONY : aplicacion
+
+# clean rule for target.
+src/aplicacion/CMakeFiles/aplicacion.dir/clean:
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/clean
+.PHONY : src/aplicacion/CMakeFiles/aplicacion.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

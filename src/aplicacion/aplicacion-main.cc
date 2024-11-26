@@ -1,7 +1,7 @@
 #include "aplicacion.h"
 
 
-void main(){
+int main(){
 
     int menu=0;
     std::vector<Alumno> alumnos;

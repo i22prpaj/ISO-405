@@ -6,10 +6,10 @@
 
 class Usuario{
     private:
-        std::string dni_, nombre_, apellidos_, sexo_, nombre_usuario_, contraseña_;
+        std::string dni_, nombre_, apellidos_, sexo_, nombre_usuario_, contrasena_;
         int edad_, consulta_;
     public:
-        Usuario(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contraseña){
+        Usuario(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena){
             dni_ = dni;
             nombre_ = nombre;
             apellidos_ = apellidos;
@@ -26,7 +26,7 @@ class Usuario{
 
             consulta_ = consulta;
             nombre_usuario_ = nombre_usuario;
-            contraseña_ = contraseña;
+            contrasena_ = contrasena;
 
         }
 
@@ -57,8 +57,8 @@ class Usuario{
         void SetNombreUsuario(std::string nombre_usuario){nombre_usuario_ = nombre_usuario;}
         std::string GetNombreUsuario(){return nombre_usuario_;}
 
-        void SetContraseña(std::string contraseña){contraseña_ = contraseña;}
-        std::string GetContraseña(){return contraseña_;}
+        void SetContrasena(std::string contrasena){contrasena_ = contrasena;}
+        std::string GetContrasena(){return contrasena_;}
 
 
 };

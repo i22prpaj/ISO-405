@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/admin/admin.h
+usuario.h
+../src/admin/usuario.h
+
+../src/alumno/alumno.h
+usuario.h
+../src/alumno/usuario.h
+
+../src/profesor/profesor.h
+usuario.h
+../src/profesor/usuario.h
+
+../src/usuario/usuario.h
+iostream
+-
+string
+-
+vector
+-
+
+/workspaces/ISO-405/src/aplicacion/aplicacion-main.cc
+aplicacion.h
+/workspaces/ISO-405/src/aplicacion/aplicacion.h
+
+/workspaces/ISO-405/src/aplicacion/aplicacion.h
+usuario.h
+/workspaces/ISO-405/src/aplicacion/usuario.h
+alumno.h
+/workspaces/ISO-405/src/aplicacion/alumno.h
+profesor.h
+/workspaces/ISO-405/src/aplicacion/profesor.h
+admin.h
+/workspaces/ISO-405/src/aplicacion/admin.h
+fstream
+-
+
