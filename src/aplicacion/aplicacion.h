@@ -33,12 +33,17 @@ void guardaAlumno(std::vector<Alumno>& alumnos);
 =======
 #include <fstream>
 
+<<<<<<< HEAD
 void cargarBD();
 void guardarBD();
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+void cargarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
+void guardarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
+>>>>>>> c2f2596 (	modified:   build/src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o)
 
 bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
-bool IniciarSesion();
+bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
 
 
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
