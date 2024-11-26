@@ -2,7 +2,7 @@
 
 bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
     std::vector<std::string> universidad;
-    std::string dni, nombre, apellidos, sexo, nombre_usuario, contraseña, tipo_usuario;
+    std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, tipo_usuario;
     int edad, consulta=0;
     std::cout << "Ingrese su DNI: ";
     std::cin >> dni;
@@ -14,15 +14,15 @@ bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, 
     std::cin >> sexo;
     std::cout << "Ingrese un nombre de usuario: ";
     std::cin >> nombre_usuario;
-    std::cout << "Ingrese una contraseña: ";
-    std::cin >> contraseña;
+    std::cout << "Ingrese una contrasena: ";
+    std::cin >> contrasena;
     std::cout << "Tipo de usuario (Profesor, Alumno): ";
     std::cin >> tipo_usuario;
     std::cout << "Ingrese su edad: ";
     std::cin >> edad;
 
     if(tipo_usuario == "Profesor"){
-        Profesor profesor1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contraseña, universidad);
+        Profesor profesor1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, universidad);
         profesores.push_back(profesor1);
     }
     else if(tipo_usuario == "Alumno"){
@@ -36,7 +36,7 @@ bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, 
         std::cin >> curso;
         std::cout << "Ingrese la matrícula: ";
         std::cin >> matricula;
-        Alumno alumno1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contraseña, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
+        Alumno alumno1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
         alumnos.push_back(alumno1);
     }
 
@@ -44,33 +44,33 @@ bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, 
 }
 
 bool IniciarSesion(){
-    std::string nombre_usuario, contraseña;
+    std::string nombre_usuario, contrasena;
     std::cout << "Ingrese su nombre de usuario: ";
     std::cin >> nombre_usuario;
-    std::cout << "Ingrese su contraseña: ";
-    std::cin >> contraseña;
+    std::cout << "Ingrese su contrasena: ";
+    std::cin >> contrasena;
 }
 
 void cargarBD(){
-    std::string nombre_usuario, contraseña;
+    std::string nombre_usuario, contrasena;
     // Lee el archivo y verifica las credenciales
     std::ifstream archivo("usuarios.txt");
     if (archivo.is_open()) {
         while(!archivo.eof()) {
-            archivo >> nombre_usuario >> contraseña;
+            archivo >> nombre_usuario >> contrasena;
             //>> lee los datos del archivo hasta encontrar un espacio en blanco o un salto de línea.
-            std::cout << nombre_usuario << " " << contraseña << std::endl;
+            std::cout << nombre_usuario << " " << contrasena << std::endl;
         }
     }
     archivo.close();
 }
 
 void guardarBD(){
-    std::string nombre_usuario, contraseña, tipo_usuario;
+    std::string nombre_usuario, contrasena, tipo_usuario;
     // Almacena las credenciales en un archivo
     std::ofstream archivo("usuarios.txt");
     if (archivo.is_open()) {
-        archivo << nombre_usuario << " " << contraseña << std::endl;
+        archivo << nombre_usuario << " " << contrasena << std::endl;
         archivo.close();
         std::cout << "Registro exitoso.\n";
     } else {

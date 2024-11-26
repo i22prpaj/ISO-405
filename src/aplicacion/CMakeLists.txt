@@ -1,4 +1,4 @@
-add_library(aplicacion aplicacion.h)
+add_library(aplicacion aplicacion.cc aplicacion.h)
 target_link_libraries(aplicacion PUBLIC usuario)
 target_link_libraries(aplicacion PUBLIC alumno)
 target_link_libraries(aplicacion PUBLIC profesor)

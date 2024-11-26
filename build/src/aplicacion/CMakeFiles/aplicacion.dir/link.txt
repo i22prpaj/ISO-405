@@ -1,2 +1,2 @@
-/usr/bin/ar qc libaplicacion.a  
+/usr/bin/ar qc libaplicacion.a  CMakeFiles/aplicacion.dir/aplicacion.cc.o
 /usr/bin/ranlib libaplicacion.a
