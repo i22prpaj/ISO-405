@@ -6,9 +6,7 @@ class Admin: public Usuario{
     private:
         
     public:
-        Admin(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena): Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){
-            
-        }
+        Admin(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena): Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){}
 };
 
 #endif

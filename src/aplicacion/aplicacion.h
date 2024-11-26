@@ -5,6 +5,7 @@
 #include "profesor.h"
 #include "admin.h"
 #include <fstream>
+#include <sstream>
 
 void cargarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
 void guardarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
