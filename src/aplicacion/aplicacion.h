@@ -9,7 +9,7 @@
 void cargarBD();
 void guardarBD();
 
-bool Registrarse();
+bool Registrarse(Alumno alumnos[], Profesor profesores[], Admin admins[]);
 bool IniciarSesion();
 
 

@@ -162,6 +162,32 @@ profesor/fast:
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/build
 .PHONY : profesor/fast
 
+#=============================================================================
+# Target rules for targets named aplicacion-main
+
+# Build rule for target.
+aplicacion-main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aplicacion-main
+.PHONY : aplicacion-main
+
+# fast build rule for target.
+aplicacion-main/fast:
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion-main.dir/build.make src/aplicacion/CMakeFiles/aplicacion-main.dir/build
+.PHONY : aplicacion-main/fast
+
+#=============================================================================
+# Target rules for targets named aplicacion
+
+# Build rule for target.
+aplicacion: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 aplicacion
+.PHONY : aplicacion
+
+# fast build rule for target.
+aplicacion/fast:
+	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/build
+.PHONY : aplicacion/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,6 +200,8 @@ help:
 	@echo "... usuario"
 	@echo "... alumno"
 	@echo "... profesor"
+	@echo "... aplicacion-main"
+	@echo "... aplicacion"
 .PHONY : help
 
 

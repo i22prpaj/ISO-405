@@ -6,11 +6,11 @@ class Alumno: public Usuario{
 
     private:
         std::string carrera_;
-        std::vector<std::string> asignaturas_, universidad_;
+        std::vector<std::string> asignaturas_, universidad_;;
         int cuatrimestre_, curso_, matricula_;
 
     public:
-        Alumno(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contraseña, std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contraseña){
+        Alumno(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena, std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){
             carrera_ = carrera;
             asignaturas_ = asignaturas;
             cuatrimestre_ = cuatrimestre;

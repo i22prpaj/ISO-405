@@ -33,6 +33,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/CMakeLists.txt"
   "../src/admin/CMakeLists.txt"
   "../src/alumno/CMakeLists.txt"
+  "../src/aplicacion/CMakeLists.txt"
   "../src/profesor/CMakeLists.txt"
   "../src/usuario/CMakeLists.txt"
   )
@@ -51,6 +52,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/usuario/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/alumno/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/profesor/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/aplicacion/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -59,4 +61,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/usuario/CMakeFiles/usuario.dir/DependInfo.cmake"
   "src/alumno/CMakeFiles/alumno.dir/DependInfo.cmake"
   "src/profesor/CMakeFiles/profesor.dir/DependInfo.cmake"
+  "src/aplicacion/CMakeFiles/aplicacion-main.dir/DependInfo.cmake"
+  "src/aplicacion/CMakeFiles/aplicacion.dir/DependInfo.cmake"
   )

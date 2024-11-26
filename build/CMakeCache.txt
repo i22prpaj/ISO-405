@@ -222,6 +222,9 @@ admin_LIB_DEPENDS:STATIC=general;usuario;
 alumno_LIB_DEPENDS:STATIC=general;usuario;
 
 //Dependencies for the target
+aplicacion_LIB_DEPENDS:STATIC=general;usuario;general;alumno;general;profesor;general;admin;
+
+//Dependencies for the target
 profesor_LIB_DEPENDS:STATIC=general;usuario;
 
 
@@ -329,7 +332,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

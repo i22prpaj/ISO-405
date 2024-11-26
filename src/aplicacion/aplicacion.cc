@@ -1,6 +1,6 @@
 #include "aplicacion.h"
 
-bool Registrarse(){
+bool Registrarse(Alumno alumnos[], Profesor profesores[]){
     std::vector<std::string> universidad;
     std::string dni, nombre, apellidos, sexo, nombre_usuario, contraseña, tipo_usuario;
     int edad, consulta=0;
@@ -26,8 +26,21 @@ bool Registrarse(){
         profesores.push_back(profesor1);
     }
     else if(tipo_usuario == "Alumno"){
+        std::string carrera;
+        std::vector<std::string> asignaturas, universidad;
+        int cuatrimestre, curso, matricula;
         
+        std::cout << "Ingrese su carrera: ";
+        std::cin >> carrera;
+        std::cout << "Ingrese el curso: ";
+        std::cin >> curso;
+        std::cout << "Ingrese la matrícula: ";
+        std::cin >> matricula;
+        Alumno alumno1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contraseña, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
+        alumnos.push_back(alumno1);
     }
+
+
 }
 
 bool IniciarSesion(){
