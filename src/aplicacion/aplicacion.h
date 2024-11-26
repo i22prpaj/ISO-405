@@ -32,6 +32,7 @@ void guardaAlumno(std::vector<Alumno>& alumnos);
 =======
 =======
 #include <fstream>
+#include <sstream>
 
 <<<<<<< HEAD
 void cargarBD();

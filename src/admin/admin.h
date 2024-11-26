@@ -10,6 +10,7 @@ class Admin: public Usuario{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Admin(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena): Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){}
 =======
         Admin(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta): Usuario(dni, nombre, apellidos, sexo, edad, consulta){
@@ -25,6 +26,9 @@ class Admin: public Usuario{
             
         }
 >>>>>>> f453b58 (	deleted:    build/CMakeFiles/Progress/1)
+=======
+        Admin(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena): Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){}
+>>>>>>> 0aa6d07 (	modified:   src/admin/admin.h)
 };
 
 #endif
