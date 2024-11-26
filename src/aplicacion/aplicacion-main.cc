@@ -8,6 +8,8 @@ int main(){
     std::vector<Profesor> profesores;
     std::vector<Admin> administradores;
 
+    cargarBD(alumnos, profesores, administradores);
+
     while(menu!=3){
         std::cout<<"1 --> Registrarse"<<std::endl;
         std::cout<<"2 --> Iniciar Sesion"<<std::endl;
@@ -29,4 +31,6 @@ int main(){
                            
         }
     }
+
+    guardarBD(alumnos, profesores, administradores);
 }

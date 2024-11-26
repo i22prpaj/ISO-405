@@ -29,6 +29,8 @@ class Alumno: public Usuario{
         std::vector<std::string> GetAsignaturas(){return asignaturas_;}
         void SetUniversidad(std::vector<std::string> universidad);
         std::vector<std::string> GetUniversidad(){return universidad_;}
+        void SetCurso(int curso){curso_ = curso;}
+        int GetCurso(){return curso_;}
 };
 
 #endif

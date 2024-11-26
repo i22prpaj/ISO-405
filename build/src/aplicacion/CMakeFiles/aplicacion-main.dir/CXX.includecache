@@ -41,4 +41,6 @@ admin.h
 /workspaces/ISO-405/src/aplicacion/admin.h
 fstream
 -
+sstream
+-
 
