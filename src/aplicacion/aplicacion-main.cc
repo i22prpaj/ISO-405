@@ -17,10 +17,15 @@ int main(){
     std::vector<Admin> administradores;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     cargarBD(alumnos, profesores, administradores);
 
 =======
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
+=======
+    cargarBD(alumnos, profesores, administradores);
+
+>>>>>>> c0e4e8d (	modified:   build/src/aplicacion/CMakeFiles/aplicacion-main.dir/CXX.includecache)
     while(menu!=3){
         std::cout<<"1 --> Registrarse"<<std::endl;
         std::cout<<"2 --> Iniciar Sesion"<<std::endl;
@@ -72,6 +77,7 @@ int main(){
                            
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     if (alumnos.empty()) {
@@ -129,4 +135,8 @@ int main(){
     guardarBD(alumnos, profesores, administradores);
 =======
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
+=======
+
+    guardarBD(alumnos, profesores, administradores);
+>>>>>>> c0e4e8d (	modified:   build/src/aplicacion/CMakeFiles/aplicacion-main.dir/CXX.includecache)
 }

@@ -49,10 +49,15 @@ class Alumno: public Usuario{
         void SetUniversidad(std::vector<std::string> universidad){universidad_ = universidad;};
         std::vector<std::string> GetUniversidad(){return universidad_;}
 <<<<<<< HEAD
+<<<<<<< HEAD
         void SetCurso(int curso){curso_ = curso;}
         int GetCurso(){return curso_;}
 =======
 >>>>>>> f453b58 (	deleted:    build/CMakeFiles/Progress/1)
+=======
+        void SetCurso(int curso){curso_ = curso;}
+        int GetCurso(){return curso_;}
+>>>>>>> c0e4e8d (	modified:   build/src/aplicacion/CMakeFiles/aplicacion-main.dir/CXX.includecache)
 };
 
 #endif

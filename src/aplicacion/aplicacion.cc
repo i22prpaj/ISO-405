@@ -506,5 +506,41 @@ void cargarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std
 
 void guardarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
 
+    std::ofstream archivo_alumnos("alumnos.txt");
+    if (archivo_alumnos.is_open()) { 
+        for (auto alumno : alumnos){
+            archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
+                            << alumno.GetSexo() << " " << alumno.GetEdad() << " " << alumno.GetConsulta() << " "
+                            << alumno.GetNombreUsuario() << " " << alumno.GetContrasena() << " " << alumno.GetCarrera() << " "
+                            << alumno.GetCuatrimestre() << " " << alumno.GetCurso() << " " << alumno.GetMatricula() << "\n";
+        }
+        archivo_alumnos.close();
+    } else {
+        std::cout << "Error al abrir el archivo de alumnos para escribir.\n";
+    }
+
+    std::ofstream archivo_profesores("profesores.txt");
+    if (archivo_profesores.is_open()) {
+        for (auto profesor : profesores) {
+            archivo_profesores << profesor.GetDNI() << " " << profesor.GetNombre() << " " << profesor.GetApellidos() << " "
+                               << profesor.GetSexo() << " " << profesor.GetEdad() << " " << profesor.GetConsulta() << " "
+                               << profesor.GetNombreUsuario() << " " << profesor.GetContrasena() << "\n";
+        }
+        archivo_profesores.close();
+    } else {
+        std::cout << "Error al abrir el archivo de profesores para escribir.\n";
+    }
+
+    std::ofstream archivo_admins("admins.txt");
+    if (archivo_admins.is_open()) {
+        for (auto admin : admins) {
+            archivo_admins << admin.GetDNI() << " " << admin.GetNombre() << " " << admin.GetApellidos() << " "
+                           << admin.GetSexo() << " " << admin.GetEdad() << " " << admin.GetConsulta() << " "
+                           << admin.GetNombreUsuario() << " " << admin.GetContrasena() << "\n";
+        }
+        archivo_admins.close();
+    } else {
+        std::cout << "Error al abrir el archivo de admins para escribir.\n";
+    }
 }
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)

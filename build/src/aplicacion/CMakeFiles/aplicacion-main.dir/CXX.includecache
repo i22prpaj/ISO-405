@@ -42,6 +42,7 @@ admin.h
 fstream
 -
 <<<<<<< HEAD
+<<<<<<< HEAD
 sstream
 -
 stdio.h
@@ -50,4 +51,8 @@ time.h
 -
 =======
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+sstream
+-
+>>>>>>> c0e4e8d (	modified:   build/src/aplicacion/CMakeFiles/aplicacion-main.dir/CXX.includecache)
 
