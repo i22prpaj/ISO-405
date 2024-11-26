@@ -32,5 +32,12 @@ int main(){
         }
     }
 
+    if (alumnos.empty()) {
+       std::cout << "El vector de alumnos está vacío.\n";
+    }
+    for (auto alumno : alumnos) {
+       std::cout << alumno.GetNombre() << std::endl;  // Imprime en la consola para verificar
+    }
+
     guardarBD(alumnos, profesores, administradores);
 }
