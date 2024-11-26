@@ -41,10 +41,13 @@ admin.h
 /workspaces/ISO-405/src/aplicacion/admin.h
 fstream
 -
+<<<<<<< HEAD
 sstream
 -
 stdio.h
 -
 time.h
 -
+=======
+>>>>>>> c7b3a37 (	modified:   build/CMakeFiles/Makefile.cmake)
 

@@ -168,6 +168,9 @@ aplicacion-main.cc.s:
 .PHONY : aplicacion-main.cc.s
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c7b3a37 (	modified:   build/CMakeFiles/Makefile.cmake)
 aplicacion.o: aplicacion.cc.o
 
 .PHONY : aplicacion.o
@@ -195,8 +198,11 @@ aplicacion.cc.s:
 	cd /workspaces/ISO-405/build && $(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.s
 .PHONY : aplicacion.cc.s
 
+<<<<<<< HEAD
 =======
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+>>>>>>> c7b3a37 (	modified:   build/CMakeFiles/Makefile.cmake)
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,11 +217,17 @@ help:
 	@echo "... aplicacion-main.i"
 	@echo "... aplicacion-main.s"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@echo "... aplicacion.o"
 	@echo "... aplicacion.i"
 	@echo "... aplicacion.s"
 =======
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+	@echo "... aplicacion.o"
+	@echo "... aplicacion.i"
+	@echo "... aplicacion.s"
+>>>>>>> c7b3a37 (	modified:   build/CMakeFiles/Makefile.cmake)
 .PHONY : help
 
 

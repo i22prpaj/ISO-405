@@ -58,6 +58,7 @@ include src/aplicacion/CMakeFiles/aplicacion.dir/progress.make
 include src/aplicacion/CMakeFiles/aplicacion.dir/flags.make
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: src/aplicacion/CMakeFiles/aplicacion.dir/flags.make
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: ../src/aplicacion/aplicacion.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o"
@@ -78,10 +79,29 @@ aplicacion_OBJECTS = \
 # Object files for target aplicacion
 aplicacion_OBJECTS =
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: src/aplicacion/CMakeFiles/aplicacion.dir/flags.make
+src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: ../src/aplicacion/aplicacion.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o"
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion.dir/aplicacion.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion.cc
+
+src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aplicacion.dir/aplicacion.cc.i"
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/aplicacion/aplicacion.cc > CMakeFiles/aplicacion.dir/aplicacion.cc.i
+
+src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aplicacion.dir/aplicacion.cc.s"
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion.cc -o CMakeFiles/aplicacion.dir/aplicacion.cc.s
+
+# Object files for target aplicacion
+aplicacion_OBJECTS = \
+"CMakeFiles/aplicacion.dir/aplicacion.cc.o"
+>>>>>>> c7b3a37 (	modified:   build/CMakeFiles/Makefile.cmake)
 
 # External object files for target aplicacion
 aplicacion_EXTERNAL_OBJECTS =
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o
 src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/build.make
@@ -92,6 +112,12 @@ src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/build.m
 src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libaplicacion.a"
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o
+src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/build.make
+src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libaplicacion.a"
+>>>>>>> c7b3a37 (	modified:   build/CMakeFiles/Makefile.cmake)
 	cd /workspaces/ISO-405/build/src/aplicacion && $(CMAKE_COMMAND) -P CMakeFiles/aplicacion.dir/cmake_clean_target.cmake
 	cd /workspaces/ISO-405/build/src/aplicacion && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aplicacion.dir/link.txt --verbose=$(VERBOSE)
 
