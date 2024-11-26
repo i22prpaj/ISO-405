@@ -37,7 +37,7 @@ void cargarBD();
 void guardarBD();
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
-bool Registrarse();
+bool Registrarse(Alumno alumnos[], Profesor profesores[], Admin admins[]);
 bool IniciarSesion();
 
 

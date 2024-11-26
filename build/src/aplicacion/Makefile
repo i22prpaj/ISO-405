@@ -167,6 +167,7 @@ aplicacion-main.cc.s:
 	cd /workspaces/ISO-405/build && $(MAKE) -f src/aplicacion/CMakeFiles/aplicacion-main.dir/build.make src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
 .PHONY : aplicacion-main.cc.s
 
+<<<<<<< HEAD
 aplicacion.o: aplicacion.cc.o
 
 .PHONY : aplicacion.o
@@ -194,6 +195,8 @@ aplicacion.cc.s:
 	cd /workspaces/ISO-405/build && $(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.s
 .PHONY : aplicacion.cc.s
 
+=======
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -207,9 +210,12 @@ help:
 	@echo "... aplicacion-main.o"
 	@echo "... aplicacion-main.i"
 	@echo "... aplicacion-main.s"
+<<<<<<< HEAD
 	@echo "... aplicacion.o"
 	@echo "... aplicacion.i"
 	@echo "... aplicacion.s"
+=======
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 .PHONY : help
 
 

@@ -34,9 +34,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/admin/CMakeLists.txt"
   "../src/alumno/CMakeLists.txt"
 <<<<<<< HEAD
+<<<<<<< HEAD
   "../src/aplicacion/CMakeLists.txt"
 =======
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+  "../src/aplicacion/CMakeLists.txt"
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
   "../src/profesor/CMakeLists.txt"
   "../src/usuario/CMakeLists.txt"
   )
@@ -56,9 +60,13 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/alumno/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/profesor/CMakeFiles/CMakeDirectoryInformation.cmake"
 <<<<<<< HEAD
+<<<<<<< HEAD
   "src/aplicacion/CMakeFiles/CMakeDirectoryInformation.cmake"
 =======
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+  "src/aplicacion/CMakeFiles/CMakeDirectoryInformation.cmake"
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
   )
 
 # Dependency information for all targets:
@@ -68,8 +76,13 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/alumno/CMakeFiles/alumno.dir/DependInfo.cmake"
   "src/profesor/CMakeFiles/profesor.dir/DependInfo.cmake"
 <<<<<<< HEAD
+<<<<<<< HEAD
   "src/aplicacion/CMakeFiles/aplicacion-main.dir/DependInfo.cmake"
   "src/aplicacion/CMakeFiles/aplicacion.dir/DependInfo.cmake"
 =======
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+  "src/aplicacion/CMakeFiles/aplicacion-main.dir/DependInfo.cmake"
+  "src/aplicacion/CMakeFiles/aplicacion.dir/DependInfo.cmake"
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
   )

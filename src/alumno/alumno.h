@@ -6,10 +6,11 @@ class Alumno: public Usuario{
 
     private:
         std::string carrera_;
-        std::vector<std::string> asignaturas_, universidad_;
+        std::vector<std::string> asignaturas_, universidad_;;
         int cuatrimestre_, curso_, matricula_;
 
     public:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -23,6 +24,9 @@ class Alumno: public Usuario{
 =======
         Alumno(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contraseña, std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contraseña){
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+        Alumno(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena, std::string carrera, std::vector<std::string> asignaturas, int cuatrimestre, int curso, int matricula, std::vector<std::string> universidad):Usuario(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena){
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
             carrera_ = carrera;
             asignaturas_ = asignaturas;
             cuatrimestre_ = cuatrimestre;

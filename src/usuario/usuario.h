@@ -8,6 +8,7 @@ class Usuario{
     private:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         std::string dni_, nombre_, apellidos_, sexo_, nombre_usuario_, contrasena_;
         int edad_, consulta_;
     public:
@@ -24,6 +25,12 @@ class Usuario{
     public:
         Usuario(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contraseña){
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+        std::string dni_, nombre_, apellidos_, sexo_, nombre_usuario_, contrasena_;
+        int edad_, consulta_;
+    public:
+        Usuario(std::string dni, std::string nombre, std::string apellidos, std::string sexo, int edad, int consulta, std::string nombre_usuario, std::string contrasena){
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
             dni_ = dni;
             nombre_ = nombre;
             apellidos_ = apellidos;
@@ -41,10 +48,14 @@ class Usuario{
             consulta_ = consulta;
             nombre_usuario_ = nombre_usuario;
 <<<<<<< HEAD
+<<<<<<< HEAD
             contrasena_ = contrasena;
 =======
             contraseña_ = contraseña;
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+            contrasena_ = contrasena;
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
         }
 
@@ -89,8 +100,8 @@ class Usuario{
         void SetNombreUsuario(std::string nombre_usuario){nombre_usuario_ = nombre_usuario;}
         std::string GetNombreUsuario(){return nombre_usuario_;}
 
-        void SetContraseña(std::string contraseña){contraseña_ = contraseña;}
-        std::string GetContraseña(){return contraseña_;}
+        void SetContrasena(std::string contrasena){contrasena_ = contrasena;}
+        std::string GetContrasena(){return contrasena_;}
 
 
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)

@@ -57,6 +57,7 @@ include src/aplicacion/CMakeFiles/aplicacion.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/aplicacion/CMakeFiles/aplicacion.dir/flags.make
 
+<<<<<<< HEAD
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: src/aplicacion/CMakeFiles/aplicacion.dir/flags.make
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: ../src/aplicacion/aplicacion.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o"
@@ -73,14 +74,24 @@ src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.s: cmake_force
 # Object files for target aplicacion
 aplicacion_OBJECTS = \
 "CMakeFiles/aplicacion.dir/aplicacion.cc.o"
+=======
+# Object files for target aplicacion
+aplicacion_OBJECTS =
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
 # External object files for target aplicacion
 aplicacion_EXTERNAL_OBJECTS =
 
+<<<<<<< HEAD
 src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o
 src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/build.make
 src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libaplicacion.a"
+=======
+src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/build.make
+src/aplicacion/libaplicacion.a: src/aplicacion/CMakeFiles/aplicacion.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libaplicacion.a"
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 	cd /workspaces/ISO-405/build/src/aplicacion && $(CMAKE_COMMAND) -P CMakeFiles/aplicacion.dir/cmake_clean_target.cmake
 	cd /workspaces/ISO-405/build/src/aplicacion && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aplicacion.dir/link.txt --verbose=$(VERBOSE)
 

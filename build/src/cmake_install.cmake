@@ -48,9 +48,13 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/workspaces/ISO-405/build/src/alumno/cmake_install.cmake")
   include("/workspaces/ISO-405/build/src/profesor/cmake_install.cmake")
 <<<<<<< HEAD
+<<<<<<< HEAD
   include("/workspaces/ISO-405/build/src/aplicacion/cmake_install.cmake")
 =======
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+  include("/workspaces/ISO-405/build/src/aplicacion/cmake_install.cmake")
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
 endif()
 

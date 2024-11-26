@@ -41,10 +41,13 @@ admin.h
 /workspaces/ISO-405/src/aplicacion/admin.h
 fstream
 -
+<<<<<<< HEAD
 sstream
 -
 stdio.h
 -
 time.h
 -
+=======
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 

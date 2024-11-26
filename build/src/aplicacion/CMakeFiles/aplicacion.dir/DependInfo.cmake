@@ -1,5 +1,6 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+<<<<<<< HEAD
   "CXX"
   )
 # The set of files for implicit dependencies of each language:
@@ -16,6 +17,10 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/profesor"
   "../src/admin"
   )
+=======
+  )
+# The set of files for implicit dependencies of each language:
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES

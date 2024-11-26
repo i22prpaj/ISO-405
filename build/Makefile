@@ -163,6 +163,9 @@ profesor/fast:
 .PHONY : profesor/fast
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 #=============================================================================
 # Target rules for targets named aplicacion-main
 
@@ -189,8 +192,11 @@ aplicacion/fast:
 	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/build
 .PHONY : aplicacion/fast
 
+<<<<<<< HEAD
 =======
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -204,10 +210,15 @@ help:
 	@echo "... alumno"
 	@echo "... profesor"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@echo "... aplicacion-main"
 	@echo "... aplicacion"
 =======
 >>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
+=======
+	@echo "... aplicacion-main"
+	@echo "... aplicacion"
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 .PHONY : help
 
 

@@ -2,10 +2,14 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 int main(){
 =======
 void main(){
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
+=======
+int main(){
+>>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
     int menu=0;
     std::vector<Alumno> alumnos;
