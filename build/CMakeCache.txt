@@ -14,22 +14,36 @@
 # EXTERNAL cache entries
 ########################
 
+<<<<<<< HEAD
 :UNINITIALIZED=======
 
+=======
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
+<<<<<<< HEAD
 //No help, variable specified on the command line.
 CMAKE_BUILD_TYPE:STRING=Debug
+=======
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
+CMAKE_BUILD_TYPE:STRING=
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
+<<<<<<< HEAD
 //No help, variable specified on the command line.
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++
+=======
+//CXX compiler
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -54,8 +68,13 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
+<<<<<<< HEAD
 //No help, variable specified on the command line.
 CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
+=======
+//C compiler
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -98,8 +117,13 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+<<<<<<< HEAD
 //No help, variable specified on the command line.
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+=======
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
@@ -217,20 +241,30 @@ ISO-405_BINARY_DIR:STATIC=/workspaces/ISO-405/build
 ISO-405_SOURCE_DIR:STATIC=/workspaces/ISO-405
 
 //Dependencies for the target
+<<<<<<< HEAD
 admin_LIB_DEPENDS:STATIC=general;usuario;general;usuario;general;usuario;
+=======
+admin_LIB_DEPENDS:STATIC=general;usuario;
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 
 //Dependencies for the target
 alumno_LIB_DEPENDS:STATIC=general;usuario;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 aplicacion_LIB_DEPENDS:STATIC=general;usuario;general;alumno;general;profesor;general;admin;
 
 =======
+=======
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 //Dependencies for the target
 aplicacion_LIB_DEPENDS:STATIC=general;usuario;general;alumno;general;profesor;general;admin;
 
 //Dependencies for the target
+<<<<<<< HEAD
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 profesor_LIB_DEPENDS:STATIC=general;usuario;
 
 
@@ -339,10 +373,14 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 <<<<<<< HEAD
+<<<<<<< HEAD
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 =======
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+>>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
