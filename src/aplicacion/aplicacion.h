@@ -9,7 +9,7 @@
 void cargarBD();
 void guardarBD();
 
-bool Registrarse(Alumno alumnos[], Profesor profesores[], Admin admins[]);
+bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
 bool IniciarSesion();
 
 
