@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
     std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, tipo_usuario;
     int edad, consulta=0;
@@ -387,6 +388,9 @@ bool Registrarse(){
 =======
 bool Registrarse(Alumno alumnos[], Profesor profesores[]){
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
+>>>>>>> 88af963 (	renamed:    build/CMakeFiles/Progress/6 -> build/CMakeFiles/Progress/7)
     std::vector<std::string> universidad;
     std::string dni, nombre, apellidos, sexo, nombre_usuario, contraseña, tipo_usuario;
     int edad, consulta=0;

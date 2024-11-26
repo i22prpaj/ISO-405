@@ -34,6 +34,7 @@ int main(){
 <<<<<<< HEAD
                 if(Registrarse(alumnos, profesores, administradores)==false){
                     std::cout<<"Error al registrarse"<<std::endl;
+<<<<<<< HEAD
                 };
                 break;
             case 2:
@@ -46,13 +47,20 @@ int main(){
 >>>>>>> 3063a41 (	modified:   src/aplicacion/aplicacion-main.cc)
                     std::cout<<"Error al registrarse"<<std::endl;
                     return;
+=======
+                    exit(EXIT_FAILURE);
+>>>>>>> 88af963 (	renamed:    build/CMakeFiles/Progress/6 -> build/CMakeFiles/Progress/7)
                 };
                 break;
             case 2:
                 if(IniciarSesion()==false){
                     std::cout<<"Error al iniciar sesion"<<std::endl;
+<<<<<<< HEAD
                     return;
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
+=======
+                    exit(EXIT_FAILURE);
+>>>>>>> 88af963 (	renamed:    build/CMakeFiles/Progress/6 -> build/CMakeFiles/Progress/7)
                 };
                 break;
                            
