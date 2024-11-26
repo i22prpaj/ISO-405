@@ -24,6 +24,8 @@ bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, 
     if(tipo_usuario == "Profesor"){
         Profesor profesor1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, universidad);
         profesores.push_back(profesor1);
+
+        return true;
     }
     else if(tipo_usuario == "Alumno"){
         std::string carrera;
@@ -38,20 +40,27 @@ bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, 
         std::cin >> matricula;
         Alumno alumno1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
         alumnos.push_back(alumno1);
+
+        return true;
     }
 
+    return false;
 
 }
 
-bool IniciarSesion(){
+bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
+    
     std::string nombre_usuario, contrasena;
     std::cout << "Ingrese su nombre de usuario: ";
     std::cin >> nombre_usuario;
     std::cout << "Ingrese su contrasena: ";
     std::cin >> contrasena;
+
+    // Verifica las credenciales
+    return true;
 }
 
-void cargarBD(){
+void cargarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
     std::string nombre_usuario, contrasena;
     // Lee el archivo y verifica las credenciales
     std::ifstream archivo("usuarios.txt");
@@ -65,7 +74,7 @@ void cargarBD(){
     archivo.close();
 }
 
-void guardarBD(){
+void guardarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
     std::string nombre_usuario, contrasena, tipo_usuario;
     // Almacena las credenciales en un archivo
     std::ofstream archivo("usuarios.txt");

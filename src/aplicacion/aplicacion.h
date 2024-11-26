@@ -6,11 +6,11 @@
 #include "admin.h"
 #include <fstream>
 
-void cargarBD();
-void guardarBD();
+void cargarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
+void guardarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
 
 bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
-bool IniciarSesion();
+bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
 
 
 #endif
