@@ -167,6 +167,33 @@ aplicacion-main.cc.s:
 	cd /workspaces/ISO-405/build && $(MAKE) -f src/aplicacion/CMakeFiles/aplicacion-main.dir/build.make src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
 .PHONY : aplicacion-main.cc.s
 
+aplicacion.o: aplicacion.cc.o
+
+.PHONY : aplicacion.o
+
+# target to build an object file
+aplicacion.cc.o:
+	cd /workspaces/ISO-405/build && $(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o
+.PHONY : aplicacion.cc.o
+
+aplicacion.i: aplicacion.cc.i
+
+.PHONY : aplicacion.i
+
+# target to preprocess a source file
+aplicacion.cc.i:
+	cd /workspaces/ISO-405/build && $(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.i
+.PHONY : aplicacion.cc.i
+
+aplicacion.s: aplicacion.cc.s
+
+.PHONY : aplicacion.s
+
+# target to generate assembly for a file
+aplicacion.cc.s:
+	cd /workspaces/ISO-405/build && $(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.s
+.PHONY : aplicacion.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -180,6 +207,9 @@ help:
 	@echo "... aplicacion-main.o"
 	@echo "... aplicacion-main.i"
 	@echo "... aplicacion-main.s"
+	@echo "... aplicacion.o"
+	@echo "... aplicacion.i"
+	@echo "... aplicacion.s"
 .PHONY : help
 
 
