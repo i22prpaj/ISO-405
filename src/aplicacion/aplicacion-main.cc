@@ -19,13 +19,13 @@ int main(){
             case 1:
                 if(Registrarse(alumnos, profesores, administradores)==false){
                     std::cout<<"Error al registrarse"<<std::endl;
-                    return;
+                    exit(EXIT_FAILURE);
                 };
                 break;
             case 2:
                 if(IniciarSesion()==false){
                     std::cout<<"Error al iniciar sesion"<<std::endl;
-                    return;
+                    exit(EXIT_FAILURE);
                 };
                 break;
                            

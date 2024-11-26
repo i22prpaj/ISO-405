@@ -1,6 +1,6 @@
 #include "aplicacion.h"
 
-bool Registrarse(Alumno alumnos[], Profesor profesores[]){
+bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
     std::vector<std::string> universidad;
     std::string dni, nombre, apellidos, sexo, nombre_usuario, contraseña, tipo_usuario;
     int edad, consulta=0;
