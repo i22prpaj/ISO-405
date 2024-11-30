@@ -1,15 +1,17 @@
 #include "aplicacion.h"
 
-bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
+bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
     std::vector<std::string> universidad;
     std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, tipo_usuario;
     int edad, consulta=0;
     std::cout << "Ingrese su DNI: ";
     std::cin >> dni;
     std::cout << "Ingrese su nombre: ";
-    std::cin >> nombre;
+    std::cin.ignore();  // Limpia el buffer antes de getline
+    std::getline(std::cin, nombre);
     std::cout << "Ingrese sus apellidos: ";
-    std::cin >> apellidos;
+    std::cin.ignore();  // Limpia el buffer antes de getline
+    std::getline(std::cin, apellidos);
     std::cout << "Ingrese su sexo: ";
     std::cin >> sexo;
     std::cout << "Ingrese un nombre de usuario: ";
@@ -48,8 +50,7 @@ bool Registrarse(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, 
 
 }
 
-bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
-    
+bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
     std::string nombre_usuario, contrasena;
     std::cout << "Ingrese su nombre de usuario: ";
     std::cin >> nombre_usuario;
@@ -60,7 +61,7 @@ bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores
     return true;
 }
 
-void cargarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
+void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
     std::ifstream archivo_alumnos("alumnos.txt");
     std::ifstream archivo_profesores("profesores.txt");
     std::ifstream archivo_admins("admins.txt");
@@ -113,8 +114,7 @@ void cargarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std
     }
 }
 
-void guardarBD(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins){
-
+void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
     std::ofstream archivo_alumnos("alumnos.txt");
     if (archivo_alumnos.is_open()) { 
         for (auto alumno : alumnos){
