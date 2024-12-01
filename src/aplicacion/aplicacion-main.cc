@@ -141,7 +141,11 @@ int main(){
             std::cout << "\tDNI: " << alumno.GetDNI() 
                       << ", Nombre: " << alumno.GetNombre() 
                       << ", Apellidos: " << alumno.GetApellidos() 
+                      << ", Sexo: " << alumno.GetSexo()
                       << ", Edad: " << alumno.GetEdad() 
+                      << ", Consulta: " << alumno.GetConsulta()
+                      << ", Nombre de usuario: " << alumno.GetNombreUsuario()
+                      << ", Contraseña: " << alumno.GetContrasena()
                       << ", Carrera: " << alumno.GetCarrera() << "\n";
         }
         std::cout<<"\n";
