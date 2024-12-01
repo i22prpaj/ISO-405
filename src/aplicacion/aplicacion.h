@@ -9,7 +9,10 @@
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
+<<<<<<< HEAD
 #include <time.h>
+=======
+>>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
 
 void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
 void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins);
@@ -51,6 +54,11 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
 bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
 bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins);
 
+<<<<<<< HEAD
 
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
+=======
+bool existeusuario(std::string nombreusuario, std::string contrasena,const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins);
+bool validarDNI(const std::string& dni);
+>>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
 #endif

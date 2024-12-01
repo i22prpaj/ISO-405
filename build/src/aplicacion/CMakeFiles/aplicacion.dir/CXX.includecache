@@ -29,8 +29,6 @@ vector
 /workspaces/ISO-405/src/aplicacion/aplicacion.cc
 aplicacion.h
 /workspaces/ISO-405/src/aplicacion/aplicacion.h
-stdio.h
--
 
 /workspaces/ISO-405/src/aplicacion/aplicacion.h
 usuario.h
@@ -49,6 +47,7 @@ sstream
 -
 stdio.h
 -
+<<<<<<< HEAD
 time.h
 -
 =======
@@ -57,4 +56,6 @@ time.h
 sstream
 -
 >>>>>>> c0e4e8d (	modified:   build/src/aplicacion/CMakeFiles/aplicacion-main.dir/CXX.includecache)
+=======
+>>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
 

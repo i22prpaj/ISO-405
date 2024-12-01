@@ -16,4 +16,8 @@
 =======
 123 alvaro illalba H 20 0 p22 aaa inf 0 2 1234
 666 Pingpong Quicky H 20 0 i22Q quikyputero inf 0 2 1000
+<<<<<<< HEAD
 >>>>>>> f80972a (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+26827577D Juan Luis Prieto Panadero H 22 0 i99 tumama electr 0 3 345678
+>>>>>>> a20cc29 (Add user validation and improve output formatting in main application)

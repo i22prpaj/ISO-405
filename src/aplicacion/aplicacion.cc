@@ -1,5 +1,4 @@
 #include "aplicacion.h"
-#include <stdio.h>
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -401,6 +400,10 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     int edad, consulta=0;
     std::cout << "Ingrese su DNI: ";
     std::cin >> dni;
+    if(validarDNI(dni)==false){
+        std::cout<<"DNI invalido\n";
+        return false;
+    }
     std::cout << "Ingrese su nombre: ";
     std::cin.ignore();  // Limpia el buffer antes de getline
     std::getline(std::cin, nombre);
@@ -452,11 +455,11 @@ bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profeso
     std::string nombre_usuario, contrasena;
     std::cout << "Ingrese su nombre de usuario: ";
     std::cin >> nombre_usuario;
+
     std::cout << "Ingrese su contrasena: ";
     std::cin >> contrasena;
 
-    // Verifica las credenciales
-    return true;
+    return existeusuario(nombre_usuario, contrasena, alumnos, profesores, admins);
 }
 
 void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
@@ -550,4 +553,77 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
         std::cout << "Error al abrir el archivo de admins para escribir.\n";
     }
 }
+<<<<<<< HEAD
 >>>>>>> 25f6136 (	modified:   src/admin/admin.h)
+=======
+
+bool existeusuario(std::string nombreusuario, std::string contrasena,const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins){
+
+    
+    for(auto admin: admins){
+        if(admin.GetNombreUsuario()==nombreusuario){
+            std::cout<<"Nombre Usuario encontrado en admins\n";
+            
+            if(admin.GetContrasena()==contrasena){
+                std::cout<<"Se ha iniciado sesion como Administrador\n";
+                return true;
+            }
+        }
+    } 
+
+
+    for(auto alumno: alumnos){
+        if(alumno.GetNombreUsuario()==nombreusuario){
+            std::cout<<"Nombre Usuario encontrado en alumnos\n";
+            
+            if(alumno.GetContrasena()==contrasena){
+                std::cout<<"Se ha iniciado sesion como Alumno\n";
+                return true;
+            }
+        }
+    }    
+
+
+    for(auto profesor: profesores){
+        if(profesor.GetNombreUsuario()==nombreusuario){
+            std::cout<<"Nombre Usuario encontrado en profesores\n";
+            
+            if(profesor.GetContrasena()==contrasena){
+                std::cout<<"Se ha iniciado sesion como Profesor\n";
+                return true;
+            }
+        }
+    } 
+
+    std::cout<<"Credenciales Erróneos o el Usuario no ha sido encontrado\n";
+    return false;
+}
+
+//
+
+bool validarDNI(const std::string& dni) {
+    // Comprobar longitud y formato básico (8 dígitos y 1 letra)
+    if (dni.length() != 9) return false;
+
+    // Comprobar si los primeros 8 caracteres son dígitos
+    for (int i = 0; i < 8; ++i) {
+        if (!isdigit(dni[i])) return false;
+    }
+
+    // Comprobar si el último carácter es una letra
+    char letra = dni[8];
+    if (!isalpha(letra)) return false;
+
+    // Array con las letras válidas según el módulo 23
+    const std::string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+    // Convertir los primeros 8 dígitos a un número entero
+    int numero = std::stoi(dni.substr(0, 8));
+
+    // Calcular la letra correspondiente
+    char letraCalculada = letras[numero % 23];
+
+    // Comparar la letra calculada con la introducida (ignorando mayúsculas o minúsculas)
+    return (toupper(letra) == letraCalculada);
+}
+>>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
