@@ -138,7 +138,7 @@ int main(){
     else {
         std::cout << "Lista de alumnos registrados:\n";
         for (auto alumno : alumnos) {
-            std::cout << "\tDNI: " << alumno.GetDNI() 
+            std::cout << "\t|->DNI: " << alumno.GetDNI() 
                       << ", Nombre: " << alumno.GetNombre() 
                       << ", Apellidos: " << alumno.GetApellidos() 
                       << ", Sexo: " << alumno.GetSexo()
@@ -157,7 +157,7 @@ int main(){
      else {
          std::cout << "Lista de profesores registrados:\n";
          for (auto profesor : profesores) {
-             std::cout << "\tDNI: " << profesor.GetDNI() 
+             std::cout << "\t|->DNI: " << profesor.GetDNI() 
                        << ", Nombre: " << profesor.GetNombre() 
                        << ", Apellidos: " << profesor.GetApellidos() 
                        << ", Edad: " << profesor.GetEdad() << "\n";
@@ -172,7 +172,7 @@ int main(){
      else {
          std::cout << "Lista de administradores registrados:\n";
          for (auto administrador : administradores) {
-             std::cout << "\tDNI: " << administrador.GetDNI() 
+             std::cout << "\t|->DNI: " << administrador.GetDNI() 
                        << ", Nombre: " << administrador.GetNombre() 
                        << ", Apellidos: " << administrador.GetApellidos() 
                        << ", Edad: " << administrador.GetEdad()<<"\n";

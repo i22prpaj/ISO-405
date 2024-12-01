@@ -408,7 +408,7 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     std::cin.ignore();  // Limpia el buffer antes de getline
     std::getline(std::cin, nombre);
     fflush(stdin);
-    std::cout << "Ingrese sus apellidos: ";
+    std::cout << "Ingrese sus apellidos: (Espacio=_)";
     //std::cin.ignore();  // Limpia el buffer antes de getline
     std::getline(std::cin, apellidos);
     fflush(stdin);
@@ -481,7 +481,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
         }
         archivo_alumnos.close();
     } else {
-        std::cout << "Error al abrir el archivo de alumnos.\n";
+        std::cout << "\tError al abrir el archivo de alumnos.\n";
     }
 
     std::cout<<"Leyendo profesores.txt\n";
@@ -498,7 +498,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
         }
         archivo_profesores.close();
     } else {
-        std::cout << "Error al abrir el archivo de profesores.\n";
+        std::cout << "\tError al abrir el archivo de profesores.\n";
     }
 
     std::cout<<"Leyendo admins.txt\n";
@@ -514,7 +514,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
         }
         archivo_admins.close();
     } else {
-        std::cout << "Error al abrir el archivo de admins.\n";
+        std::cout << "\tError al abrir el archivo de admins.\n";
     }
 }
 
@@ -565,36 +565,39 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
     
     for(auto admin: admins){
         if(admin.GetNombreUsuario()==nombreusuario){
-            std::cout<<"Nombre Usuario encontrado en admins\n";
+            std::cout<<"\nNombre Usuario encontrado en admins\n";
             
             if(admin.GetContrasena()==contrasena){
-                std::cout<<"Se ha iniciado sesion como Administrador\n";
+                std::cout<<"\t|->Se ha iniciado sesion como Administrador\n";
                 return true;
             }
+            std::cout<<"\t|->Contraseña Incorrecta\n";
         }
     } 
 
 
     for(auto alumno: alumnos){
         if(alumno.GetNombreUsuario()==nombreusuario){
-            std::cout<<"Nombre Usuario encontrado en alumnos\n";
+            std::cout<<"\nNombre Usuario encontrado en alumnos\n";
             
             if(alumno.GetContrasena()==contrasena){
-                std::cout<<"Se ha iniciado sesion como Alumno\n";
+                std::cout<<"\t|->Se ha iniciado sesion como Alumno\n";
                 return true;
             }
+            std::cout<<"\t|->Contraseña Incorrecta\n";
         }
     }    
 
 
     for(auto profesor: profesores){
         if(profesor.GetNombreUsuario()==nombreusuario){
-            std::cout<<"Nombre Usuario encontrado en profesores\n";
+            std::cout<<"\nNombre Usuario encontrado en profesores\n";
             
             if(profesor.GetContrasena()==contrasena){
-                std::cout<<"Se ha iniciado sesion como Profesor\n";
+                std::cout<<"\t|->Se ha iniciado sesion como Profesor\n";
                 return true;
             }
+            std::cout<<"\t|->Contraseña Incorrecta\n";
         }
     } 
 
