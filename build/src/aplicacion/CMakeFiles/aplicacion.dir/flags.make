@@ -3,12 +3,17 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # compile CXX with /usr/bin/g++
 CXX_FLAGS = -g   -std=gnu++17
 =======
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =   -std=gnu++17
 >>>>>>> c7b3a37 (	modified:   build/CMakeFiles/Makefile.cmake)
+=======
+# compile CXX with /usr/bin/g++
+CXX_FLAGS = -g   -std=gnu++17
+>>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
 
 CXX_DEFINES = 
 

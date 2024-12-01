@@ -13,10 +13,14 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
 <<<<<<< HEAD
+<<<<<<< HEAD
     set(CMAKE_INSTALL_CONFIG_NAME "Debug")
 =======
     set(CMAKE_INSTALL_CONFIG_NAME "")
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+>>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()

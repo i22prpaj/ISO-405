@@ -61,6 +61,7 @@ src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o: src/aplicaci
 src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o: ../src/aplicacion/aplicacion-main.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc
 
 src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i: cmake_force
@@ -72,15 +73,22 @@ src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s: cmake_force
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
 =======
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc
+=======
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc
+>>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
 
 src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i"
-	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc > CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc > CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i
 
 src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s"
+<<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
 >>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
+>>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
 
 # Object files for target aplicacion-main
 aplicacion__main_OBJECTS = \
