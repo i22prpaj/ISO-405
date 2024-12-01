@@ -62,9 +62,9 @@ bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profeso
 }
 
 void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
-    std::ifstream archivo_alumnos("alumnos.txt");
-    std::ifstream archivo_profesores("profesores.txt");
-    std::ifstream archivo_admins("admins.txt");
+    std::ifstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
+    std::ifstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
+    std::ifstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
 
     if (archivo_alumnos.is_open()) {
         std::string linea;
@@ -115,7 +115,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
 }
 
 void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
-    std::ofstream archivo_alumnos("alumnos.txt");
+    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
     if (archivo_alumnos.is_open()) { 
         for (auto alumno : alumnos){
             archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
@@ -128,7 +128,7 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
         std::cout << "Error al abrir el archivo de alumnos para escribir.\n";
     }
 
-    std::ofstream archivo_profesores("profesores.txt");
+    std::ofstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
     if (archivo_profesores.is_open()) {
         for (auto profesor : profesores) {
             archivo_profesores << profesor.GetDNI() << " " << profesor.GetNombre() << " " << profesor.GetApellidos() << " "
@@ -140,7 +140,7 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
         std::cout << "Error al abrir el archivo de profesores para escribir.\n";
     }
 
-    std::ofstream archivo_admins("admins.txt");
+    std::ofstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
     if (archivo_admins.is_open()) {
         for (auto admin : admins) {
             archivo_admins << admin.GetDNI() << " " << admin.GetNombre() << " " << admin.GetApellidos() << " "
