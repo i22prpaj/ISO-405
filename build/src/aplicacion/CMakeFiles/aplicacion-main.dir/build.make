@@ -63,17 +63,22 @@ src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o: ../src/aplic
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc
 =======
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc
 >>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
+=======
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc
+>>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
 
 src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i"
-	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc > CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc > CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.i
 
 src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s"
+<<<<<<< HEAD
 <<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
 =======
@@ -97,6 +102,9 @@ src/aplicacion/CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s: cmake_force
 =======
 	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
 >>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
+=======
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.s
+>>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
 
 # Object files for target aplicacion-main
 aplicacion__main_OBJECTS = \

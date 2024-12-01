@@ -63,17 +63,22 @@ src/profesor/CMakeFiles/profesor.dir/profesor.cc.o: ../src/profesor/profesor.cc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/profesor.dir/profesor.cc.o -c /workspaces/ISO-405/src/profesor/profesor.cc
 =======
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/profesor.dir/profesor.cc.o -c /workspaces/ISO-405/src/profesor/profesor.cc
 >>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
+=======
+	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/profesor.dir/profesor.cc.o -c /workspaces/ISO-405/src/profesor/profesor.cc
+>>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
 
 src/profesor/CMakeFiles/profesor.dir/profesor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/profesor.dir/profesor.cc.i"
-	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/profesor/profesor.cc > CMakeFiles/profesor.dir/profesor.cc.i
+	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/profesor/profesor.cc > CMakeFiles/profesor.dir/profesor.cc.i
 
 src/profesor/CMakeFiles/profesor.dir/profesor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/profesor.dir/profesor.cc.s"
+<<<<<<< HEAD
 <<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/profesor/profesor.cc -o CMakeFiles/profesor.dir/profesor.cc.s
 =======
@@ -97,6 +102,9 @@ src/profesor/CMakeFiles/profesor.dir/profesor.cc.s: cmake_force
 =======
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/profesor/profesor.cc -o CMakeFiles/profesor.dir/profesor.cc.s
 >>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
+=======
+	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/profesor/profesor.cc -o CMakeFiles/profesor.dir/profesor.cc.s
+>>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
 
 # Object files for target profesor
 profesor_OBJECTS = \

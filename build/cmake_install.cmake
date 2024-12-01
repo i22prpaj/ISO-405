@@ -16,6 +16,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     set(CMAKE_INSTALL_CONFIG_NAME "Debug")
 =======
     set(CMAKE_INSTALL_CONFIG_NAME "")
@@ -29,6 +30,9 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
 =======
     set(CMAKE_INSTALL_CONFIG_NAME "")
 >>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
+=======
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+>>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()

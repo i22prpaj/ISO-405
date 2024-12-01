@@ -63,17 +63,22 @@ src/usuario/CMakeFiles/usuario.dir/usuario.cc.o: ../src/usuario/usuario.cc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/usuario.dir/usuario.cc.o -c /workspaces/ISO-405/src/usuario/usuario.cc
 =======
 	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/usuario.dir/usuario.cc.o -c /workspaces/ISO-405/src/usuario/usuario.cc
 >>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
+=======
+	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/usuario.dir/usuario.cc.o -c /workspaces/ISO-405/src/usuario/usuario.cc
+>>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
 
 src/usuario/CMakeFiles/usuario.dir/usuario.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/usuario.dir/usuario.cc.i"
-	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/usuario/usuario.cc > CMakeFiles/usuario.dir/usuario.cc.i
+	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/usuario/usuario.cc > CMakeFiles/usuario.dir/usuario.cc.i
 
 src/usuario/CMakeFiles/usuario.dir/usuario.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/usuario.dir/usuario.cc.s"
+<<<<<<< HEAD
 <<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/usuario/usuario.cc -o CMakeFiles/usuario.dir/usuario.cc.s
 =======
@@ -97,6 +102,9 @@ src/usuario/CMakeFiles/usuario.dir/usuario.cc.s: cmake_force
 =======
 	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/usuario/usuario.cc -o CMakeFiles/usuario.dir/usuario.cc.s
 >>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
+=======
+	cd /workspaces/ISO-405/build/src/usuario && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/usuario/usuario.cc -o CMakeFiles/usuario.dir/usuario.cc.s
+>>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
 
 # Object files for target usuario
 usuario_OBJECTS = \
