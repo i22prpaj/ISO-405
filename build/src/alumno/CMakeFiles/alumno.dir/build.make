@@ -60,15 +60,15 @@ include src/alumno/CMakeFiles/alumno.dir/flags.make
 src/alumno/CMakeFiles/alumno.dir/alumno.cc.o: src/alumno/CMakeFiles/alumno.dir/flags.make
 src/alumno/CMakeFiles/alumno.dir/alumno.cc.o: ../src/alumno/alumno.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/alumno/CMakeFiles/alumno.dir/alumno.cc.o"
-	cd /workspaces/ISO-405/build/src/alumno && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alumno.dir/alumno.cc.o -c /workspaces/ISO-405/src/alumno/alumno.cc
+	cd /workspaces/ISO-405/build/src/alumno && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/alumno.dir/alumno.cc.o -c /workspaces/ISO-405/src/alumno/alumno.cc
 
 src/alumno/CMakeFiles/alumno.dir/alumno.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/alumno.dir/alumno.cc.i"
-	cd /workspaces/ISO-405/build/src/alumno && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/alumno/alumno.cc > CMakeFiles/alumno.dir/alumno.cc.i
+	cd /workspaces/ISO-405/build/src/alumno && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/alumno/alumno.cc > CMakeFiles/alumno.dir/alumno.cc.i
 
 src/alumno/CMakeFiles/alumno.dir/alumno.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/alumno.dir/alumno.cc.s"
-	cd /workspaces/ISO-405/build/src/alumno && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/alumno/alumno.cc -o CMakeFiles/alumno.dir/alumno.cc.s
+	cd /workspaces/ISO-405/build/src/alumno && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/alumno/alumno.cc -o CMakeFiles/alumno.dir/alumno.cc.s
 
 # Object files for target alumno
 alumno_OBJECTS = \
