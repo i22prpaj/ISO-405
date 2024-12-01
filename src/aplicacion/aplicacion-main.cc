@@ -35,15 +35,8 @@ int main(){
     if (alumnos.empty()) {
        std::cout << "El vector de alumnos está vacío.\n";
     }
-    else {
-        std::cout << "Lista de alumnos registrados:\n";
-        for (auto alumno : alumnos) {
-            std::cout << "DNI: " << alumno.GetDNI() 
-                      << ", Nombre: " << alumno.GetNombre() 
-                      << ", Apellidos: " << alumno.GetApellidos() 
-                      << ", Edad: " << alumno.GetEdad() 
-                      << ", Carrera: " << alumno.GetCarrera() << "\n";
-        }
+    for (auto alumno : alumnos) {
+       std::cout << alumno.GetNombre() << std::endl;  // Imprime en la consola para verificar
     }
 
     guardarBD(alumnos, profesores, administradores);
