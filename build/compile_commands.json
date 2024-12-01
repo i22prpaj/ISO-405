@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/workspaces/ISO-405/build/src/admin",
+  "command": "/usr/bin/g++   -I/workspaces/ISO-405/src/admin -I/workspaces/ISO-405/src/usuario  -g   -std=gnu++17 -o CMakeFiles/admin.dir/admin.cc.o -c /workspaces/ISO-405/src/admin/admin.cc",
+  "file": "/workspaces/ISO-405/src/admin/admin.cc"
+},
+{
+  "directory": "/workspaces/ISO-405/build/src/usuario",
+  "command": "/usr/bin/g++   -I/workspaces/ISO-405/src/usuario  -g   -std=gnu++17 -o CMakeFiles/usuario.dir/usuario.cc.o -c /workspaces/ISO-405/src/usuario/usuario.cc",
+  "file": "/workspaces/ISO-405/src/usuario/usuario.cc"
+},
+{
+  "directory": "/workspaces/ISO-405/build/src/alumno",
+  "command": "/usr/bin/g++   -I/workspaces/ISO-405/src/alumno -I/workspaces/ISO-405/src/usuario  -g   -std=gnu++17 -o CMakeFiles/alumno.dir/alumno.cc.o -c /workspaces/ISO-405/src/alumno/alumno.cc",
+  "file": "/workspaces/ISO-405/src/alumno/alumno.cc"
+},
+{
+  "directory": "/workspaces/ISO-405/build/src/profesor",
+  "command": "/usr/bin/g++   -I/workspaces/ISO-405/src/profesor -I/workspaces/ISO-405/src/usuario  -g   -std=gnu++17 -o CMakeFiles/profesor.dir/profesor.cc.o -c /workspaces/ISO-405/src/profesor/profesor.cc",
+  "file": "/workspaces/ISO-405/src/profesor/profesor.cc"
+},
+{
+  "directory": "/workspaces/ISO-405/build/src/aplicacion",
+  "command": "/usr/bin/g++   -I/workspaces/ISO-405/src/aplicacion -I/workspaces/ISO-405/src/usuario -I/workspaces/ISO-405/src/alumno -I/workspaces/ISO-405/src/profesor -I/workspaces/ISO-405/src/admin  -g   -std=gnu++17 -o CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion-main.cc",
+  "file": "/workspaces/ISO-405/src/aplicacion/aplicacion-main.cc"
+},
+{
+  "directory": "/workspaces/ISO-405/build/src/aplicacion",
+  "command": "/usr/bin/g++   -I/workspaces/ISO-405/src/aplicacion -I/workspaces/ISO-405/src/usuario -I/workspaces/ISO-405/src/alumno -I/workspaces/ISO-405/src/profesor -I/workspaces/ISO-405/src/admin  -g   -std=gnu++17 -o CMakeFiles/aplicacion.dir/aplicacion.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion.cc",
+  "file": "/workspaces/ISO-405/src/aplicacion/aplicacion.cc"
+}
+]
