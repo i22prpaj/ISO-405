@@ -46,5 +46,18 @@ int main(){
         }
     }
 
+    if (profesores.empty()) {
+        std::cout << "El vector de profesores está vacío.\n";
+     }
+     else {
+         std::cout << "Lista de profesores registrados:\n";
+         for (auto profesor : profesores) {
+             std::cout << "DNI: " << profesor.GetDNI() 
+                       << ", Nombre: " << profesor.GetNombre() 
+                       << ", Apellidos: " << profesor.GetApellidos() 
+                       << ", Edad: " << profesor.GetEdad() << "\n";
+         }
+     }
+
     guardarBD(alumnos, profesores, administradores);
 }
