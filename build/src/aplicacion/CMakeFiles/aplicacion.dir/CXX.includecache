@@ -29,6 +29,8 @@ vector
 /workspaces/ISO-405/src/aplicacion/aplicacion.cc
 aplicacion.h
 /workspaces/ISO-405/src/aplicacion/aplicacion.h
+stdio.h
+-
 
 /workspaces/ISO-405/src/aplicacion/aplicacion.h
 usuario.h

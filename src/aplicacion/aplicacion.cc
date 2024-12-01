@@ -1,4 +1,5 @@
 #include "aplicacion.h"
+#include <stdio.h>
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -403,9 +404,11 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     std::cout << "Ingrese su nombre: ";
     std::cin.ignore();  // Limpia el buffer antes de getline
     std::getline(std::cin, nombre);
+    fflush(stdin);
     std::cout << "Ingrese sus apellidos: ";
-    std::cin.ignore();  // Limpia el buffer antes de getline
+    //std::cin.ignore();  // Limpia el buffer antes de getline
     std::getline(std::cin, apellidos);
+    fflush(stdin);
     std::cout << "Ingrese su sexo: ";
     std::cin >> sexo;
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
