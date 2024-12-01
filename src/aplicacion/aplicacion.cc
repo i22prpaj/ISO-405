@@ -467,6 +467,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
     std::ifstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
     std::ifstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
 
+    std::cout<<"Leyendo alumnos.txt\n";
     if (archivo_alumnos.is_open()) {
         std::string linea;
         while (getline(archivo_alumnos, linea)) {
@@ -483,6 +484,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
         std::cout << "Error al abrir el archivo de alumnos.\n";
     }
 
+    std::cout<<"Leyendo profesores.txt\n";
     if (archivo_profesores.is_open()) {
         std::string linea;
         while (getline(archivo_profesores, linea)) {
@@ -499,6 +501,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
         std::cout << "Error al abrir el archivo de profesores.\n";
     }
 
+    std::cout<<"Leyendo admins.txt\n";
     if (archivo_admins.is_open()) {
         std::string linea;
         while (getline(archivo_admins, linea)) {
