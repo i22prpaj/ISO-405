@@ -62,14 +62,19 @@ src/profesor/CMakeFiles/profesor.dir/profesor.cc.o: ../src/profesor/profesor.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/profesor/CMakeFiles/profesor.dir/profesor.cc.o"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/profesor.dir/profesor.cc.o -c /workspaces/ISO-405/src/profesor/profesor.cc
+=======
+	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/profesor.dir/profesor.cc.o -c /workspaces/ISO-405/src/profesor/profesor.cc
+>>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
 
 src/profesor/CMakeFiles/profesor.dir/profesor.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/profesor.dir/profesor.cc.i"
-	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/profesor/profesor.cc > CMakeFiles/profesor.dir/profesor.cc.i
+	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/profesor/profesor.cc > CMakeFiles/profesor.dir/profesor.cc.i
 
 src/profesor/CMakeFiles/profesor.dir/profesor.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/profesor.dir/profesor.cc.s"
+<<<<<<< HEAD
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/profesor/profesor.cc -o CMakeFiles/profesor.dir/profesor.cc.s
 =======
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/profesor.dir/profesor.cc.o -c /workspaces/ISO-405/src/profesor/profesor.cc
@@ -89,6 +94,9 @@ src/profesor/CMakeFiles/profesor.dir/profesor.cc.s: cmake_force
 =======
 	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/profesor/profesor.cc -o CMakeFiles/profesor.dir/profesor.cc.s
 >>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
+=======
+	cd /workspaces/ISO-405/build/src/profesor && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/profesor/profesor.cc -o CMakeFiles/profesor.dir/profesor.cc.s
+>>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
 
 # Object files for target profesor
 profesor_OBJECTS = \

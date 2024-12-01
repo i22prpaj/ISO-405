@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /usr/bin/g++  -g   CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
 =======
 /usr/bin/c++     CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
@@ -7,3 +8,6 @@
 =======
 /usr/bin/g++  -g   CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
 >>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
+=======
+/usr/bin/c++     CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
+>>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")

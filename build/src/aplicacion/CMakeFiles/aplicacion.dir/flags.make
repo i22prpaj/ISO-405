@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # compile CXX with /usr/bin/g++
 CXX_FLAGS = -g   -std=gnu++17
 =======
@@ -14,6 +15,10 @@ CXX_FLAGS =   -std=gnu++17
 # compile CXX with /usr/bin/g++
 CXX_FLAGS = -g   -std=gnu++17
 >>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
+=======
+# compile CXX with /usr/bin/c++
+CXX_FLAGS =   -std=gnu++17
+>>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
 
 CXX_DEFINES = 
 
