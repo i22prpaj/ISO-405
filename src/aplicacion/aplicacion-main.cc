@@ -38,12 +38,13 @@ int main(){
     else {
         std::cout << "Lista de alumnos registrados:\n";
         for (auto alumno : alumnos) {
-            std::cout << "DNI: " << alumno.GetDNI() 
+            std::cout << "\tDNI: " << alumno.GetDNI() 
                       << ", Nombre: " << alumno.GetNombre() 
                       << ", Apellidos: " << alumno.GetApellidos() 
                       << ", Edad: " << alumno.GetEdad() 
                       << ", Carrera: " << alumno.GetCarrera() << "\n";
         }
+        std::cout<<"\n";
     }
 
     if (profesores.empty()) {
@@ -52,11 +53,27 @@ int main(){
      else {
          std::cout << "Lista de profesores registrados:\n";
          for (auto profesor : profesores) {
-             std::cout << "DNI: " << profesor.GetDNI() 
+             std::cout << "\tDNI: " << profesor.GetDNI() 
                        << ", Nombre: " << profesor.GetNombre() 
                        << ", Apellidos: " << profesor.GetApellidos() 
                        << ", Edad: " << profesor.GetEdad() << "\n";
          }
+         std::cout<<"\n";
+     }
+
+
+     if (administradores.empty()) {
+        std::cout << "El vector de administradores está vacío.\n";
+     }
+     else {
+         std::cout << "Lista de administradores registrados:\n";
+         for (auto administrador : administradores) {
+             std::cout << "\tDNI: " << administrador.GetDNI() 
+                       << ", Nombre: " << administrador.GetNombre() 
+                       << ", Apellidos: " << administrador.GetApellidos() 
+                       << ", Edad: " << administrador.GetEdad()<<"\n";
+         }
+         std::cout<<"\n";
      }
 
     guardarBD(alumnos, profesores, administradores);
