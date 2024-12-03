@@ -16,4 +16,11 @@ bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profeso
 
 bool existeusuario(std::string nombreusuario, std::string contrasena,const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins);
 bool validarDNI(const std::string& dni);
+
+void InicioAlumnos(int  menu);
+void InicioProfesores(int menu);
+void InicioAdmins(int menu);
+
+void ListarUniversidades();
+void HacerFormulario();
 #endif
