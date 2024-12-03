@@ -412,7 +412,7 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     //std::cin.ignore();  // Limpia el buffer antes de getline
     std::getline(std::cin, apellidos);
     fflush(stdin);
-    std::cout << "Ingrese su sexo: ";
+    std::cout << "Ingrese su sexo(H o M): ";
     std::cin >> sexo;
 >>>>>>> ef80a67 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
     std::cout << "Ingrese un nombre de usuario: ";
@@ -569,6 +569,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
             
             if(admin.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Administrador\n";
+                InicioAdmins(0);
                 return true;
             }
             std::cout<<"\t|->Contraseña Incorrecta\n";
@@ -582,6 +583,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
             
             if(alumno.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n";
+                InicioAlumnos(0);
                 return true;
             }
             std::cout<<"\t|->Contraseña Incorrecta\n";
@@ -595,6 +597,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
             
             if(profesor.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Profesor\n";
+                InicioProfesores(0);
                 return true;
             }
             std::cout<<"\t|->Contraseña Incorrecta\n";
@@ -632,4 +635,142 @@ bool validarDNI(const std::string& dni) {
     // Comparar la letra calculada con la introducida (ignorando mayúsculas o minúsculas)
     return (toupper(letra) == letraCalculada);
 }
+<<<<<<< HEAD
 >>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
+=======
+
+
+
+void InicioAlumnos(int menu){
+
+    while(menu!=3){
+
+        std::cout<<"1 --> Listar Universidades\n2 --> Proceder al Formulario\n3 --> Cerrar Sesión\n\t->";
+        std::cin>>menu;
+
+        switch(menu){
+
+            case 1:
+                ListarUniversidades();
+            break;
+
+            case 2:
+                std::cout<<"Formulario\n";
+                HacerFormulario();
+            break;
+
+        }
+    }
+
+}
+
+
+void InicioProfesores(int menu){
+
+
+}
+
+
+void InicioAdmins(int menu){
+
+
+}
+
+
+void ListarUniversidades(){
+
+
+    std::cout<<"Universidades Disponibles:\n";
+    std::cout<<"\tAndalucia:\n\t\t-Universidad de Almeria\n\t\t-Universidad de Cadiz\n\t\t-Universidad de Cordoba\n\t\t-Universidad de Granada\n\t\t-Universidad de Huelva\n\t\t-Universidad de Jaen\n\t\t-Universidad de Malaga\n\t\t-Universidad de Sevilla\n";
+    std::cout<<"\tAragon:\n\t\t-Universidad de Zaragoza\n\t\t-Universidad San Jorge\n";
+    std::cout<<"\tAsturias:\n\t\t-Universidad de Oviedo\n";
+    std::cout<<"\tIslas Canarias:\n\t\t-Universidad de Las Palmas de Gran Canaria\n\t\t-Universidad de La Laguna\n";
+    std::cout<<"\tCantabria:\n\t\t-Universidad de Cantabria\n";
+    std::cout<<"\tCastilla y Leon:\n\t\t-Universidad de Burgos\n\t\t-Universidad de Leon\n\t\t-Universidad de Salamanca\n\t\t-Universidad de Valladolid\n";
+    std::cout<<"\tCastilla-La Mancha:\n\t\t-Universidad de Castilla-La Mancha\n";
+    std::cout<<"\tCataluña:\n\t\t-Universidad de Barcelona\n\t\t-Universidad Autonoma de Barcelona\n\t\t-Universidad Politecnica de Cataluña\n\t\t-Universidad Pompeu Fabra\n\t\t-Universidad Ramon Llull\n\t\t-Universidad Rovira i Virgili\n\t\t-Universidad Internacional de Cataluña\n";
+    std::cout<<"\tComunidad de Madrid:\n\t\t-Universidad Autonoma de Madrid\n\t\t-Universidad Carlos III de Madrid\n\t\t-Universidad Complutense de Madrid\n\t\t-Universidad Politecnica de Madrid\n\t\t-Universidad Rey Juan Carlos\n\t\t-Universidad de Alcala\n";
+    std::cout<<"\tComunidad Foral de Navarra:\n\t\t-Universidad Publica de Navarra\n";
+    std::cout<<"\tComunidad Valenciana:\n\t\t-Universidad de Alicante\n\t\t-Universidad Jaume I\n\t\t-Universidad Miguel Hernandez\n\t\t-Universidad Politecnica de Valencia\n\t\t-Universidad de Valencia\n";
+    std::cout<<"\tExtremadura:\n\t\t-Universidad de Extremadura\n";
+    std::cout<<"\tGalicia:\n\t\t-Universidad de A Coruña\n\t\t-Universidad de Santiago de Compostela\n\t\t-Universidad de Vigo\n";
+    std::cout<<"\tIslas Baleares:\n\t\t-Universidad de las Islas Baleares\n";
+    std::cout<<"\tLa Rioja:\n\t\t-Universidad de La Rioja\n";
+    std::cout<<"\tPais Vasco:\n\t\t-Universidad del Pais Vasco\n\t\t-Universidad de Deusto\n\t\t-Universidad de Mondragon\n";
+    std::cout<<"\tRegion de Murcia:\n\t\t-Universidad de Murcia\n\t\t-Universidad Politecnica de Cartagena\n";
+
+};
+
+
+void HacerFormulario(){
+
+    std::string DNI, nombre, apellido1, apellido2, sexo, carrera;
+    int edad, cuatrimestre, curso;
+
+    std::cout<<"Ingrese su DNI: ";
+    std::cin>>DNI;
+    std::cout<<"Ingrese su nombre: ";
+    std::cin>>nombre;
+    std::cout<<"Ingrese su primer apellido: ";
+    std::cin>>apellido1;
+    std::cout<<"Ingrese su segundo apellido: ";
+    std::cin>>apellido2;
+    std::cout<<"Ingrese su sexo: ";
+    std::cin>>sexo;
+    std::cout<<"Ingrese su carrera: ";
+    std::cin>>carrera;
+    std::cout<<"Ingrese su edad: ";
+    std::cin>>edad;
+    std::cout<<"Ingrese el cuatrimestre que desea para el intercambio: ";
+    std::cin>>cuatrimestre;
+    std::cout<<"Ingrese el curso que desea para el intercambio: ";
+    std::cin>>curso;
+
+    std::vector<std::string> universidades;
+
+    std::cout<<"Eliga las universidades a las que desea aplicar (Max 5): ";
+    std::string universidad;
+
+    ListarUniversidades();
+
+    for(int i=0; i<5; i++){
+
+        switch(i){
+            case 0:
+                std::cout<<"Primera Universidad: ";
+                std::cin>>universidad;
+                universidades.push_back(universidad);
+                std::cin.ignore(); 
+            break;
+            case 1:
+                std::cout<<"Segunda Universidad: ";
+                std::cin>>universidad;
+                universidades.push_back(universidad);
+                std::cin.ignore(); 
+            break;
+            case 2:
+                std::cout<<"Tercera Universidad: ";
+                std::cin>>universidad;
+                universidades.push_back(universidad);
+                std::cin.ignore(); 
+            break;
+            case 3:
+                std::cout<<"Cuarta Universidad: ";
+                std::cin>>universidad;
+                universidades.push_back(universidad);
+                std::cin.ignore(); 
+            break;
+            case 4:
+                std::cout<<"Quinta Universidad: ";
+                std::cin>>universidad;
+                universidades.push_back(universidad);
+                std::cin.ignore(); 
+            break;
+        }
+        
+    }
+
+    std::cout<<"Formulario completado\n";
+    std::cout<<"Espere a ser aceptado\n";
+}
+>>>>>>> 5e6353b (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)

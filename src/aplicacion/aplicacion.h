@@ -60,5 +60,15 @@ bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profeso
 =======
 bool existeusuario(std::string nombreusuario, std::string contrasena,const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins);
 bool validarDNI(const std::string& dni);
+<<<<<<< HEAD
 >>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
+=======
+
+void InicioAlumnos(int  menu);
+void InicioProfesores(int menu);
+void InicioAdmins(int menu);
+
+void ListarUniversidades();
+void HacerFormulario();
+>>>>>>> 5e6353b (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 #endif
