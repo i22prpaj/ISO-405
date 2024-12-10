@@ -64,11 +64,16 @@ bool validarDNI(const std::string& dni);
 >>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
 =======
 
-void InicioAlumnos(int  menu);
-void InicioProfesores(int menu);
-void InicioAdmins(int menu);
+void InicioAlumnos(int  menu, Alumno alumno);
+void InicioProfesores(int menu, Profesor profesor);
+void InicioAdmins(int menu, Admin admin);
 
 void ListarUniversidades();
+<<<<<<< HEAD
 void HacerFormulario();
 >>>>>>> 5e6353b (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+void HacerFormulario(Alumno alumno);
+void HacerFormulario(Profesor profesor);
+>>>>>>> 9e665ad (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 #endif

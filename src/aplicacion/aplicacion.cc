@@ -427,7 +427,6 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     if(tipo_usuario == "Profesor"){
         Profesor profesor1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, universidad);
         profesores.push_back(profesor1);
-
         return true;
     }
     else if(tipo_usuario == "Alumno"){
@@ -443,12 +442,9 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
         std::cin >> matricula;
         Alumno alumno1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
         alumnos.push_back(alumno1);
-
         return true;
     }
-
     return false;
-
 }
 
 bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
@@ -458,7 +454,6 @@ bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profeso
 
     std::cout << "Ingrese su contrasena: ";
     std::cin >> contrasena;
-
     return existeusuario(nombre_usuario, contrasena, alumnos, profesores, admins);
 }
 
@@ -569,7 +564,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
             
             if(admin.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Administrador\n";
-                InicioAdmins(0);
+                InicioAdmins(0, admin);
                 return true;
             }
             std::cout<<"\t|->Contraseña Incorrecta\n";
@@ -583,7 +578,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
             
             if(alumno.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n";
-                InicioAlumnos(0);
+                InicioAlumnos(0, alumno);
                 return true;
             }
             std::cout<<"\t|->Contraseña Incorrecta\n";
@@ -597,7 +592,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
             
             if(profesor.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Profesor\n";
-                InicioProfesores(0);
+                InicioProfesores(0, profesor);
                 return true;
             }
             std::cout<<"\t|->Contraseña Incorrecta\n";
@@ -641,7 +636,7 @@ bool validarDNI(const std::string& dni) {
 
 
 
-void InicioAlumnos(int menu){
+void InicioAlumnos(int menu, Alumno alumno){
 
     while(menu!=3){
 
@@ -656,7 +651,7 @@ void InicioAlumnos(int menu){
 
             case 2:
                 std::cout<<"Formulario\n";
-                HacerFormulario();
+                HacerFormulario(alumno);
             break;
 
         }
@@ -665,13 +660,13 @@ void InicioAlumnos(int menu){
 }
 
 
-void InicioProfesores(int menu){
+void InicioProfesores(int menu, Profesor profesor){
 
 
 }
 
 
-void InicioAdmins(int menu){
+void InicioAdmins(int menu, Admin admin){
 
 
 }
@@ -702,25 +697,24 @@ void ListarUniversidades(){
 };
 
 
-void HacerFormulario(){
+void HacerFormulario(Alumno alumno){
 
+    if(alumno.GetConsulta()>0){
+        std::cout<<"Ya hay un formulario en proceso\n";
+        return;
+    }
     std::string DNI, nombre, apellido1, apellido2, sexo, carrera;
     int edad, cuatrimestre, curso;
 
-    std::cout<<"Ingrese su DNI: ";
-    std::cin>>DNI;
-    std::cout<<"Ingrese su nombre: ";
-    std::cin>>nombre;
-    std::cout<<"Ingrese su primer apellido: ";
-    std::cin>>apellido1;
-    std::cout<<"Ingrese su segundo apellido: ";
-    std::cin>>apellido2;
-    std::cout<<"Ingrese su sexo: ";
-    std::cin>>sexo;
-    std::cout<<"Ingrese su carrera: ";
-    std::cin>>carrera;
-    std::cout<<"Ingrese su edad: ";
-    std::cin>>edad;
+    std::cout<<"DNI: "<<alumno.GetDNI()<<"\n";
+    std::cout<<"Nombre: "<<alumno.GetNombre()<<"\n";
+    std::cout<<"Apellidos: "<<alumno.GetApellidos()<<"\n";
+    std::cout<<"Sexo: "<<alumno.GetSexo()<<"\n";
+    std::cout<<"Edad: "<<alumno.GetEdad()<<"\n";
+    std::cout<<"Carrera: "<<alumno.GetCarrera();
+    std::cout<<"\nPresione Enter si los datos son correctos\n";
+    std::cin.ignore();
+    std::cin.get();
     std::cout<<"Ingrese el cuatrimestre que desea para el intercambio: ";
     std::cin>>cuatrimestre;
     std::cout<<"Ingrese el curso que desea para el intercambio: ";
@@ -769,6 +763,8 @@ void HacerFormulario(){
         }
         
     }
+
+    alumno.SetConsulta(alumno.GetConsulta()+1);
 
     std::cout<<"Formulario completado\n";
     std::cout<<"Espere a ser aceptado\n";
