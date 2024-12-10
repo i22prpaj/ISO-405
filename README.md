@@ -2,6 +2,7 @@
 Este es el repositorio que se va a utilzar para almacenar, supervisar y trabajar con el proyecto.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ![image](https://github.com/user-attachments/assets/ba72ff19-9b15-4a2e-ba49-91498522d107)
 =======
@@ -11,3 +12,7 @@ Este es el repositorio que se va a utilzar para almacenar, supervisar y trabajar
 ![image](https://github.com/user-attachments/assets/ba72ff19-9b15-4a2e-ba49-91498522d107)
 
 >>>>>>> 66dad1e (README.md)
+=======
+
+![image](https://github.com/user-attachments/assets/ba72ff19-9b15-4a2e-ba49-91498522d107)
+>>>>>>> 1c0f2a1 (README.md)
