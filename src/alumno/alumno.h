@@ -6,7 +6,7 @@ class Alumno: public Usuario{
 
     private:
         std::string carrera_;
-        std::vector<std::string> asignaturas_, universidad_;;
+        std::vector<std::string> asignaturas_, universidad_;
         int cuatrimestre_, curso_, matricula_;
 
     public:
