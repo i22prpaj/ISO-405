@@ -48,6 +48,7 @@ sstream
 stdio.h
 -
 <<<<<<< HEAD
+<<<<<<< HEAD
 time.h
 -
 =======
@@ -58,4 +59,8 @@ sstream
 >>>>>>> c0e4e8d (	modified:   build/src/aplicacion/CMakeFiles/aplicacion-main.dir/CXX.includecache)
 =======
 >>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
+=======
+time.h
+-
+>>>>>>> 2cbee60 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 32733756H Álvaro Villalba_Aranda H 20 1 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Murcia Universidad_de_Cordoba Universidad_de_Malaga Universidad_de_Madrid Universidad_de_Sevilla
 26827577D Juan_Luis Prieto_Panadero H 20 1 i22prpaj juanlu04 Informatica 0 2 12203     
 =======
@@ -32,3 +33,6 @@
 =======
 32733756H Álvaro Villalba_Aranda H 20 0 p22vilaa aaa Informatica 0 2 1234
 >>>>>>> 9e665ad (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+32733756H Álvaro Villalba_Aranda H 20 0 p22vilaa aaa Informatica 0 2 1234empty empty empty empty empty
+>>>>>>> 2cbee60 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)

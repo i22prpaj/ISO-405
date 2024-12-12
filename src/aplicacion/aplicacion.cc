@@ -447,55 +447,21 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     return false;
 }
 
-bool IniciarSesion(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
+bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins) {
     std::string nombre_usuario, contrasena;
     std::cout << "Ingrese su nombre de usuario: ";
     std::cin >> nombre_usuario;
 
     std::cout << "Ingrese su contrasena: ";
     std::cin >> contrasena;
-    return existeusuario(nombre_usuario, contrasena, alumnos, profesores, admins);
+    return existeusuario(nombre_usuario, contrasena, &alumnos, profesores, admins);
 }
 
-void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
-    std::ifstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
-    std::ifstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
-    std::ifstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
 
-    std::cout<<"Leyendo alumnos.txt\n";
-    if (archivo_alumnos.is_open()) {
-        std::string linea;
-        while (getline(archivo_alumnos, linea)) {
-            std::istringstream iss(linea);
-            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, carrera;
-            int edad, consulta, cuatrimestre, curso, matricula;
-            std::vector<std::string> asignaturas, universidad;
-            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena >> carrera >> cuatrimestre >> curso >> matricula;
-            Alumno alumno(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
-            alumnos.push_back(alumno);
-        }
-        archivo_alumnos.close();
-    } else {
-        std::cout << "\tError al abrir el archivo de alumnos.\n";
-    }
+bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno> *alumnos,  std::vector<Profesor> profesores,  std::vector<Admin> admins){
 
-    std::cout<<"Leyendo profesores.txt\n";
-    if (archivo_profesores.is_open()) {
-        std::string linea;
-        while (getline(archivo_profesores, linea)) {
-            std::istringstream iss(linea);
-            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena;
-            int edad, consulta;
-            std::vector<std::string> universidad;
-            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena;
-            Profesor profesor(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, universidad);
-            profesores.push_back(profesor);
-        }
-        archivo_profesores.close();
-    } else {
-        std::cout << "\tError al abrir el archivo de profesores.\n";
-    }
 
+<<<<<<< HEAD
     std::cout<<"Leyendo admins.txt\n";
     if (archivo_admins.is_open()) {
         std::string linea;
@@ -558,44 +524,47 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
 bool existeusuario(std::string nombreusuario, std::string contrasena,const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins){
 
     
+=======
+>>>>>>> 2cbee60 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
     for(auto admin: admins){
         if(admin.GetNombreUsuario()==nombreusuario){
-            std::cout<<"\nNombre Usuario encontrado en admins\n";
+            //std::cout<<"\nNombre Usuario encontrado en admins\n";
             
             if(admin.GetContrasena()==contrasena){
-                std::cout<<"\t|->Se ha iniciado sesion como Administrador\n";
+                std::cout<<"\t|->Se ha iniciado sesion como Administrador\n\n";
                 InicioAdmins(0, admin);
                 return true;
             }
-            std::cout<<"\t|->Contraseña Incorrecta\n";
+            //std::cout<<"\t|->Contraseña Incorrecta\n";
         }
     } 
 
-
-    for(auto alumno: alumnos){
-        if(alumno.GetNombreUsuario()==nombreusuario){
-            std::cout<<"\nNombre Usuario encontrado en alumnos\n";
+    for(int i=0 ; i<alumnos->size(); i++){
+        if((*alumnos)[i].GetNombreUsuario()==nombreusuario){
+            //std::cout<<"\nNombre Usuario encontrado en alumnos\n";
             
-            if(alumno.GetContrasena()==contrasena){
-                std::cout<<"\t|->Se ha iniciado sesion como Alumno\n";
-                InicioAlumnos(0, alumno);
+            if((*alumnos)[i].GetContrasena()==contrasena){
+                std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
+                InicioAlumnos(0, &(*alumnos)[i]);
                 return true;
             }
-            std::cout<<"\t|->Contraseña Incorrecta\n";
+            //std::cout<<"\t|->Contraseña Incorrecta\n";
         }
-    }    
+    }
+
+    
 
 
     for(auto profesor: profesores){
         if(profesor.GetNombreUsuario()==nombreusuario){
-            std::cout<<"\nNombre Usuario encontrado en profesores\n";
+            //std::cout<<"\nNombre Usuario encontrado en profesores\n";
             
             if(profesor.GetContrasena()==contrasena){
-                std::cout<<"\t|->Se ha iniciado sesion como Profesor\n";
+                std::cout<<"\t|->Se ha iniciado sesion como Profesor\n\n";
                 InicioProfesores(0, profesor);
                 return true;
             }
-            std::cout<<"\t|->Contraseña Incorrecta\n";
+            //std::cout<<"\t|->Contraseña Incorrecta\n";
         }
     } 
 
@@ -603,6 +572,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
     return false;
 }
 
+<<<<<<< HEAD
 //
 
 bool validarDNI(const std::string& dni) {
@@ -633,16 +603,17 @@ bool validarDNI(const std::string& dni) {
 <<<<<<< HEAD
 >>>>>>> a20cc29 (Add user validation and improve output formatting in main application)
 =======
+=======
+>>>>>>> 2cbee60 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
 
+void InicioAlumnos(int menu, Alumno *alumno){
+    std::cout<<(*alumno).GetNombre()<<"\n";
+    while(menu!=4){
 
-void InicioAlumnos(int menu, Alumno alumno){
-
-    while(menu!=3){
-
-        std::cout<<"1 --> Listar Universidades\n2 --> Proceder al Formulario\n3 --> Cerrar Sesión\n\t->";
+        std::cout<<"1 --> Listar Universidades\n2 --> Proceder al Formulario\n3 --> Consultar Estado de mi Solicitud\n4 --> Cerrar Sesión\n\t->";
         std::cin>>menu;
-
+        int estado;
         switch(menu){
 
             case 1:
@@ -652,6 +623,10 @@ void InicioAlumnos(int menu, Alumno alumno){
             case 2:
                 std::cout<<"Formulario\n";
                 HacerFormulario(alumno);
+            break;
+
+            case 3:
+                estado=EstadoSolicitud(alumno);
             break;
 
         }
@@ -697,21 +672,22 @@ void ListarUniversidades(){
 };
 
 
-void HacerFormulario(Alumno alumno){
+void HacerFormulario(Alumno *alumno){
 
-    if(alumno.GetConsulta()>0){
+    std::cout<<(*alumno).GetNombre()<<"\n";
+    if((*alumno).GetConsulta()>0){
         std::cout<<"Ya hay un formulario en proceso\n";
         return;
     }
     std::string DNI, nombre, apellido1, apellido2, sexo, carrera;
     int edad, cuatrimestre, curso;
 
-    std::cout<<"DNI: "<<alumno.GetDNI()<<"\n";
-    std::cout<<"Nombre: "<<alumno.GetNombre()<<"\n";
-    std::cout<<"Apellidos: "<<alumno.GetApellidos()<<"\n";
-    std::cout<<"Sexo: "<<alumno.GetSexo()<<"\n";
-    std::cout<<"Edad: "<<alumno.GetEdad()<<"\n";
-    std::cout<<"Carrera: "<<alumno.GetCarrera();
+    std::cout<<"DNI: "<<(*alumno).GetDNI()<<"\n";
+    std::cout<<"Nombre: "<<(*alumno).GetNombre()<<"\n";
+    std::cout<<"Apellidos: "<<(*alumno).GetApellidos()<<"\n";
+    std::cout<<"Sexo: "<<(*alumno).GetSexo()<<"\n";
+    std::cout<<"Edad: "<<(*alumno).GetEdad()<<"\n";
+    std::cout<<"Carrera: "<<(*alumno).GetCarrera();
     std::cout<<"\nPresione Enter si los datos son correctos\n";
     std::cin.ignore();
     std::cin.get();
@@ -764,9 +740,186 @@ void HacerFormulario(Alumno alumno){
         
     }
 
-    alumno.SetConsulta(alumno.GetConsulta()+1);
-
+    (*alumno).SetUniversidad(universidades);
+    std::cout<<(*alumno).GetConsulta()<<"\n";
+    (*alumno).SetConsulta((*alumno).GetConsulta()+1);
+    std::cout<<(*alumno).GetConsulta()<<"\n";
     std::cout<<"Formulario completado\n";
     std::cout<<"Espere a ser aceptado\n";
 }
+<<<<<<< HEAD
 >>>>>>> 5e6353b (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+
+int EstadoSolicitud(Alumno *alumno){
+
+    std::cout<<(*alumno).GetNombre()<<"\n";
+    std::cout<<(*alumno).GetConsulta()<<"\n";
+    if((*alumno).GetConsulta()==0){
+        std::cout<<"No hay ninguna solicitud en proceso\n";
+        return 0;
+    }
+
+    srand(time(NULL));
+    int estado=rand()%5;
+
+    std::cout<<"Su solicitud ha sido aceptada en "<<(*alumno).GetUniversidad()[estado]<<"\n";
+    
+    return estado;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+bool validarDNI(const std::string& dni) {
+    // Comprobar longitud y formato básico (8 dígitos y 1 letra)
+    if (dni.length() != 9) return false;
+
+    // Comprobar si los primeros 8 caracteres son dígitos
+    for (int i = 0; i < 8; ++i) {
+        if (!isdigit(dni[i])) return false;
+    }
+
+    // Comprobar si el último carácter es una letra
+    char letra = dni[8];
+    if (!isalpha(letra)) return false;
+
+    // Array con las letras válidas según el módulo 23
+    const std::string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+    // Convertir los primeros 8 dígitos a un número entero
+    int numero = std::stoi(dni.substr(0, 8));
+
+    // Calcular la letra correspondiente
+    char letraCalculada = letras[numero % 23];
+
+    // Comparar la letra calculada con la introducida (ignorando mayúsculas o minúsculas)
+    return (toupper(letra) == letraCalculada);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
+    std::ifstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
+    std::ifstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
+    std::ifstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
+
+    std::cout<<"Leyendo alumnos.txt\n";
+    if (archivo_alumnos.is_open()) {
+        std::string linea;
+        while (getline(archivo_alumnos, linea)) {
+            std::istringstream iss(linea);
+            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, carrera, u1,u2,u3,u4,u5;
+            int edad, consulta, cuatrimestre, curso, matricula;
+            std::vector<std::string> asignaturas, universidad;
+            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena >> carrera >> cuatrimestre >> curso >> matricula >> u1 >> u2 >> u3 >> u4 >> u5;
+            universidad.push_back(u1);
+            universidad.push_back(u2);
+            universidad.push_back(u3);
+            universidad.push_back(u4);
+            universidad.push_back(u5);
+            Alumno alumno(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
+            alumnos.push_back(alumno);
+        }
+        archivo_alumnos.close();
+    } else {
+        std::cout << "\tError al abrir el archivo de alumnos.\n";
+    }
+
+    std::cout<<"Leyendo profesores.txt\n";
+    if (archivo_profesores.is_open()) {
+        std::string linea;
+        while (getline(archivo_profesores, linea)) {
+            std::istringstream iss(linea);
+            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena;
+            int edad, consulta;
+            std::vector<std::string> universidad;
+            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena;
+            Profesor profesor(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, universidad);
+            profesores.push_back(profesor);
+        }
+        archivo_profesores.close();
+    } else {
+        std::cout << "\tError al abrir el archivo de profesores.\n";
+    }
+
+    std::cout<<"Leyendo admins.txt\n";
+    if (archivo_admins.is_open()) {
+        std::string linea;
+        while (getline(archivo_admins, linea)) {
+            std::istringstream iss(linea);
+            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena;
+            int edad, consulta;
+            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena;
+            Admin admin(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena);
+            admins.push_back(admin);
+        }
+        archivo_admins.close();
+    } else {
+        std::cout << "\tError al abrir el archivo de admins.\n";
+    }
+}
+
+void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
+    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
+    if (archivo_alumnos.is_open()) { 
+        for (auto alumno : alumnos){
+            archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
+                            << alumno.GetSexo() << " " << alumno.GetEdad() << " " << alumno.GetConsulta() << " "
+                            << alumno.GetNombreUsuario() << " " << alumno.GetContrasena() << " " << alumno.GetCarrera() << " "
+                            << alumno.GetCuatrimestre() << " " << alumno.GetCurso() << " " << alumno.GetMatricula() << alumno.GetUniversidad()[0] << " " << alumno.GetUniversidad()[1] << " " << alumno.GetUniversidad()[2] << " " << alumno.GetUniversidad()[3] << " " << alumno.GetUniversidad()[4] << "\n";
+        }
+        archivo_alumnos.close();
+    } else {
+        std::cout << "Error al abrir el archivo de alumnos para escribir.\n";
+    }
+
+    std::ofstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
+    if (archivo_profesores.is_open()) {
+        for (auto profesor : profesores) {
+            archivo_profesores << profesor.GetDNI() << " " << profesor.GetNombre() << " " << profesor.GetApellidos() << " "
+                               << profesor.GetSexo() << " " << profesor.GetEdad() << " " << profesor.GetConsulta() << " "
+                               << profesor.GetNombreUsuario() << " " << profesor.GetContrasena() << "\n";
+        }
+        archivo_profesores.close();
+    } else {
+        std::cout << "Error al abrir el archivo de profesores para escribir.\n";
+    }
+
+    std::ofstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
+    if (archivo_admins.is_open()) {
+        for (auto admin : admins) {
+            archivo_admins << admin.GetDNI() << " " << admin.GetNombre() << " " << admin.GetApellidos() << " "
+                           << admin.GetSexo() << " " << admin.GetEdad() << " " << admin.GetConsulta() << " "
+                           << admin.GetNombreUsuario() << " " << admin.GetContrasena() << "\n";
+        }
+        archivo_admins.close();
+    } else {
+        std::cout << "Error al abrir el archivo de admins para escribir.\n";
+    }
+}
+>>>>>>> 2cbee60 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
