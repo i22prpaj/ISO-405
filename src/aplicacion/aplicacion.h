@@ -13,17 +13,17 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
 void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins);
 
 bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
-bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins);
+bool IniciarSesion(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
 
 bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno> *alumnos,  std::vector<Profesor> profesores,  std::vector<Admin> admins);
 bool validarDNI(const std::string& dni);
 
-void InicioAlumnos(int  menu, Alumno *alumno);
+void InicioAlumnos(int  menu, Alumno alumno);
 void InicioProfesores(int menu, Profesor profesor);
 void InicioAdmins(int menu, Admin admin);
 
 void ListarUniversidades();
-void HacerFormulario(Alumno *alumno);
+void HacerFormulario(Alumno alumno);
 void HacerFormulario(Profesor profesor);
-int EstadoSolicitud(Alumno *alumno);
+int EstadoSolicitud(Alumno alumno);
 #endif
