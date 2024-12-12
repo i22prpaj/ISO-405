@@ -68,6 +68,7 @@ bool IniciarSesion(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesor
     return existeusuario(nombre_usuario, contrasena, alumnos, profesores, admins);
 }
 
+<<<<<<< HEAD
 bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno>& alumnos,  std::vector<Profesor>& profesores,  std::vector<Admin>& admins){
     int i=0;
     for(auto admin: admins){
@@ -531,6 +532,9 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
 =======
 >>>>>>> 2cbee60 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 =======
+=======
+bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno>& alumnos,  std::vector<Profesor>& profesores,  std::vector<Admin>& admins){
+>>>>>>> a7fd2f5 (	deleted:    build/CMakeFiles/Progress/1)
     int i=0;
 >>>>>>> 473cbc7 (	new file:   build/CMakeFiles/Progress/1)
     for(auto admin: admins){
@@ -546,14 +550,13 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
         }
     } 
 
-
     for(auto alumno: alumnos){
         if(alumno.GetNombreUsuario()==nombreusuario){
             //std::cout<<"\nNombre Usuario encontrado en alumnos\n";
             
             if(alumno.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
-                InicioAlumnos(0, &alumno);
+                InicioAlumnos(0, alumno);
                 std::cout<<"Sesion cerrada\n";
                 std::cout<<alumno.GetConsulta()<<"\n";
                 alumnos[i].SetConsulta(alumno.GetConsulta());
@@ -564,7 +567,6 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
         }
         i++;
     }    
-
 
     for(auto profesor: profesores){
         if(profesor.GetNombreUsuario()==nombreusuario){
@@ -583,6 +585,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena,const std::
     return false;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //
 
@@ -619,6 +622,8 @@ bool validarDNI(const std::string& dni) {
 
 
 
+=======
+>>>>>>> a7fd2f5 (	deleted:    build/CMakeFiles/Progress/1)
 void InicioAlumnos(int menu, Alumno alumno){
     std::cout<<alumno.GetNombre()<<"\n";
     while(menu!=4){
@@ -627,41 +632,32 @@ void InicioAlumnos(int menu, Alumno alumno){
         std::cin>>menu;
         int estado;
         switch(menu){
-
             case 1:
                 ListarUniversidades();
-            break;
-
+                break;
             case 2:
                 std::cout<<"Formulario\n";
                 HacerFormulario(alumno);
-            break;
-
+                break;
             case 3:
                 estado=EstadoSolicitud(alumno);
-            break;
-
+                break;
         }
     }
 
 }
-
 
 void InicioProfesores(int menu, Profesor profesor){
 
 
 }
 
-
 void InicioAdmins(int menu, Admin admin){
 
 
 }
 
-
 void ListarUniversidades(){
-
-
     std::cout<<"Universidades Disponibles:\n";
     std::cout<<"\tAndalucia:\n\t\t-Universidad de Almeria\n\t\t-Universidad de Cadiz\n\t\t-Universidad de Cordoba\n\t\t-Universidad de Granada\n\t\t-Universidad de Huelva\n\t\t-Universidad de Jaen\n\t\t-Universidad de Malaga\n\t\t-Universidad de Sevilla\n";
     std::cout<<"\tAragon:\n\t\t-Universidad de Zaragoza\n\t\t-Universidad San Jorge\n";
@@ -683,9 +679,7 @@ void ListarUniversidades(){
 
 };
 
-
 void HacerFormulario(Alumno &alumno){
-
     std::cout<<alumno.GetNombre()<<"\n";
     if(alumno.GetConsulta()>0){
         std::cout<<"Ya hay un formulario en proceso\n";
@@ -716,38 +710,37 @@ void HacerFormulario(Alumno &alumno){
     ListarUniversidades();
 
     for(int i=0; i<5; i++){
-
         switch(i){
             case 0:
                 std::cout<<"Primera Universidad: ";
                 std::cin>>universidad;
                 universidades.push_back(universidad);
                 std::cin.ignore(); 
-            break;
+                break;
             case 1:
                 std::cout<<"Segunda Universidad: ";
                 std::cin>>universidad;
                 universidades.push_back(universidad);
                 std::cin.ignore(); 
-            break;
+                break;
             case 2:
                 std::cout<<"Tercera Universidad: ";
                 std::cin>>universidad;
                 universidades.push_back(universidad);
                 std::cin.ignore(); 
-            break;
+                break;
             case 3:
                 std::cout<<"Cuarta Universidad: ";
                 std::cin>>universidad;
                 universidades.push_back(universidad);
                 std::cin.ignore(); 
-            break;
+                break;
             case 4:
                 std::cout<<"Quinta Universidad: ";
                 std::cin>>universidad;
                 universidades.push_back(universidad);
                 std::cin.ignore(); 
-            break;
+                break;
         }
         
     }
@@ -764,7 +757,6 @@ void HacerFormulario(Alumno &alumno){
 =======
 
 int EstadoSolicitud(Alumno alumno){
-
     std::cout<<alumno.GetNombre()<<"\n";
     std::cout<<alumno.GetConsulta()<<"\n";
     if(alumno.GetConsulta()==0){
@@ -778,19 +770,7 @@ int EstadoSolicitud(Alumno alumno){
     std::cout<<"Su solicitud ha sido aceptada en "<<alumno.GetUniversidad()[estado]<<"\n";
     
     return estado;
-    
 }
-
-
-
-
-
-
-
-
-
-
-
 
 bool validarDNI(const std::string& dni) {
     // Comprobar longitud y formato básico (8 dígitos y 1 letra)
@@ -817,23 +797,6 @@ bool validarDNI(const std::string& dni) {
     // Comparar la letra calculada con la introducida (ignorando mayúsculas o minúsculas)
     return (toupper(letra) == letraCalculada);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
     std::ifstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
@@ -933,5 +896,9 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
     } else {
         std::cout << "Error al abrir el archivo de admins para escribir.\n";
     }
+<<<<<<< HEAD
 }
 >>>>>>> 2cbee60 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
+=======
+}
+>>>>>>> a7fd2f5 (	deleted:    build/CMakeFiles/Progress/1)
