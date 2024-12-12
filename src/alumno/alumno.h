@@ -16,7 +16,10 @@ class Alumno: public Usuario{
             cuatrimestre_ = cuatrimestre;
             curso_ = curso;
             matricula_ = matricula;
-            universidad_ = universidad;
+
+            for(int i = 0; i < universidad.size(); i++){
+                universidad_.push_back(universidad[i]);
+            }
         }
         
         void SetMatricula(int matricula){matricula_ = matricula;}
@@ -27,7 +30,7 @@ class Alumno: public Usuario{
         std::string GetCarrera(){return carrera_;}
         void SetAsignaturas(std::vector<std::string> asignaturas);
         std::vector<std::string> GetAsignaturas(){return asignaturas_;}
-        void SetUniversidad(std::vector<std::string> universidad);
+        void SetUniversidad(std::vector<std::string> universidad){universidad_ = universidad;};
         std::vector<std::string> GetUniversidad(){return universidad_;}
         void SetCurso(int curso){curso_ = curso;}
         int GetCurso(){return curso_;}
