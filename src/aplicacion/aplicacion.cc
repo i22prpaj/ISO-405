@@ -1,7 +1,6 @@
 #include "aplicacion.h"
 
 bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
-    std::vector<std::string> universidad;
     std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, tipo_usuario;
     int edad, consulta=0;
     std::cout << "Ingrese su DNI: ";
@@ -30,6 +29,7 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     std::cin >> edad;
 
     if(tipo_usuario == "Profesor"){
+        std::vector<std::string> universidad;
         Profesor profesor1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, universidad);
         profesores.push_back(profesor1);
         return true;
@@ -52,20 +52,20 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
     return false;
 }
 
-bool IniciarSesion(std::vector<Alumno> alumnos, std::vector<Profesor> profesores, std::vector<Admin> admins) {
+bool IniciarSesion(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
     std::string nombre_usuario, contrasena;
     std::cout << "Ingrese su nombre de usuario: ";
     std::cin >> nombre_usuario;
 
     std::cout << "Ingrese su contrasena: ";
     std::cin >> contrasena;
-    return existeusuario(nombre_usuario, contrasena, &alumnos, profesores, admins);
+    return existeusuario(nombre_usuario, contrasena, alumnos, profesores, admins);
 }
 
 
-bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno> *alumnos,  std::vector<Profesor> profesores,  std::vector<Admin> admins){
+bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno>& alumnos,  std::vector<Profesor>& profesores,  std::vector<Admin>& admins){
 
-
+    int i=0;
     for(auto admin: admins){
         if(admin.GetNombreUsuario()==nombreusuario){
             //std::cout<<"\nNombre Usuario encontrado en admins\n";
@@ -79,20 +79,24 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
         }
     } 
 
-    for(int i=0 ; i<alumnos->size(); i++){
-        if((*alumnos)[i].GetNombreUsuario()==nombreusuario){
+
+    for(auto alumno: alumnos){
+        if(alumno.GetNombreUsuario()==nombreusuario){
             //std::cout<<"\nNombre Usuario encontrado en alumnos\n";
             
-            if((*alumnos)[i].GetContrasena()==contrasena){
+            if(alumno.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
-                InicioAlumnos(0, &(*alumnos)[i]);
+                InicioAlumnos(0, &alumno);
+                std::cout<<"Sesion cerrada\n";
+                std::cout<<alumno.GetConsulta()<<"\n";
+                alumnos[i].SetConsulta(alumno.GetConsulta());
+                alumnos[i].SetUniversidad(alumno.GetUniversidad());
                 return true;
             }
             //std::cout<<"\t|->Contraseña Incorrecta\n";
         }
-    }
-
-    
+        i++;
+    }    
 
 
     for(auto profesor: profesores){
@@ -114,8 +118,9 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
 
 
 
-void InicioAlumnos(int menu, Alumno *alumno){
-    std::cout<<(*alumno).GetNombre()<<"\n";
+
+void InicioAlumnos(int menu, Alumno alumno){
+    std::cout<<alumno.GetNombre()<<"\n";
     while(menu!=4){
 
         std::cout<<"1 --> Listar Universidades\n2 --> Proceder al Formulario\n3 --> Consultar Estado de mi Solicitud\n4 --> Cerrar Sesión\n\t->";
@@ -179,22 +184,22 @@ void ListarUniversidades(){
 };
 
 
-void HacerFormulario(Alumno *alumno){
+void HacerFormulario(Alumno &alumno){
 
-    std::cout<<(*alumno).GetNombre()<<"\n";
-    if((*alumno).GetConsulta()>0){
+    std::cout<<alumno.GetNombre()<<"\n";
+    if(alumno.GetConsulta()>0){
         std::cout<<"Ya hay un formulario en proceso\n";
         return;
     }
     std::string DNI, nombre, apellido1, apellido2, sexo, carrera;
     int edad, cuatrimestre, curso;
 
-    std::cout<<"DNI: "<<(*alumno).GetDNI()<<"\n";
-    std::cout<<"Nombre: "<<(*alumno).GetNombre()<<"\n";
-    std::cout<<"Apellidos: "<<(*alumno).GetApellidos()<<"\n";
-    std::cout<<"Sexo: "<<(*alumno).GetSexo()<<"\n";
-    std::cout<<"Edad: "<<(*alumno).GetEdad()<<"\n";
-    std::cout<<"Carrera: "<<(*alumno).GetCarrera();
+    std::cout<<"DNI: "<<alumno.GetDNI()<<"\n";
+    std::cout<<"Nombre: "<<alumno.GetNombre()<<"\n";
+    std::cout<<"Apellidos: "<<alumno.GetApellidos()<<"\n";
+    std::cout<<"Sexo: "<<alumno.GetSexo()<<"\n";
+    std::cout<<"Edad: "<<alumno.GetEdad()<<"\n";
+    std::cout<<"Carrera: "<<alumno.GetCarrera();
     std::cout<<"\nPresione Enter si los datos son correctos\n";
     std::cin.ignore();
     std::cin.get();
@@ -247,19 +252,19 @@ void HacerFormulario(Alumno *alumno){
         
     }
 
-    (*alumno).SetUniversidad(universidades);
-    std::cout<<(*alumno).GetConsulta()<<"\n";
-    (*alumno).SetConsulta((*alumno).GetConsulta()+1);
-    std::cout<<(*alumno).GetConsulta()<<"\n";
+    alumno.SetUniversidad(universidades);
+    std::cout<<alumno.GetConsulta()<<"\n";
+    alumno.SetConsulta(alumno.GetConsulta()+1);
+    std::cout<<alumno.GetConsulta()<<"\n";
     std::cout<<"Formulario completado\n";
     std::cout<<"Espere a ser aceptado\n";
 }
 
-int EstadoSolicitud(Alumno *alumno){
+int EstadoSolicitud(Alumno alumno){
 
-    std::cout<<(*alumno).GetNombre()<<"\n";
-    std::cout<<(*alumno).GetConsulta()<<"\n";
-    if((*alumno).GetConsulta()==0){
+    std::cout<<alumno.GetNombre()<<"\n";
+    std::cout<<alumno.GetConsulta()<<"\n";
+    if(alumno.GetConsulta()==0){
         std::cout<<"No hay ninguna solicitud en proceso\n";
         return 0;
     }
@@ -267,7 +272,7 @@ int EstadoSolicitud(Alumno *alumno){
     srand(time(NULL));
     int estado=rand()%5;
 
-    std::cout<<"Su solicitud ha sido aceptada en "<<(*alumno).GetUniversidad()[estado]<<"\n";
+    std::cout<<"Su solicitud ha sido aceptada en "<<alumno.GetUniversidad()[estado]<<"\n";
     
     return estado;
     
