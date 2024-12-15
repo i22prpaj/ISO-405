@@ -164,7 +164,7 @@ void ListarUniversidades(){
 };
 
 void HacerFormulario(Alumno &alumno){
-    std::cout<<alumno.GetNombre()<<"\n";
+    std::cout<<"Alumno: "<<alumno.GetNombre()<<"\n";
     if(alumno.GetConsulta()>0){
         std::cout<<"Ya hay un formulario en proceso\n";
         return;
