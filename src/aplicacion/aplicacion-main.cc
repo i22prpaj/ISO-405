@@ -43,10 +43,13 @@ int main(){
                       << ", Apellidos: " << alumno.GetApellidos() 
                       << ", Sexo: " << alumno.GetSexo()
                       << ", Edad: " << alumno.GetEdad() 
-                      << ", Consulta: " << alumno.GetConsulta()
+                      << ", Consultas: " << alumno.GetConsulta()
                       << ", Nombre de usuario: " << alumno.GetNombreUsuario()
                       << ", Contraseña: " << alumno.GetContrasena()
-                      << ", Carrera: " << alumno.GetCarrera() << "\n";
+                      << ", Carrera: " << alumno.GetCarrera() 
+                      << ", Cuatrimestre: " << alumno.GetCuatrimestre()
+                      << ", Curso: " << alumno.GetCurso()
+                      << ", Matrícula: " << alumno.GetMatricula() <<  "\n";
         }
         std::cout<<"\n";
     }
@@ -60,7 +63,7 @@ int main(){
              std::cout << "\t|->DNI: " << profesor.GetDNI() 
                        << ", Nombre: " << profesor.GetNombre() 
                        << ", Apellidos: " << profesor.GetApellidos() 
-                       << ", Edad: " << profesor.GetEdad() << "\n";
+                       << ", Edad: " << profesor.GetEdad()<< "\n";
          }
          std::cout<<"\n";
      }
