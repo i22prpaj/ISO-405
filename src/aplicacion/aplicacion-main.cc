@@ -147,9 +147,10 @@ int main(){
                       << ", Nombre de usuario: " << alumno.GetNombreUsuario()
                       << ", Contraseña: " << alumno.GetContrasena()
                       << ", Carrera: " << alumno.GetCarrera()
-                      << ", /nCuatrimestre: " << alumno.GetCuatrimestre()
+                      << ", \nCuatrimestre: " << alumno.GetCuatrimestre()
                       << ", Curso: " << alumno.GetCurso()
-                      << ", Matrícula: " << alumno.GetMatricula() <<  "\n";
+                      << ", Matrícula: " << alumno.GetMatricula()  
+                      << ", Universidad: " /*<< alumno.GetUniversidad()*/<<"\n";
         }
         std::cout<<"\n";
     }
