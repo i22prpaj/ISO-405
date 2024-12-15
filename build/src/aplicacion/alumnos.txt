@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 32733756H Álvaro Villalba_Aranda H 20 1 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Murcia Universidad_de_Cordoba Universidad_de_Malaga Universidad_de_Madrid Universidad_de_Sevilla
 26827577D Juan_Luis Prieto_Panadero H 20 1 i22prpaj juanlu04 Informatica 0 2 12203     
 =======
@@ -44,3 +45,6 @@
 =======
 32733756H Álvaro Villalba_Aranda H 20 0 p22vilaa aaa Informatica 0 0 1234 empty empty empty empty empty
 >>>>>>> 6eccd1d (Improve output formatting and validation in application logic)
+=======
+32733756H Álvaro Villalba_Aranda H 20 1 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Murcia Universidad_de_Cordoba Universidad_de_Malaga Universidad_de_Madrid Universidad_de_Sevilla
+>>>>>>> 2c0cb4e (Update student data with new university information and modify session handling logic)
