@@ -52,6 +52,7 @@ void HacerFormulario(Alumno &alumno);
 int EstadoSolicitud(Alumno alumno);
 
 void guardaAlumno(std::vector<Alumno>& alumnos);
+<<<<<<< HEAD
 =======
 =======
 #include <fstream>
@@ -109,4 +110,6 @@ void HacerFormulario(Alumno &alumno);
 >>>>>>> a7fd2f5 (	deleted:    build/CMakeFiles/Progress/1)
 int EstadoSolicitud(Alumno alumno);
 >>>>>>> 473cbc7 (	new file:   build/CMakeFiles/Progress/1)
+=======
+>>>>>>> 360edeb (Add functionality to save student data to a file and improve output formatting)
 #endif

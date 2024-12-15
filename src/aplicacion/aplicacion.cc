@@ -91,8 +91,12 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
                 InicioAlumnos(0, alumno);
                 std::cout<<"Sesion cerrada\n";
+<<<<<<< HEAD
                 if(alumno.GetConsulta()==0)
                     alumnos[i].SetConsulta(alumno.GetConsulta()+1);
+=======
+                alumnos[i].SetConsulta(alumno.GetConsulta()+1);
+>>>>>>> 360edeb (Add functionality to save student data to a file and improve output formatting)
                 alumnos[i].SetUniversidad(alumno.GetUniversidad());
                 std::cout<<"Solicitudes en proceso de " << alumnos[i].GetNombreUsuario() << ": " << alumnos[i].GetConsulta()<<"\n";
                 guardaAlumno(alumnos);
@@ -209,7 +213,7 @@ void HacerFormulario(Alumno &alumno){
         std::cin.ignore();
         std::getline(std::cin, universidad);
 
-        if (universidad.empty()) std::cout << "Debe ingresar una universidad.\n";
+        if (universidad.empty()) break;
         universidades.push_back(universidad);
     }
 
@@ -367,6 +371,7 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
 }
 
 void guardaAlumno(std::vector<Alumno>& alumnos){
+<<<<<<< HEAD
     std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt", std::ios::trunc);
     if (archivo_alumnos.is_open()) { 
         for (auto alumno : alumnos){
@@ -831,6 +836,8 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
 }
 
 void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
+=======
+>>>>>>> 360edeb (Add functionality to save student data to a file and improve output formatting)
     std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
     if (archivo_alumnos.is_open()) { 
         for (auto alumno : alumnos){
@@ -847,6 +854,7 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
     } else {
         std::cout << "Error al abrir el archivo de alumnos para escribir.\n";
     }
+<<<<<<< HEAD
 
     std::ofstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
     if (archivo_profesores.is_open()) {
@@ -877,3 +885,6 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
 =======
 }
 >>>>>>> a7fd2f5 (	deleted:    build/CMakeFiles/Progress/1)
+=======
+}
+>>>>>>> 360edeb (Add functionality to save student data to a file and improve output formatting)
