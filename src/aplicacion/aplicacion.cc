@@ -209,7 +209,7 @@ void HacerFormulario(Alumno &alumno){
         std::cin.ignore();
         std::getline(std::cin, universidad);
 
-        if (universidad.empty()) break;
+        if (universidad.empty()) std::cout << "Debe ingresar una universidad.\n";
         universidades.push_back(universidad);
     }
 

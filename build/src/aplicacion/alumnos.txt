@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 32733756H Álvaro Villalba_Aranda H 20 1 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Murcia Universidad_de_Cordoba Universidad_de_Malaga Universidad_de_Madrid Universidad_de_Sevilla
 26827577D Juan_Luis Prieto_Panadero H 20 1 i22prpaj juanlu04 Informatica 0 2 12203     
 =======
@@ -40,3 +41,6 @@
 =======
 32733756H Álvaro Villalba_Aranda H 20 0 p22vilaa aaa Informatica 0 2 1234 empty empty empty empty empty
 >>>>>>> e0e1755 (	renamed:    build/.cmake/api/v1/reply/index-2024-12-12T08-31-29-0926.json -> build/.cmake/api/v1/reply/index-2024-12-15T16-01-39-0214.json)
+=======
+32733756H Álvaro Villalba_Aranda H 20 0 p22vilaa aaa Informatica 0 0 1234 empty empty empty empty empty
+>>>>>>> 6eccd1d (Improve output formatting and validation in application logic)
