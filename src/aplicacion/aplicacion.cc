@@ -110,7 +110,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
 }
 
 void InicioAlumnos(int menu, Alumno alumno){
-    std::cout<<alumno.GetNombre()<<"\n";
+    std::cout<<"Alumno: "<<alumno.GetNombre()<<"\n";
     while(menu!=4){
         std::cout<<"1 --> Listar Universidades\n2 --> Proceder al Formulario\n3 --> Consultar Estado de mi Solicitud\n4 --> Cerrar Sesión\n\t->";
         std::cin>>menu;
@@ -197,7 +197,7 @@ void HacerFormulario(Alumno &alumno){
         std::cin.ignore();
         std::getline(std::cin, universidad);
 
-        if (universidad.empty()) break;
+        if (universidad.empty()) std::cout << "Debe ingresar una universidad.\n";
         universidades.push_back(universidad);
     }
 
