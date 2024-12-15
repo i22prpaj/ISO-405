@@ -83,9 +83,10 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
                 InicioAlumnos(0, alumno);
                 std::cout<<"Sesion cerrada\n";
-                std::cout<<"Solicitud: " << alumno.GetConsulta()<<"\n";
                 alumnos[i].SetConsulta(alumno.GetConsulta()+1);
                 alumnos[i].SetUniversidad(alumno.GetUniversidad());
+                std::cout<<"Solicitudes en proceso de " << alumnos[i].GetNombreUsuario() << ": " << alumnos[i].GetConsulta()<<"\n";
+                guardaAlumno(alumnos);
                 return true;
             }
             //std::cout<<"\t|->Contraseña Incorrecta\n";
@@ -197,7 +198,7 @@ void HacerFormulario(Alumno &alumno){
         std::cin.ignore();
         std::getline(std::cin, universidad);
 
-        if (universidad.empty()) std::cout << "Debe ingresar una universidad.\n";
+        if (universidad.empty()) break;
         universidades.push_back(universidad);
     }
 
@@ -351,5 +352,24 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
         archivo_admins.close();
     } else {
         std::cout << "Error al abrir el archivo de admins para escribir.\n";
+    }
+}
+
+void guardaAlumno(std::vector<Alumno>& alumnos){
+    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
+    if (archivo_alumnos.is_open()) { 
+        for (auto alumno : alumnos){
+            archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
+                            << alumno.GetSexo() << " " << alumno.GetEdad() << " " << alumno.GetConsulta() << " "
+                            << alumno.GetNombreUsuario() << " " << alumno.GetContrasena() << " " << alumno.GetCarrera() << " "
+                            << alumno.GetCuatrimestre() << " " << alumno.GetCurso() << " " << alumno.GetMatricula();
+            for (const auto& universidad : alumno.GetUniversidad()) {
+                archivo_alumnos << " " << universidad;
+            }
+            archivo_alumnos << "\n";
+        }
+        archivo_alumnos.close();
+    } else {
+        std::cout << "Error al abrir el archivo de alumnos para escribir.\n";
     }
 }

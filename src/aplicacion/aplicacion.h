@@ -25,4 +25,6 @@ void InicioAdmins(int menu, Admin admin);
 void ListarUniversidades();
 void HacerFormulario(Alumno &alumno);
 int EstadoSolicitud(Alumno alumno);
+
+void guardaAlumno(std::vector<Alumno>& alumnos);
 #endif
