@@ -66,8 +66,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
     int i=0;
     for(auto admin: admins){
         if(admin.GetNombreUsuario()==nombreusuario){
-            //std::cout<<"\nNombre Usuario encontrado en admins\n";
-            
+            //std::cout<<"\nNombre Usuario encontrado en admins\n";            
             if(admin.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Administrador\n\n";
                 InicioAdmins(0, admin);
@@ -79,14 +78,13 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
 
     for(auto alumno: alumnos){
         if(alumno.GetNombreUsuario()==nombreusuario){
-            //std::cout<<"\nNombre Usuario encontrado en alumnos\n";
-            
+            //std::cout<<"\nNombre Usuario encontrado en alumnos\n";      
             if(alumno.GetContrasena()==contrasena){
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
                 InicioAlumnos(0, alumno);
                 std::cout<<"Sesion cerrada\n";
-                std::cout<<alumno.GetConsulta()<<"\n";
-                alumnos[i].SetConsulta(alumno.GetConsulta());
+                std::cout<<"Solicitud: " << alumno.GetConsulta()<<"\n";
+                alumnos[i].SetConsulta(alumno.GetConsulta()+1);
                 alumnos[i].SetUniversidad(alumno.GetUniversidad());
                 return true;
             }
@@ -107,7 +105,6 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
             //std::cout<<"\t|->Contraseña Incorrecta\n";
         }
     } 
-
     std::cout<<"Credenciales Erróneos o el Usuario no ha sido encontrado\n";
     return false;
 }
@@ -115,7 +112,6 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
 void InicioAlumnos(int menu, Alumno alumno){
     std::cout<<alumno.GetNombre()<<"\n";
     while(menu!=4){
-
         std::cout<<"1 --> Listar Universidades\n2 --> Proceder al Formulario\n3 --> Consultar Estado de mi Solicitud\n4 --> Cerrar Sesión\n\t->";
         std::cin>>menu;
         int estado;
@@ -132,7 +128,6 @@ void InicioAlumnos(int menu, Alumno alumno){
                 break;
         }
     }
-
 }
 
 void InicioProfesores(int menu, Profesor profesor){
@@ -164,7 +159,6 @@ void ListarUniversidades(){
     std::cout<<"\tLa Rioja:\n\t\t-Universidad de La Rioja\n";
     std::cout<<"\tPais Vasco:\n\t\t-Universidad del Pais Vasco\n\t\t-Universidad de Deusto\n\t\t-Universidad de Mondragon\n";
     std::cout<<"\tRegion de Murcia:\n\t\t-Universidad de Murcia\n\t\t-Universidad Politecnica de Cartagena\n";
-
 };
 
 void HacerFormulario(Alumno &alumno){
@@ -197,60 +191,33 @@ void HacerFormulario(Alumno &alumno){
 
     ListarUniversidades();
 
-    for(int i=0; i<5; i++){
-        switch(i){
-            case 0:
-                std::cout<<"Primera Universidad: ";
-                std::cin>>universidad;
-                universidades.push_back(universidad);
-                std::cin.ignore(); 
-                break;
-            case 1:
-                std::cout<<"Segunda Universidad: ";
-                std::cin>>universidad;
-                universidades.push_back(universidad);
-                std::cin.ignore(); 
-                break;
-            case 2:
-                std::cout<<"Tercera Universidad: ";
-                std::cin>>universidad;
-                universidades.push_back(universidad);
-                std::cin.ignore(); 
-                break;
-            case 3:
-                std::cout<<"Cuarta Universidad: ";
-                std::cin>>universidad;
-                universidades.push_back(universidad);
-                std::cin.ignore(); 
-                break;
-            case 4:
-                std::cout<<"Quinta Universidad: ";
-                std::cin>>universidad;
-                universidades.push_back(universidad);
-                std::cin.ignore(); 
-                break;
-        }
-        
+    
+    for (int i = 0; i < 5; ++i) {
+        std::cout << "Ingrese la universidad " << i + 1 << ": ";
+        std::cin.ignore();
+        std::getline(std::cin, universidad);
+
+        if (universidad.empty()) break;
+        universidades.push_back(universidad);
     }
 
     alumno.SetUniversidad(universidades);
-    std::cout<<alumno.GetConsulta()<<"\n";
-    alumno.SetConsulta(alumno.GetConsulta()+1);
-    std::cout<<alumno.GetConsulta()<<"\n";
-    std::cout<<"Formulario completado\n";
-    std::cout<<"Espere a ser aceptado\n";
+    alumno.SetConsulta(alumno.GetConsulta() + 1);
+
+    std::cout << "Formulario completado.\n";
+    std::cout << "Espere a ser aceptado. Su formulario ha sido registrado correctamente.\n";
 }
 
 int EstadoSolicitud(Alumno alumno){
-    std::cout<<alumno.GetNombre()<<"\n";
-    std::cout<<alumno.GetConsulta()<<"\n";
+    std::cout<<"Alumno: " << alumno.GetNombre()<<"\n";
+    std::cout<<"Solicitudes: " << alumno.GetConsulta()<<"\n";
     if(alumno.GetConsulta()==0){
         std::cout<<"No hay ninguna solicitud en proceso\n";
         return 0;
     }
 
     srand(time(NULL));
-    int estado=rand()%5;
+    int estado=rand()% alumno.GetUniversidad().size();
 
     std::cout<<"Su solicitud ha sido aceptada en "<<alumno.GetUniversidad()[estado]<<"\n";
     
@@ -351,7 +318,11 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
             archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
                             << alumno.GetSexo() << " " << alumno.GetEdad() << " " << alumno.GetConsulta() << " "
                             << alumno.GetNombreUsuario() << " " << alumno.GetContrasena() << " " << alumno.GetCarrera() << " "
-                            << alumno.GetCuatrimestre() << " " << alumno.GetCurso() << " " << alumno.GetMatricula() << alumno.GetUniversidad()[0] << " " << alumno.GetUniversidad()[1] << " " << alumno.GetUniversidad()[2] << " " << alumno.GetUniversidad()[3] << " " << alumno.GetUniversidad()[4] << "\n";
+                            << alumno.GetCuatrimestre() << " " << alumno.GetCurso() << " " << alumno.GetMatricula();
+            for (const auto& universidad : alumno.GetUniversidad()) {
+                archivo_alumnos << " " << universidad;
+            }
+            archivo_alumnos << "\n";
         }
         archivo_alumnos.close();
     } else {
