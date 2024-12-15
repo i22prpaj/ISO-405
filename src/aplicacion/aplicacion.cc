@@ -83,7 +83,8 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
                 std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
                 InicioAlumnos(0, alumno);
                 std::cout<<"Sesion cerrada\n";
-                alumnos[i].SetConsulta(alumno.GetConsulta()+1);
+                if(alumno.GetConsulta()==0)
+                    alumnos[i].SetConsulta(alumno.GetConsulta()+1);
                 alumnos[i].SetUniversidad(alumno.GetUniversidad());
                 std::cout<<"Solicitudes en proceso de " << alumnos[i].GetNombreUsuario() << ": " << alumnos[i].GetConsulta()<<"\n";
                 guardaAlumno(alumnos);
@@ -356,7 +357,7 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
 }
 
 void guardaAlumno(std::vector<Alumno>& alumnos){
-    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
+    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt", std::ios::trunc);
     if (archivo_alumnos.is_open()) { 
         for (auto alumno : alumnos){
             archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
