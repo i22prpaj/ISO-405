@@ -1,1 +1,1 @@
-32733756H Álvaro Villalba_Aranda H 20 0 p22vilaa aaa Informatica 0 0 1234 empty empty empty empty empty
+32733756H Álvaro Villalba_Aranda H 20 1 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Murcia Universidad_de_Cordoba Universidad_de_Malaga Universidad_de_Madrid Universidad_de_Sevilla
