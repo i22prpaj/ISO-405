@@ -46,8 +46,8 @@ int main(){
                       << ", Consultas: " << alumno.GetConsulta()
                       << ", Nombre de usuario: " << alumno.GetNombreUsuario()
                       << ", Contraseña: " << alumno.GetContrasena()
-                      << ", Carrera: " << alumno.GetCarrera() 
-                      << ", Cuatrimestre: " << alumno.GetCuatrimestre()
+                      << ", Carrera: " << alumno.GetCarrera()
+                      << ", /nCuatrimestre: " << alumno.GetCuatrimestre()
                       << ", Curso: " << alumno.GetCurso()
                       << ", Matrícula: " << alumno.GetMatricula() <<  "\n";
         }
