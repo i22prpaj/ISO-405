@@ -183,8 +183,10 @@ void HacerFormulario(Alumno &alumno){
     std::cin.get();
     std::cout<<"Ingrese el cuatrimestre que desea para el intercambio: ";
     std::cin>>cuatrimestre;
+    alumno.SetCuatrimestre(cuatrimestre);
     std::cout<<"Ingrese el curso que desea para el intercambio: ";
     std::cin>>curso;
+    alumno.SetCurso(curso);
 
     std::vector<std::string> universidades;
 
