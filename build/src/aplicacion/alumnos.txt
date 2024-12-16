@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 32733756H Álvaro Villalba_Aranda H 20 1 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Murcia Universidad_de_Cordoba Universidad_de_Malaga Universidad_de_Madrid Universidad_de_Sevilla
 <<<<<<< HEAD
+<<<<<<< HEAD
 26827577D Juan_Luis Prieto_Panadero H 20 1 i22prpaj juanlu04 Informatica 0 2 12203     
 =======
 27 Juan erez H 19 0 i22 1hola inf 0 2 12345
@@ -52,3 +53,6 @@
 =======
 mecago
 >>>>>>> 4a1484d (Add a new student entry to the alumnos.txt)
+=======
+26827577D Juan_Luis Prieto_Panadero H 20 1 i22prpaj juanlu04 Informatica 0 2 12203     
+>>>>>>> bb4072a (Remove outdated JSON files and update student information in alumnos.txt)
