@@ -41,7 +41,9 @@ bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores
         
         std::cout << "Ingrese su carrera: ";
         std::cin >> carrera;
-        std::cout << "Ingrese el curso: ";
+        std::cout << "Ingrese el cuatrimestre en el que se encuentra actualmente: ";
+        std::cin >> cuatrimestre;
+        std::cout << "Ingrese el curso actual: ";
         std::cin >> curso;
         std::cout << "Ingrese la matrícula: ";
         std::cin >> matricula;
@@ -86,6 +88,7 @@ bool existeusuario(std::string nombreusuario, std::string contrasena, std::vecto
                 if(alumno.GetConsulta()==0)
                     alumnos[i].SetConsulta(alumno.GetConsulta()+1);
                 alumnos[i].SetUniversidad(alumno.GetUniversidad());
+                alumnos[i].SetCuatrimestre(alumno.GetCuatrimestre());
                 std::cout<<"Solicitudes en proceso de " << alumnos[i].GetNombreUsuario() << ": " << alumnos[i].GetConsulta()<<"\n";
                 guardaAlumno(alumnos);
                 return true;
@@ -178,6 +181,8 @@ void HacerFormulario(Alumno &alumno){
     std::cout<<"Sexo: "<<alumno.GetSexo()<<"\n";
     std::cout<<"Edad: "<<alumno.GetEdad()<<"\n";
     std::cout<<"Carrera: "<<alumno.GetCarrera();
+    std::cout<<"\nCuatrimestre actual: "<<alumno.GetCuatrimestre();
+    std::cout<<"\nCurso actual: "<<alumno.GetCurso();
     std::cout<<"\nPresione Enter si los datos son correctos\n";
     std::cin.ignore();
     std::cin.get();
@@ -258,7 +263,8 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
     std::ifstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
     std::ifstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
     std::ifstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
-
+    std::ifstream archivo_solicitudesAlumnos("/workspaces/ISO-405/build/src/aplicacion/solicitudesAlumnos.txt");
+    
     std::cout<<"Leyendo alumnos.txt\n";
     if (archivo_alumnos.is_open()) {
         std::string linea;
@@ -313,6 +319,28 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
     } else {
         std::cout << "\tError al abrir el archivo de admins.\n";
     }
+    /*
+    std::cout<<"Leyendo solicitudesAlumnos.txt\n";
+    if (archivo_solicitudesAlumnos.is_open()) {
+        std::string linea;
+        while (getline(archivo_solicitudesAlumnos, linea)) {
+            std::istringstream iss(linea);
+            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, carrera, u1,u2,u3,u4,u5;
+            int edad, consulta, cuatrimestre, curso, matricula;
+            std::vector<std::string> asignaturas, universidad;
+            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena >> carrera >> cuatrimestre >> curso >> matricula >> u1 >> u2 >> u3 >> u4 >> u5;
+            universidad.push_back(u1);
+            universidad.push_back(u2);
+            universidad.push_back(u3);
+            universidad.push_back(u4);
+            universidad.push_back(u5);
+            Alumno alumno(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
+            alumnos.push_back(alumno);
+        }
+        archivo_alumnos.close();
+    } else {
+        std::cout << "\tError al abrir el archivo de alumnos.\n";
+    }*/
 }
 
 void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
@@ -358,8 +386,8 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
     }
 }
 
-void guardaAlumno(std::vector<Alumno>& alumnos){
-    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt", std::ios::trunc);
+void guardaAlumno(std::vector<Alumno>& alumnos){ //solicitudes
+    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/solicitudesAlumnos.txt");
     if (archivo_alumnos.is_open()) { 
         for (auto alumno : alumnos){
             archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "

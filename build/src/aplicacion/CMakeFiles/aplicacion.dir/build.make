@@ -60,15 +60,15 @@ include src/aplicacion/CMakeFiles/aplicacion.dir/flags.make
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: src/aplicacion/CMakeFiles/aplicacion.dir/flags.make
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o: ../src/aplicacion/aplicacion.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/ISO-405/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.o"
-	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion.dir/aplicacion.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion.cc
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aplicacion.dir/aplicacion.cc.o -c /workspaces/ISO-405/src/aplicacion/aplicacion.cc
 
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aplicacion.dir/aplicacion.cc.i"
-	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/aplicacion/aplicacion.cc > CMakeFiles/aplicacion.dir/aplicacion.cc.i
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/ISO-405/src/aplicacion/aplicacion.cc > CMakeFiles/aplicacion.dir/aplicacion.cc.i
 
 src/aplicacion/CMakeFiles/aplicacion.dir/aplicacion.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aplicacion.dir/aplicacion.cc.s"
-	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion.cc -o CMakeFiles/aplicacion.dir/aplicacion.cc.s
+	cd /workspaces/ISO-405/build/src/aplicacion && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/ISO-405/src/aplicacion/aplicacion.cc -o CMakeFiles/aplicacion.dir/aplicacion.cc.s
 
 # Object files for target aplicacion
 aplicacion_OBJECTS = \
