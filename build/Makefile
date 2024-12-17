@@ -162,13 +162,6 @@ profesor/fast:
 	$(MAKE) -f src/profesor/CMakeFiles/profesor.dir/build.make src/profesor/CMakeFiles/profesor.dir/build
 .PHONY : profesor/fast
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
-=======
->>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 #=============================================================================
 # Target rules for targets named aplicacion-main
 
@@ -195,14 +188,6 @@ aplicacion/fast:
 	$(MAKE) -f src/aplicacion/CMakeFiles/aplicacion.dir/build.make src/aplicacion/CMakeFiles/aplicacion.dir/build
 .PHONY : aplicacion/fast
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
-=======
->>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
-=======
->>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -215,21 +200,8 @@ help:
 	@echo "... usuario"
 	@echo "... alumno"
 	@echo "... profesor"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	@echo "... aplicacion-main"
 	@echo "... aplicacion"
-=======
->>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
-=======
-	@echo "... aplicacion-main"
-	@echo "... aplicacion"
->>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
-=======
-	@echo "... aplicacion-main"
-	@echo "... aplicacion"
->>>>>>> 80b3d5b (	new file:   build/CMakeCache.txt)
 .PHONY : help
 
 

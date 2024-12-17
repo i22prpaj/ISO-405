@@ -1,17 +1,1 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-/usr/bin/g++  -g   CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
-=======
 /usr/bin/c++     CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
->>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
-=======
-/usr/bin/g++  -g   CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
->>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
-=======
-/usr/bin/c++     CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
->>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
-=======
-/usr/bin/g++  -g   CMakeFiles/aplicacion-main.dir/aplicacion-main.cc.o  -o aplicacion-main  libaplicacion.a ../alumno/libalumno.a ../profesor/libprofesor.a ../admin/libadmin.a ../usuario/libusuario.a 
->>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)

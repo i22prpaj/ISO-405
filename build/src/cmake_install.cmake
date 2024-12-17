@@ -12,23 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
-=======
     set(CMAKE_INSTALL_CONFIG_NAME "")
->>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
-=======
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
->>>>>>> 3f7bd85 (Update CMake configuration and set Debug build type)
-=======
-    set(CMAKE_INSTALL_CONFIG_NAME "")
->>>>>>> 06888e9 (Revert "Update CMake configuration and set Debug build type")
-=======
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
->>>>>>> 44bfc57 (	new file:   build/.cmake/api/v1/query/client-vscode/query.json)
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -59,14 +43,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/workspaces/ISO-405/build/src/usuario/cmake_install.cmake")
   include("/workspaces/ISO-405/build/src/alumno/cmake_install.cmake")
   include("/workspaces/ISO-405/build/src/profesor/cmake_install.cmake")
-<<<<<<< HEAD
-<<<<<<< HEAD
   include("/workspaces/ISO-405/build/src/aplicacion/cmake_install.cmake")
-=======
->>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
-=======
-  include("/workspaces/ISO-405/build/src/aplicacion/cmake_install.cmake")
->>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 
 endif()
 

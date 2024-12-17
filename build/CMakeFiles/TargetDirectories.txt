@@ -14,16 +14,7 @@
 /workspaces/ISO-405/build/src/profesor/CMakeFiles/rebuild_cache.dir
 /workspaces/ISO-405/build/src/profesor/CMakeFiles/edit_cache.dir
 /workspaces/ISO-405/build/src/profesor/CMakeFiles/profesor.dir
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
 /workspaces/ISO-405/build/src/aplicacion/CMakeFiles/edit_cache.dir
 /workspaces/ISO-405/build/src/aplicacion/CMakeFiles/aplicacion-main.dir
 /workspaces/ISO-405/build/src/aplicacion/CMakeFiles/rebuild_cache.dir
 /workspaces/ISO-405/build/src/aplicacion/CMakeFiles/aplicacion.dir
-<<<<<<< HEAD
-=======
->>>>>>> 332eb2e (	modified:   build/CMakeCache.txt)
-=======
->>>>>>> 0338030 (Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>)
