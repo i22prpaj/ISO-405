@@ -1,1 +1,1 @@
-32733756H Alvaro Villalba_Aranda H 20 0 p22vilaa aaa  32767 980158112 29091 Universidad_Cordoba Uni_Sevilla universidad universidad universidad Algebra asignatura asignatura asignatura asignatura asignatura
+32733756H Alvaro Villalba_Aranda H 20 1 p22vilaa aaa 32767 980158112 29091 0 cordoba universidad universidad universidad universidad algebra asignatura asignatura asignatura asignatura asignatura

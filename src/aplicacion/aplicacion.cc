@@ -2,25 +2,30 @@
 
 void menuAlumno(std::vector<Alumno>& alumnos) {
     int opcion;
+    bool sicue = false;
     do {
         std::cout << "\nMenu Alumno:\n";
-        std::cout << "\t1. Inscribirse a un plan de Convalidación\n";
-        std::cout << "\t2. Inscribirse al SICUE\n";
+        std::cout << "\t1. Inscribirse al SICUE\n";
+        std::cout << "\t2. Inscribirse a un plan de Convalidación\n";
         std::cout << "\t3. Consultar los Planes de Convalidación según la carrera\n";
         std::cout << "\t4. Consultar la inscripción al plan de Convalidación\n";
         std::cout << "\t5. Anular inscripción\n";
         std::cout << "\t6. Salir\n";
         std::cout << "\tSeleccione una opción: \n\t->";
         std::cin >> opcion;
-
         switch (opcion) {
             case 1:
-                // Implementar inscripción a un plan de Convalidación
-                    plandeConvalidacion(alumnos);
-                break;            
-            case 2:
                 // Implementar inscripción al SICUE
                     planSICUE(alumnos);
+                    sicue = true;
+                break;            
+            case 2:
+                if (sicue==false){
+                    std::cout << "\n\t->Primero debe inscribirse al SICUE\n\n";
+                    break;
+                }
+                // Implementar inscripción a un plan de Convalidación
+                    plandeConvalidacion(alumnos);
                 break;
             case 3:
                 // Implementar consulta de Planes de Convalidación según la carrera
@@ -126,7 +131,7 @@ void plandeConvalidacion(std::vector<Alumno>& alumnos) {
 
             
         }
-        
+        it->SetConsulta(1);
         it->SetAsignaturas(asignaturas);
         std::cout << "\n\t---Asignaturas convalidadas correctamente---\n\n";
     } else {
@@ -194,7 +199,11 @@ void consultarConvalidacion(std::vector<Alumno>& alumnos) {
     });
     if (it != alumnos.end()) {
         std::cout << "\nAlumno encontrado. Consultando inscripción...\n";
-        srand(time(0));
+        if(it->GetConsulta() == 0) {
+            std::cout << "\n\t-> Aún no se ha realizado ninguna inscripción al plan de convalidación\n";
+            return;
+        }
+        srand(time(NULL));
         std::string universidad_aceptada = getRandomElement(it->GetUniversidad(), 5);
         std::cout << "\n\t-> Ha sido aceptado en la universidad: " << universidad_aceptada << "\n";
 
@@ -236,6 +245,7 @@ void anularInscripcion(std::vector<Alumno>& alumnos){
             std::vector<std::string> asignaturas(6, "asignatura");
             it->SetUniversidad(universidades);
             it->SetAsignaturas(asignaturas);
+            it->SetConsulta(0);
             std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
         } else {
             std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
@@ -314,7 +324,7 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
 }
 
 void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
-    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
+    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt", std::ofstream::trunc);
     if (archivo_alumnos.is_open()) { 
         for (auto alumno : alumnos){
             archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
