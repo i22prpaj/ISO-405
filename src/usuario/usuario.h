@@ -55,10 +55,10 @@ class Usuario{
         int GetConsulta(){return consulta_;}
 
         void SetNombreUsuario(std::string nombre_usuario){nombre_usuario_ = nombre_usuario;}
-        std::string GetNombreUsuario(){return nombre_usuario_;}
+        std::string GetNombreUsuario() const {return nombre_usuario_;}
 
         void SetContrasena(std::string contrasena){contrasena_ = contrasena;}
-        std::string GetContrasena(){return contrasena_;}
+        std::string GetContrasena() const {return contrasena_;}
 
 
 };

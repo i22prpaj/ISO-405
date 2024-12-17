@@ -1,2 +1,1 @@
-32733756H Álvaro Villalba_Aranda H 20 1 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Murcia Universidad_de_Cordoba Universidad_de_Malaga Universidad_de_Madrid Universidad_de_Sevilla
-26827577D Juan Prieto H 20 1 i22prpaj juanlu04 informatico 1 2 65434567
+32733756H Alvaro Villalba_Aranda H 20 0 p22vilaa aaa  32767 980158112 29091 Universidad_Cordoba Uni_Sevilla universidad universidad universidad Algebra asignatura asignatura asignatura asignatura asignatura

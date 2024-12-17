@@ -47,4 +47,16 @@ stdio.h
 -
 time.h
 -
+iostream
+-
+string
+-
+vector
+-
+algorithm
+-
+cstdlib
+-
+ctime
+-
 

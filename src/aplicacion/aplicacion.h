@@ -8,23 +8,29 @@
 #include <sstream>
 #include <stdio.h>
 #include <time.h>
+#include <iostream>
+#include <string> 
+#include <vector>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+
+void menuAlumno(std::vector<Alumno> &alumnos);
+void menuProfesor(std::vector<Profesor> &profesores);
+void menuAdmin(std::vector<Admin> &admins);
+
+
+void plandeConvalidacion(std::vector<Alumno>& alumnos);
+void planSICUE(std::vector<Alumno>& alumnos);
+void consultarConvalidacion(std::vector<Alumno>& alumnos);
+void anularInscripcion(std::vector<Alumno>& alumnos);
 
 void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
-void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins);
+void guardarBD(const std::vector<Alumno> &alumnos, const std::vector<Profesor> &profesores, const std::vector<Admin> &admins);
 
-bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
-bool IniciarSesion(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
 
-bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno> &alumnos,  std::vector<Profesor> &profesores,  std::vector<Admin> &admins);
-bool validarDNI(const std::string& dni);
+std::string getRandomElement(const std::vector<std::string>& vec, int maxIndex);
 
-void InicioAlumnos(int  menu, Alumno alumno);
-void InicioProfesores(int menu, Profesor profesor);
-void InicioAdmins(int menu, Admin admin);
 
-void ListarUniversidades();
-void HacerFormulario(Alumno &alumno);
-int EstadoSolicitud(Alumno alumno);
-
-void guardaAlumno(std::vector<Alumno>& alumnos);
 #endif
+

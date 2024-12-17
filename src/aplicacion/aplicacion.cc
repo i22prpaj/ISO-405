@@ -1,284 +1,276 @@
 #include "aplicacion.h"
 
-bool Registrarse(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
-    std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, tipo_usuario;
-    int edad, consulta=0;
-    std::cout << "Ingrese su DNI: ";
-    std::cin >> dni;
-    if(validarDNI(dni)==false){
-        std::cout<<"DNI invalido\n";
-        return false;
-    }
-    std::cout << "Ingrese su nombre: ";
-    std::cin.ignore();  // Limpia el buffer antes de getline
-    std::getline(std::cin, nombre);
-    fflush(stdin);
-    std::cout << "Ingrese sus apellidos: (Espacio=_)";
-    //std::cin.ignore();  // Limpia el buffer antes de getline
-    std::getline(std::cin, apellidos);
-    fflush(stdin);
-    std::cout << "Ingrese su sexo(H o M): ";
-    std::cin >> sexo;
-    std::cout << "Ingrese un nombre de usuario: ";
-    std::cin >> nombre_usuario;
-    std::cout << "Ingrese una contrasena: ";
-    std::cin >> contrasena;
-    std::cout << "Tipo de usuario (Profesor, Alumno): ";
-    std::cin >> tipo_usuario;
-    std::cout << "Ingrese su edad: ";
-    std::cin >> edad;
+void menuAlumno(std::vector<Alumno>& alumnos) {
+    int opcion;
+    do {
+        std::cout << "\nMenu Alumno:\n";
+        std::cout << "\t1. Inscribirse a un plan de Convalidación\n";
+        std::cout << "\t2. Inscribirse al SICUE\n";
+        std::cout << "\t3. Consultar los Planes de Convalidación según la carrera\n";
+        std::cout << "\t4. Consultar la inscripción al plan de Convalidación\n";
+        std::cout << "\t5. Anular inscripción\n";
+        std::cout << "\t6. Salir\n";
+        std::cout << "\tSeleccione una opción: \n\t->";
+        std::cin >> opcion;
 
-    if(tipo_usuario == "Profesor"){
-        std::vector<std::string> universidad;
-        Profesor profesor1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, universidad);
-        profesores.push_back(profesor1);
-        return true;
-    }
-    else if(tipo_usuario == "Alumno"){
-        std::string carrera;
-        std::vector<std::string> asignaturas, universidad;
-        int cuatrimestre, curso, matricula;
-        
-        std::cout << "Ingrese su carrera: ";
-        std::cin >> carrera;
-        std::cout << "Ingrese el cuatrimestre en el que se encuentra actualmente: ";
-        std::cin >> cuatrimestre;
-        std::cout << "Ingrese el curso actual: ";
-        std::cin >> curso;
-        std::cout << "Ingrese la matrícula: ";
-        std::cin >> matricula;
-        Alumno alumno1(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
-        alumnos.push_back(alumno1);
-        return true;
-    }
-    return false;
-}
-
-bool IniciarSesion(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
-    std::string nombre_usuario, contrasena;
-    std::cout << "Ingrese su nombre de usuario: ";
-    std::cin >> nombre_usuario;
-
-    std::cout << "Ingrese su contrasena: ";
-    std::cin >> contrasena;
-    return existeusuario(nombre_usuario, contrasena, alumnos, profesores, admins);
-}
-
-bool existeusuario(std::string nombreusuario, std::string contrasena, std::vector<Alumno>& alumnos,  std::vector<Profesor>& profesores,  std::vector<Admin>& admins){
-    int i=0;
-    for(auto admin: admins){
-        if(admin.GetNombreUsuario()==nombreusuario){
-            //std::cout<<"\nNombre Usuario encontrado en admins\n";            
-            if(admin.GetContrasena()==contrasena){
-                std::cout<<"\t|->Se ha iniciado sesion como Administrador\n\n";
-                InicioAdmins(0, admin);
-                return true;
-            }
-            //std::cout<<"\t|->Contraseña Incorrecta\n";
-        }
-    } 
-
-    for(auto alumno: alumnos){
-        if(alumno.GetNombreUsuario()==nombreusuario){
-            //std::cout<<"\nNombre Usuario encontrado en alumnos\n";      
-            if(alumno.GetContrasena()==contrasena){
-                std::cout<<"\t|->Se ha iniciado sesion como Alumno\n\n";
-                InicioAlumnos(0, alumno);
-                std::cout<<"Sesion cerrada\n";
-                if(alumno.GetConsulta()==0)
-                    alumnos[i].SetConsulta(alumno.GetConsulta()+1);
-                alumnos[i].SetUniversidad(alumno.GetUniversidad());
-                alumnos[i].SetCuatrimestre(alumno.GetCuatrimestre());
-                std::cout<<"Solicitudes en proceso de " << alumnos[i].GetNombreUsuario() << ": " << alumnos[i].GetConsulta()<<"\n";
-                guardaAlumno(alumnos);
-                return true;
-            }
-            //std::cout<<"\t|->Contraseña Incorrecta\n";
-        }
-        i++;
-    }    
-
-    for(auto profesor: profesores){
-        if(profesor.GetNombreUsuario()==nombreusuario){
-            //std::cout<<"\nNombre Usuario encontrado en profesores\n";
-            
-            if(profesor.GetContrasena()==contrasena){
-                std::cout<<"\t|->Se ha iniciado sesion como Profesor\n\n";
-                InicioProfesores(0, profesor);
-                return true;
-            }
-            //std::cout<<"\t|->Contraseña Incorrecta\n";
-        }
-    } 
-    std::cout<<"Credenciales Erróneos o el Usuario no ha sido encontrado\n";
-    return false;
-}
-
-void InicioAlumnos(int menu, Alumno alumno){
-    std::cout<<"Alumno: "<<alumno.GetNombre()<<"\n";
-    while(menu!=4){
-        std::cout<<"1 --> Listar Universidades\n2 --> Proceder al Formulario\n3 --> Consultar Estado de mi Solicitud\n4 --> Cerrar Sesión\n\t->";
-        std::cin>>menu;
-        int estado;
-        switch(menu){
+        switch (opcion) {
             case 1:
-                ListarUniversidades();
-                break;
+                // Implementar inscripción a un plan de Convalidación
+                    plandeConvalidacion(alumnos);
+                break;            
             case 2:
-                std::cout<<"Formulario\n";
-                HacerFormulario(alumno);
+                // Implementar inscripción al SICUE
+                    planSICUE(alumnos);
                 break;
             case 3:
-                estado=EstadoSolicitud(alumno);
+                // Implementar consulta de Planes de Convalidación según la carrera
+                std::cout << "\n\t->Se podrán seleccionar 6 asignaturas a convalidar\n\n";
                 break;
+            case 4:
+                // Implementar consulta de la inscripción al plan de Convalidación
+                    consultarConvalidacion(alumnos);
+                break;
+            case 5:
+                // Implementar anulación de inscripción
+                    anularInscripcion(alumnos);
+                break;
+            case 6:
+                std::cout << "\n\tSaliendo del menú Alumno...\n";
+                break;
+            default:
+                std::cout << "\n---Opción no válida. Intente de nuevo---\n\n";
         }
+    } while (opcion != 6);
+}
+
+void menuProfesor(std::vector<Profesor>& profesores) {
+    int opcion;
+    do {
+        std::cout << "Menu Profesor:\n";
+        std::cout << "1. Inscribirse al SICUE\n";
+        std::cout << "2. Ver el estado de su solicitud\n";
+        std::cout << "3. Salir\n";
+        std::cout << "Seleccione una opción: ";
+        std::cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                // Implementar inscripción al SICUE
+                break;
+            case 2:
+                // Implementar consulta del estado de la solicitud
+                break;
+            case 3:
+                std::cout << "Saliendo del menú Profesor...\n";
+                break;
+            default:
+                std::cout << "Opción no válida. Intente de nuevo.\n";
+        }
+    } while (opcion != 3);
+}
+
+void menuAdmin(std::vector<Admin>& admins) {
+    int opcion;
+    do {
+        std::cout << "Menu Admin:\n";
+        std::cout << "1. Creación plan de convalidación\n";
+        std::cout << "2. Salir\n";
+        std::cout << "Seleccione una opción: ";
+        std::cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                // Implementar creación de plan de convalidación
+                break;
+            case 2:
+                std::cout << "Saliendo del menú Admin...\n";
+                break;
+            default:
+                std::cout << "Opción no válida. Intente de nuevo.\n";
+        }
+    } while (opcion != 2);
+}
+
+void plandeConvalidacion(std::vector<Alumno>& alumnos) {
+    std::string nombre_usuario, contrasena;
+    std::cout << "\nIngrese su nombre de usuario: \n\t->";
+    std::cin >> nombre_usuario;
+    std::cout << "\nIngrese su contraseña: \n\t->";
+    std::cin >> contrasena;
+
+    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
+        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
+    });
+
+    if (it != alumnos.end()) {
+        std::cout << "\nAlumno encontrado. Ingrese las asignaturas que desea convalidar (máximo 6):\n";
+        std::vector<std::string> asignaturas;
+        std::string asignatura;
+        for (int i = 0; i < 6; ++i) {
+            
+            std::cout << "\n\tAsignatura " << i + 1 << ":\n\t\t->";
+            std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+            std::getline(std::cin, asignatura);
+            std::replace(asignatura.begin(), asignatura.end(), ' ', '_');
+            asignaturas.push_back(asignatura);
+            char opcion;
+            std::cout << "¿Desea agregar otra asignatura? (s/n): ";
+            std::cin >> opcion;
+            
+            if (opcion == 'n' || opcion == 'N') {
+                while (asignaturas.size() < 6) {
+                    asignaturas.push_back("asignatura");
+                }
+                i=6;
+            }
+
+            
+        }
+        
+        it->SetAsignaturas(asignaturas);
+        std::cout << "\n\t---Asignaturas convalidadas correctamente---\n\n";
+    } else {
+        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
     }
 }
 
-void InicioProfesores(int menu, Profesor profesor){
+void planSICUE(std::vector<Alumno>& alumnos) {
+    std::string nombre_usuario, contrasena;
+    std::cout << "Ingrese su nombre de usuario: \n\t->";
+    std::cin >> nombre_usuario;
+    std::cout << "Ingrese su contraseña: \n\t->";
+    std::cin >> contrasena;
 
+    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
+        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
+    });
 
-}
+    if (it != alumnos.end()) {
+        std::cout << "\nAlumno encontrado. Ingrese las universidades a las que desea inscribirse (máximo 5):\n";
+        std::vector<std::string> universidades;
+        std::string universidad;
+        for (int i = 0; i < 5; ++i) {
+            std::cout << "\nUniversidad " << i + 1 << ": \n\t\t->";
+            std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+            std::getline(std::cin, universidad);
+            std::replace(universidad.begin(), universidad.end(), ' ', '_');
+            universidades.push_back(universidad);
+            char opcion;
+            std::cout << "¿Desea agregar otra universidad? (s/n): ";
+            std::cin >> opcion;
 
-void InicioAdmins(int menu, Admin admin){
+            if (opcion == 'n' || opcion == 'N') {
+                while (universidades.size() < 5) {
+                    universidades.push_back("universidad");
+                }
+                break;
+            }
+        }
 
-
-}
-
-void ListarUniversidades(){
-    std::cout<<"Universidades Disponibles:\n";
-    std::cout<<"\tAndalucia:\n\t\t-Universidad de Almeria\n\t\t-Universidad de Cadiz\n\t\t-Universidad de Cordoba\n\t\t-Universidad de Granada\n\t\t-Universidad de Huelva\n\t\t-Universidad de Jaen\n\t\t-Universidad de Malaga\n\t\t-Universidad de Sevilla\n";
-    std::cout<<"\tAragon:\n\t\t-Universidad de Zaragoza\n\t\t-Universidad San Jorge\n";
-    std::cout<<"\tAsturias:\n\t\t-Universidad de Oviedo\n";
-    std::cout<<"\tIslas Canarias:\n\t\t-Universidad de Las Palmas de Gran Canaria\n\t\t-Universidad de La Laguna\n";
-    std::cout<<"\tCantabria:\n\t\t-Universidad de Cantabria\n";
-    std::cout<<"\tCastilla y Leon:\n\t\t-Universidad de Burgos\n\t\t-Universidad de Leon\n\t\t-Universidad de Salamanca\n\t\t-Universidad de Valladolid\n";
-    std::cout<<"\tCastilla-La Mancha:\n\t\t-Universidad de Castilla-La Mancha\n";
-    std::cout<<"\tCataluña:\n\t\t-Universidad de Barcelona\n\t\t-Universidad Autonoma de Barcelona\n\t\t-Universidad Politecnica de Cataluña\n\t\t-Universidad Pompeu Fabra\n\t\t-Universidad Ramon Llull\n\t\t-Universidad Rovira i Virgili\n\t\t-Universidad Internacional de Cataluña\n";
-    std::cout<<"\tComunidad de Madrid:\n\t\t-Universidad Autonoma de Madrid\n\t\t-Universidad Carlos III de Madrid\n\t\t-Universidad Complutense de Madrid\n\t\t-Universidad Politecnica de Madrid\n\t\t-Universidad Rey Juan Carlos\n\t\t-Universidad de Alcala\n";
-    std::cout<<"\tComunidad Foral de Navarra:\n\t\t-Universidad Publica de Navarra\n";
-    std::cout<<"\tComunidad Valenciana:\n\t\t-Universidad de Alicante\n\t\t-Universidad Jaume I\n\t\t-Universidad Miguel Hernandez\n\t\t-Universidad Politecnica de Valencia\n\t\t-Universidad de Valencia\n";
-    std::cout<<"\tExtremadura:\n\t\t-Universidad de Extremadura\n";
-    std::cout<<"\tGalicia:\n\t\t-Universidad de A Coruña\n\t\t-Universidad de Santiago de Compostela\n\t\t-Universidad de Vigo\n";
-    std::cout<<"\tIslas Baleares:\n\t\t-Universidad de las Islas Baleares\n";
-    std::cout<<"\tLa Rioja:\n\t\t-Universidad de La Rioja\n";
-    std::cout<<"\tPais Vasco:\n\t\t-Universidad del Pais Vasco\n\t\t-Universidad de Deusto\n\t\t-Universidad de Mondragon\n";
-    std::cout<<"\tRegion de Murcia:\n\t\t-Universidad de Murcia\n\t\t-Universidad Politecnica de Cartagena\n";
-};
-
-void HacerFormulario(Alumno &alumno){
-    std::cout<<"Alumno: "<<alumno.GetNombre()<<"\n";
-    if(alumno.GetConsulta()>0){
-        std::cout<<"Ya hay un formulario en proceso\n";
-        return;
+        it->SetUniversidad(universidades);
+        std::cout << "\n\t---Universidades inscritas correctamente---\n\n";
+    } else {
+        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
     }
-    std::string DNI, nombre, apellido1, apellido2, sexo, carrera;
-    int edad, cuatrimestre, curso;
-
-    std::cout<<"DNI: "<<alumno.GetDNI()<<"\n";
-    std::cout<<"Nombre: "<<alumno.GetNombre()<<"\n";
-    std::cout<<"Apellidos: "<<alumno.GetApellidos()<<"\n";
-    std::cout<<"Sexo: "<<alumno.GetSexo()<<"\n";
-    std::cout<<"Edad: "<<alumno.GetEdad()<<"\n";
-    std::cout<<"Carrera: "<<alumno.GetCarrera();
-    std::cout<<"\nCuatrimestre actual: "<<alumno.GetCuatrimestre();
-    std::cout<<"\nCurso actual: "<<alumno.GetCurso();
-    std::cout<<"\nPresione Enter si los datos son correctos\n";
-    std::cin.ignore();
-    std::cin.get();
-    std::cout<<"Ingrese el cuatrimestre que desea para el intercambio: ";
-    std::cin>>cuatrimestre;
-    alumno.SetCuatrimestre(cuatrimestre);
-    std::cout<<"Ingrese el curso que desea para el intercambio: ";
-    std::cin>>curso;
-    alumno.SetCurso(curso);
-
-    std::vector<std::string> universidades;
-
-    std::cout<<"Eliga las universidades a las que desea aplicar (Max 5): ";
-    std::string universidad;
-
-    ListarUniversidades();
-
-    
-    for (int i = 0; i < 5; ++i) {
-        std::cout << "Ingrese la universidad " << i + 1 << ": ";
-        std::cin.ignore();
-        std::getline(std::cin, universidad);
-
-        if (universidad.empty()) break;
-        universidades.push_back(universidad);
-    }
-
-    alumno.SetUniversidad(universidades);
-    alumno.SetConsulta(alumno.GetConsulta() + 1);
-
-    std::cout << "Formulario completado.\n";
-    std::cout << "Espere a ser aceptado. Su formulario ha sido registrado correctamente.\n";
 }
 
-int EstadoSolicitud(Alumno alumno){
-    std::cout<<"Alumno: " << alumno.GetNombre()<<"\n";
-    std::cout<<"Solicitudes: " << alumno.GetConsulta()<<"\n";
-    if(alumno.GetConsulta()==0){
-        std::cout<<"No hay ninguna solicitud en proceso\n";
-        return 0;
-    }
 
-    srand(time(NULL));
-    int estado=rand()% alumno.GetUniversidad().size();
-
-    std::cout<<"Su solicitud ha sido aceptada en "<<alumno.GetUniversidad()[estado]<<"\n";
-    
-    return estado;
+std::string getRandomElement(const std::vector<std::string>& vec, int maxIndex) {
+    int index;
+    do {
+        index = rand() % maxIndex;
+    } while (vec[index] == "universidad" || vec[index] == "asignatura");
+    return vec[index];
 }
 
-bool validarDNI(const std::string& dni) {
-    // Comprobar longitud y formato básico (8 dígitos y 1 letra)
-    if (dni.length() != 9) return false;
+void consultarConvalidacion(std::vector<Alumno>& alumnos) {
+    std::string nombre_usuario, contrasena;
+    std::cout << "Ingrese su nombre de usuario: \n\t->";
+    std::cin >> nombre_usuario;
+    std::cout << "Ingrese su contraseña: \n\t->";
+    std::cin >> contrasena;
+    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
+        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
+    });
+    if (it != alumnos.end()) {
+        std::cout << "\nAlumno encontrado. Consultando inscripción...\n";
+        srand(time(0));
+        std::string universidad_aceptada = getRandomElement(it->GetUniversidad(), 5);
+        std::cout << "\n\t-> Ha sido aceptado en la universidad: " << universidad_aceptada << "\n";
 
-    // Comprobar si los primeros 8 caracteres son dígitos
-    for (int i = 0; i < 8; ++i) {
-        if (!isdigit(dni[i])) return false;
+        int num_asignaturas_aceptadas = rand() % 7; // Número aleatorio entre 0 y 6
+
+        if(num_asignaturas_aceptadas == 0) {
+            std::cout << "\n\t-> No se han aceptado asignaturas.\n";
+            return;
+        }
+
+        for (int i = 0; i < num_asignaturas_aceptadas; ++i) {
+            if (it->GetAsignaturas()[i] != "asignatura") {
+            std::cout << "\n\t-> Asignatura aceptada: " << it->GetAsignaturas()[i] << "\n";
+            }
+        }
+    } else {
+        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
     }
-
-    // Comprobar si el último carácter es una letra
-    char letra = dni[8];
-    if (!isalpha(letra)) return false;
-
-    // Array con las letras válidas según el módulo 23
-    const std::string letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-
-    // Convertir los primeros 8 dígitos a un número entero
-    int numero = std::stoi(dni.substr(0, 8));
-
-    // Calcular la letra correspondiente
-    char letraCalculada = letras[numero % 23];
-
-    // Comparar la letra calculada con la introducida (ignorando mayúsculas o minúsculas)
-    return (toupper(letra) == letraCalculada);
 }
+
+void anularInscripcion(std::vector<Alumno>& alumnos){
+    std::string nombre_usuario, contrasena;
+    std::cout << "Ingrese su nombre de usuario: \n\t->";
+    std::cin >> nombre_usuario;
+    std::cout << "Ingrese su contraseña: \n\t->";
+    std::cin >> contrasena;
+
+    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
+        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
+    });
+
+    if (it != alumnos.end()) {
+        char confirmacion;
+        std::cout << "\nAlumno encontrado. ¿Está seguro de que desea anular la inscripción? (s/n): ";
+        std::cin >> confirmacion;
+
+        if (confirmacion == 's' || confirmacion == 'S') {
+            std::vector<std::string> universidades(5, "universidad");
+            std::vector<std::string> asignaturas(6, "asignatura");
+            it->SetUniversidad(universidades);
+            it->SetAsignaturas(asignaturas);
+            std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
+        } else {
+            std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
+        }
+    } else {
+        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
+    }
+}
+
 
 void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins) {
     std::ifstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/alumnos.txt");
     std::ifstream archivo_profesores("/workspaces/ISO-405/build/src/aplicacion/profesores.txt");
     std::ifstream archivo_admins("/workspaces/ISO-405/build/src/aplicacion/admins.txt");
-    std::ifstream archivo_solicitudesAlumnos("/workspaces/ISO-405/build/src/aplicacion/solicitudesAlumnos.txt");
-    
+
     std::cout<<"Leyendo alumnos.txt\n";
     if (archivo_alumnos.is_open()) {
         std::string linea;
         while (getline(archivo_alumnos, linea)) {
             std::istringstream iss(linea);
-            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, carrera, u1,u2,u3,u4,u5;
+            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, carrera, u1,u2,u3,u4,u5,a1,a2,a3,a4,a5,a6;
             int edad, consulta, cuatrimestre, curso, matricula;
             std::vector<std::string> asignaturas, universidad;
-            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena >> carrera >> cuatrimestre >> curso >> matricula >> u1 >> u2 >> u3 >> u4 >> u5;
+            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena >> carrera >> cuatrimestre >> curso >> matricula >> u1 >> u2 >> u3 >> u4 >> u5 >> a1 >> a2 >> a3 >> a4 >> a5 >> a6;
             universidad.push_back(u1);
             universidad.push_back(u2);
             universidad.push_back(u3);
             universidad.push_back(u4);
             universidad.push_back(u5);
+            asignaturas.push_back(a1);
+            asignaturas.push_back(a2);
+            asignaturas.push_back(a3);
+            asignaturas.push_back(a4);
+            asignaturas.push_back(a5);
+            asignaturas.push_back(a6);
             Alumno alumno(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
             alumnos.push_back(alumno);
         }
@@ -319,28 +311,6 @@ void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, s
     } else {
         std::cout << "\tError al abrir el archivo de admins.\n";
     }
-    /*
-    std::cout<<"Leyendo solicitudesAlumnos.txt\n";
-    if (archivo_solicitudesAlumnos.is_open()) {
-        std::string linea;
-        while (getline(archivo_solicitudesAlumnos, linea)) {
-            std::istringstream iss(linea);
-            std::string dni, nombre, apellidos, sexo, nombre_usuario, contrasena, carrera, u1,u2,u3,u4,u5;
-            int edad, consulta, cuatrimestre, curso, matricula;
-            std::vector<std::string> asignaturas, universidad;
-            iss >> dni >> nombre >> apellidos >> sexo >> edad >> consulta >> nombre_usuario >> contrasena >> carrera >> cuatrimestre >> curso >> matricula >> u1 >> u2 >> u3 >> u4 >> u5;
-            universidad.push_back(u1);
-            universidad.push_back(u2);
-            universidad.push_back(u3);
-            universidad.push_back(u4);
-            universidad.push_back(u5);
-            Alumno alumno(dni, nombre, apellidos, sexo, edad, consulta, nombre_usuario, contrasena, carrera, asignaturas, cuatrimestre, curso, matricula, universidad);
-            alumnos.push_back(alumno);
-        }
-        archivo_alumnos.close();
-    } else {
-        std::cout << "\tError al abrir el archivo de alumnos.\n";
-    }*/
 }
 
 void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& profesores, const std::vector<Admin>& admins) {
@@ -353,6 +323,10 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
                             << alumno.GetCuatrimestre() << " " << alumno.GetCurso() << " " << alumno.GetMatricula();
             for (const auto& universidad : alumno.GetUniversidad()) {
                 archivo_alumnos << " " << universidad;
+            }
+
+            for (const auto& asignatura : alumno.GetAsignaturas()) {
+                archivo_alumnos << " " << asignatura;
             }
             archivo_alumnos << "\n";
         }
@@ -383,24 +357,5 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
         archivo_admins.close();
     } else {
         std::cout << "Error al abrir el archivo de admins para escribir.\n";
-    }
-}
-
-void guardaAlumno(std::vector<Alumno>& alumnos){ //solicitudes
-    std::ofstream archivo_alumnos("/workspaces/ISO-405/build/src/aplicacion/solicitudesAlumnos.txt");
-    if (archivo_alumnos.is_open()) { 
-        for (auto alumno : alumnos){
-            archivo_alumnos << alumno.GetDNI() << " " << alumno.GetNombre() << " " << alumno.GetApellidos() << " "
-                            << alumno.GetSexo() << " " << alumno.GetEdad() << " " << alumno.GetConsulta() << " "
-                            << alumno.GetNombreUsuario() << " " << alumno.GetContrasena() << " " << alumno.GetCarrera() << " "
-                            << alumno.GetCuatrimestre() << " " << alumno.GetCurso() << " " << alumno.GetMatricula();
-            for (const auto& universidad : alumno.GetUniversidad()) {
-                archivo_alumnos << " " << universidad;
-            }
-            archivo_alumnos << "\n";
-        }
-        archivo_alumnos.close();
-    } else {
-        std::cout << "Error al abrir el archivo de alumnos para escribir.\n";
     }
 }
