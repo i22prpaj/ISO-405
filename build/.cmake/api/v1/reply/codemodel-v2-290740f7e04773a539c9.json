@@ -107,7 +107,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -138,42 +138,42 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "admin::@71b7fb986e7fc369ee49",
-					"jsonFile" : "target-admin-a16b186e2c17cc2af43c.json",
+					"jsonFile" : "target-admin-Debug-d45a7637ce56f72bf4d6.json",
 					"name" : "admin",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "alumno::@7a109cd2627f9c6684b7",
-					"jsonFile" : "target-alumno-d6a4a7bf135bc15d887c.json",
+					"jsonFile" : "target-alumno-Debug-f55f7c3af7b52bcbdf02.json",
 					"name" : "alumno",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "aplicacion::@f2c3e2fcb9ac6d1b5b3c",
-					"jsonFile" : "target-aplicacion-cce6c3f007d42bbe6935.json",
+					"jsonFile" : "target-aplicacion-Debug-0f0cf5dc43f5433117d4.json",
 					"name" : "aplicacion",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "aplicacion-main::@f2c3e2fcb9ac6d1b5b3c",
-					"jsonFile" : "target-aplicacion-main-08dbb6fc18ab307f958f.json",
+					"jsonFile" : "target-aplicacion-main-Debug-3ca5dd28d827f58c1654.json",
 					"name" : "aplicacion-main",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 5,
 					"id" : "profesor::@59dcca903b598914e8f3",
-					"jsonFile" : "target-profesor-c455a46ae009551fa34e.json",
+					"jsonFile" : "target-profesor-Debug-805a74d1e0711e6f853a.json",
 					"name" : "profesor",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "usuario::@049649831c63a5dd1c74",
-					"jsonFile" : "target-usuario-179f1f3015876c5a83e4.json",
+					"jsonFile" : "target-usuario-Debug-f5e939a9544d315a579c.json",
 					"name" : "usuario",
 					"projectIndex" : 0
 				}

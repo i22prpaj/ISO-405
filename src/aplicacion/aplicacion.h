@@ -21,9 +21,12 @@ void menuAdmin(std::vector<Admin> &admins);
 
 
 void plandeConvalidacion(std::vector<Alumno>& alumnos);
-void planSICUE(std::vector<Alumno>& alumnos);
+void SICUEalumnos(std::vector<Alumno>& alumnos);
+void SICUEprofesor(std::vector<Profesor>& profesores);
 void consultarConvalidacion(std::vector<Alumno>& alumnos);
-void anularInscripcion(std::vector<Alumno>& alumnos);
+void consultarEstadoSolicitud(std::vector<Profesor>& profesores);
+void anularInscripcionAlumno(std::vector<Alumno>& alumnos);
+void anularInscripcionProfesor(std::vector<Profesor>& profesores);
 
 void cargarBD(std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<Admin>& admins);
 void guardarBD(const std::vector<Alumno> &alumnos, const std::vector<Profesor> &profesores, const std::vector<Admin> &admins);
