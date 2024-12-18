@@ -18,27 +18,33 @@ void menuAlumno(std::vector<Alumno>& alumnos) {
         std::cout << "\t6. Salir\n";
         std::cout << "\tSeleccione una opción: \n\t->";
         std::cin >> opcion;
-
+        if(true)
+            system("clear"); // Para sistemas Unix/Linux
         switch (opcion) {
             case 1:
                 // Implementar inscripción al SICUE
-                    planSICUE(alumnos);
+                std::cout << "1. Inscribirse al SICUE\n";
+                planSICUE(alumnos);
                 break;
             case 2:
                 // Implementar inscripción a un plan de Convalidación
-                    plandeConvalidacion(alumnos);
+                std::cout << "2. Inscribirse a un plan de Convalidación\n";
+                plandeConvalidacion(alumnos);
                 break;            
             case 3:
                 // Implementar consulta de Planes de Convalidación según la carrera
+                std::cout << "3. Consultar los Planes de Convalidación según la carrera\n";
                 std::cout << "\n\t->Se podrán seleccionar 6 asignaturas a convalidar\n\n";
                 break;
             case 4:
                 // Implementar consulta de la inscripción al plan de Convalidación
-                    consultarConvalidacion(alumnos);
+                std::cout << "4. Consultar la inscripción al plan de Convalidación\n";
+                consultarConvalidacion(alumnos);
                 break;
             case 5:
                 // Implementar anulación de inscripción
-                    anularInscripcion(alumnos);
+                std::cout << "5. Anular inscripción\n";
+                anularInscripcion(alumnos);
                 break;
             case 6:
                 std::cout << "\n\tSaliendo del menú Alumno...\n";
@@ -46,6 +52,10 @@ void menuAlumno(std::vector<Alumno>& alumnos) {
             default:
                 std::cout << "\n---Opción no válida. Intente de nuevo---\n\n";
         }
+        std::cout << "Presione Enter para continuar...";
+        std::cin.ignore();
+        std::cin.get();
+        system("clear"); // Para sistemas Unix/Linux
     } while (opcion != 6);
 }
 
@@ -59,7 +69,8 @@ void menuProfesor(std::vector<Profesor>& profesores) {
         std::cout << "4. Salir\n";
         std::cout << "Seleccione una opción: ";
         std::cin >> opcion;
-
+        if(true)
+            system("clear"); // Para sistemas Unix/Linux
         switch (opcion) {
             case 1:
                 // Implementar inscripción al SICUE
@@ -79,6 +90,10 @@ void menuProfesor(std::vector<Profesor>& profesores) {
             default:
                 std::cout << "Opción no válida. Intente de nuevo.\n";
         }
+        std::cout << "Presione Enter para continuar...";
+        std::cin.ignore();
+        std::cin.get();
+        system("clear"); // Para sistemas Unix/Linux
     } while (opcion != 4);
 }
 
@@ -90,7 +105,8 @@ void menuAdmin(std::vector<Admin>& admins) {
         std::cout << "2. Salir\n";
         std::cout << "Seleccione una opción: ";
         std::cin >> opcion;
-
+        if(true)
+            system("clear"); // Para sistemas Unix/Linux
         switch (opcion) {
             case 1:
                 // Implementar creación de plan de convalidación
@@ -101,6 +117,10 @@ void menuAdmin(std::vector<Admin>& admins) {
             default:
                 std::cout << "Opción no válida. Intente de nuevo.\n";
         }
+        std::cout << "Presione Enter para continuar...";
+        std::cin.ignore();
+        std::cin.get();
+        system("clear"); // Para sistemas Unix/Linux
     } while (opcion != 2);
 }
 
