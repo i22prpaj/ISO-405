@@ -1,1 +1,2 @@
-32733756H Alvaro Villalba_Aranda H 20 1 p22vilaa aaa 32767 980158112 29091 0 cordoba universidad universidad universidad universidad algebra asignatura asignatura asignatura asignatura asignatura
+32733756H Álvaro Villalba_Aranda H 20 0 p22vilaa aaa Informatica 2 2 1234 universidad universidad universidad universidad universidad asignatura asignatura asignatura asignatura asignatura asignatura
+26827577D Juan_Luis Prieto_Panadero H 20 2 i22prpaj juanlu04 Informatica 2 2 12203 pureba1 universidad universidad universidad universidad abatucam asignatura asignatura asignatura asignatura asignatura
