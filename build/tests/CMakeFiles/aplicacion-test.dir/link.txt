@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/aplicacion-test.dir/aplicacion-test.cc.o  -o aplicacion-test  ../src/aplicacion/libaplicacion.a ../lib/libgtest_main.a ../lib/libgmock_main.a ../lib/libgmock.a ../lib/libgtest.a -lpthread ../src/alumno/libalumno.a ../src/profesor/libprofesor.a ../src/admin/libadmin.a ../src/usuario/libusuario.a 

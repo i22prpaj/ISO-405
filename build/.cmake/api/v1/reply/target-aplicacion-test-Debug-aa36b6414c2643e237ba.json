@@ -1,0 +1,224 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "tests/aplicacion-test"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries"
+		],
+		"files" : 
+		[
+			"tests/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 30,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g  "
+				},
+				{
+					"fragment" : "-std=gnu++17"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/workspaces/ISO-405/src/aplicacion"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/workspaces/ISO-405/src/usuario"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/workspaces/ISO-405/src/alumno"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/workspaces/ISO-405/src/profesor"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/workspaces/ISO-405/src/admin"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/workspaces/ISO-405/build/_deps/googletest-src/googletest/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/workspaces/ISO-405/build/_deps/googletest-src/googletest"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/workspaces/ISO-405/build/_deps/googletest-src/googlemock/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/workspaces/ISO-405/build/_deps/googletest-src/googlemock"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "admin::@71b7fb986e7fc369ee49"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "usuario::@049649831c63a5dd1c74"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "alumno::@7a109cd2627f9c6684b7"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "profesor::@59dcca903b598914e8f3"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "aplicacion::@f2c3e2fcb9ac6d1b5b3c"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "gmock_main::@0f7bb11d64f3678238c7"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "gmock::@0f7bb11d64f3678238c7"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
+		}
+	],
+	"id" : "aplicacion-test::@a44f0ac069e85531cdee",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "../src/aplicacion/libaplicacion.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../lib/libgtest_main.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../lib/libgmock_main.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../lib/libgmock.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../lib/libgtest.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../src/alumno/libalumno.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../src/profesor/libprofesor.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../src/admin/libadmin.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../src/usuario/libusuario.a",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "aplicacion-test",
+	"nameOnDisk" : "aplicacion-test",
+	"paths" : 
+	{
+		"build" : "tests",
+		"source" : "tests"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/aplicacion-test.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
