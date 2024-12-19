@@ -16,24 +16,24 @@
 #include <ctime>
 
 //Menus
-void menuAlumno(std::vector<Alumno> &alumnos);
-void menuProfesor(std::vector<Profesor> &profesores);
+void menuAlumno(Alumno& alumno);
+void menuProfesor(Profesor& profesor);
 void menuAdmin(std::vector<Admin> &admins, std::vector<Alumno> &alumnos, std::vector<Profesor> &profesores);
 //Fin Menus
 
 
 //Alumno
-void plandeConvalidacion(std::vector<Alumno>& alumnos);
-void planSICUE(std::vector<Alumno>& alumnos);
-void consultarConvalidacion(std::vector<Alumno>& alumnos);
-void anularInscripcion(std::vector<Alumno>& alumnos);
+void planSICUE(Alumno& alumno);
+void plandeConvalidacion(Alumno& alumno);
+void consultarConvalidacion(Alumno& alumno);
+void anularInscripcion(Alumno& alumno);
 //Fin Alumno
 
 
 //Profesor
-void SICUEprofesor(std::vector<Profesor>& profesores);
-void consultarEstadoSolicitud(std::vector<Profesor>& profesores);
-void anularInscripcionProfesor(std::vector<Profesor>& profesores);
+void SICUEprofesor(Profesor& profesor);
+void consultarEstadoSolicitud(Profesor& profesor);
+void anularInscripcionProfesor(Profesor& profesor);
 //Fin Profesor
 
 

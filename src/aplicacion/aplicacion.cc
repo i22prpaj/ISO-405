@@ -6,10 +6,10 @@
 ============================================================================================================*/
 
 
-void menuAlumno(std::vector<Alumno>& alumnos) {
+void menuAlumno(Alumno& alumno) {
     int opcion;
     do {
-        std::cout << "\nMenu Alumno:\n";
+        std::cout << "\nMenu Alumno (" << alumno.GetNombreUsuario() << "):\n";
         std::cout << "\t1. Inscribirse al SICUE\n";
         std::cout << "\t2. Inscribirse a un plan de Convalidación\n";
         std::cout << "\t3. Consultar los Planes de Convalidación según la carrera\n";
@@ -24,12 +24,12 @@ void menuAlumno(std::vector<Alumno>& alumnos) {
             case 1:
                 // Implementar inscripción al SICUE
                 std::cout << "1. Inscribirse al SICUE\n";
-                planSICUE(alumnos);
+                planSICUE(alumno);
                 break;
             case 2:
                 // Implementar inscripción a un plan de Convalidación
                 std::cout << "2. Inscribirse a un plan de Convalidación\n";
-                plandeConvalidacion(alumnos);
+                plandeConvalidacion(alumno);
                 break;            
             case 3:
                 // Implementar consulta de Planes de Convalidación según la carrera
@@ -39,12 +39,12 @@ void menuAlumno(std::vector<Alumno>& alumnos) {
             case 4:
                 // Implementar consulta de la inscripción al plan de Convalidación
                 std::cout << "4. Consultar la inscripción al plan de Convalidación\n";
-                consultarConvalidacion(alumnos);
+                consultarConvalidacion(alumno);
                 break;
             case 5:
                 // Implementar anulación de inscripción
                 std::cout << "5. Anular inscripción\n";
-                anularInscripcion(alumnos);
+                anularInscripcion(alumno);
                 break;
             case 6:
                 std::cout << "\n\tSaliendo del menú Alumno...\n";
@@ -59,10 +59,10 @@ void menuAlumno(std::vector<Alumno>& alumnos) {
     } while (opcion != 6);
 }
 
-void menuProfesor(std::vector<Profesor>& profesores) {
+void menuProfesor(Profesor& profesor) {
     int opcion;
     do {
-        std::cout << "Menu Profesor:\n";
+        std::cout << "\nMenu Profesor (" << profesor.GetNombreUsuario() << "):\n";
         std::cout << "1. Inscribirse al SICUE\n";
         std::cout << "2. Ver el estado de su solicitud\n";
         std::cout << "3. Anular inscripción\n";
@@ -75,17 +75,17 @@ void menuProfesor(std::vector<Profesor>& profesores) {
             case 1:
                 // Implementar inscripción al SICUE
                 std::cout << "1. Inscribirse al SICUE\n";
-                SICUEprofesor(profesores);
+                SICUEprofesor(profesor);
                 break;
             case 2:
                 // Implementar consulta del estado de la solicitud
                 std::cout << "2. Ver el estado de su solicitud\n";
-                consultarEstadoSolicitud(profesores);
+                consultarEstadoSolicitud(profesor);
                 break;
             case 3:
                 // Implementar anulación de inscripción
                 std::cout << "3. Anular inscripción\n";
-                anularInscripcionProfesor(profesores);
+                anularInscripcionProfesor(profesor);
                 break;
             case 4:
                 std::cout << "Saliendo del menú Profesor...\n";
@@ -145,23 +145,12 @@ void menuAdmin(std::vector<Admin>& admins, std::vector<Alumno>& alumnos, std::ve
 ============================       FUNCIONES ALUMNOS     ===================================================
 ============================================================================================================*/
 
-void planSICUE(std::vector<Alumno>& alumnos) {
-    std::string nombre_usuario, contrasena;
-    std::cout << "Ingrese su nombre de usuario: \n\t->";
-    std::cin >> nombre_usuario;
-    std::cout << "Ingrese su contraseña: \n\t->";
-    std::cin >> contrasena;
-
-    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
-        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
-    });
-
-    if (it != alumnos.end()) {
-        if (it->GetConsulta() == 0) {
-            std::cout << "\nAlumno encontrado. Ingrese las universidades a las que desea inscribirse (máximo 5):\n";
-            std::vector<std::string> universidades;
-            std::string universidad;
-            for (int i = 0; i < 5; ++i) {
+void planSICUE(Alumno& alumno) {
+    if (alumno.GetConsulta() == 0) {
+        std::cout << "\nAlumno encontrado. Ingrese las universidades a las que desea inscribirse (máximo 5):\n";
+        std::vector<std::string> universidades;
+        std::string universidad;
+        for (int i = 0; i < 5; ++i) {
             std::cout << "\nUniversidad " << i + 1 << ": \n\t\t->";
             std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
             std::getline(std::cin, universidad);
@@ -173,181 +162,134 @@ void planSICUE(std::vector<Alumno>& alumnos) {
 
             if (opcion == 'n' || opcion == 'N') {
                 while (universidades.size() < 5) {
-                universidades.push_back("universidad");
+                    universidades.push_back("universidad");
                 }
                 break;
             }
-            }
-
-            it->SetUniversidad(universidades);
-            std::cout << "\n\t---Universidades inscritas correctamente---\n\n";
-            it->SetConsulta(1);
-        } else {
-            std::cout << "\n\t---Ya hay una solicitud en progreso---\n\n";
         }
+
+        alumno.SetUniversidad(universidades);
+        std::cout << "\n\t---Universidades inscritas correctamente---\n\n";
+        alumno.SetConsulta(1);
     } else {
-        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
+        std::cout << "\n\t---Ya hay una solicitud en progreso---\n\n";
     }
 }
 
-void plandeConvalidacion(std::vector<Alumno>& alumnos) {
-    std::string nombre_usuario, contrasena;
-    std::cout << "\nIngrese su nombre de usuario: \n\t->";
-    std::cin >> nombre_usuario;
-    std::cout << "\nIngrese su contraseña: \n\t->";
-    std::cin >> contrasena;
+void plandeConvalidacion(Alumno& alumno) {
+    if (alumno.GetConsulta() == 1) {
+        std::cout << "\nAlumno encontrado. Ingrese las asignaturas que desea convalidar (máximo 6):\n";
+        std::vector<std::string> asignaturas;
+        std::string asignatura;
+        for (int i = 0; i < 6; ++i) {
+            std::cout << "\n\tAsignatura " << i + 1 << ":\n\t\t->";
+            std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+            std::getline(std::cin, asignatura);
+            std::replace(asignatura.begin(), asignatura.end(), ' ', '_');
+            asignaturas.push_back(asignatura);
+            char opcion;
+            std::cout << "¿Desea agregar otra asignatura? (s/n): ";
+            std::cin >> opcion;
 
-    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
-        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
-    });
-
-    if (it != alumnos.end()) {
-        
-            if (it->GetConsulta() == 1) {
-                std::cout << "\nAlumno encontrado. Ingrese las asignaturas que desea convalidar (máximo 6):\n";
-                std::vector<std::string> asignaturas;
-                std::string asignatura;
-                for (int i = 0; i < 6; ++i) {
-                    std::cout << "\n\tAsignatura " << i + 1 << ":\n\t\t->";
-                    std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
-                    std::getline(std::cin, asignatura);
-                    std::replace(asignatura.begin(), asignatura.end(), ' ', '_');
-                    asignaturas.push_back(asignatura);
-                    char opcion;
-                    std::cout << "¿Desea agregar otra asignatura? (s/n): ";
-                    std::cin >> opcion;
-
-                    if (opcion == 'n' || opcion == 'N') {
-                        while (asignaturas.size() < 6) {
-                            asignaturas.push_back("asignatura");
-                        }
-                        break;
-                    }
+            if (opcion == 'n' || opcion == 'N') {
+                while (asignaturas.size() < 6) {
+                    asignaturas.push_back("asignatura");
                 }
+                break;
+            }
+        }
 
-                it->SetAsignaturas(asignaturas);
-                std::cout << "\n\t---Asignaturas convalidadas correctamente---\n\n";
-                it->SetConsulta(2);
-            } else if (it->GetConsulta() == 2) {
+        alumno.SetAsignaturas(asignaturas);
+        std::cout << "\n\t---Asignaturas convalidadas correctamente---\n\n";
+        alumno.SetConsulta(2);
+    } else if (alumno.GetConsulta() == 2) {
+        char opcion;
+        std::cout << "\nYa ha seleccionado las asignaturas. ¿Desea modificar su elección? (s/n): ";
+        std::cin >> opcion;
+
+        if (opcion == 's' || opcion == 'S') {
+            std::cout << "\nIngrese las nuevas asignaturas que desea convalidar (máximo 6):\n";
+            std::vector<std::string> asignaturas;
+            std::string asignatura;
+            for (int i = 0; i < 6; ++i) {
+                std::cout << "\n\tAsignatura " << i + 1 << ":\n\t\t->";
+                std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+                std::getline(std::cin, asignatura);
+                std::replace(asignatura.begin(), asignatura.end(), ' ', '_');
+                asignaturas.push_back(asignatura);
                 char opcion;
-                std::cout << "\nYa ha seleccionado las asignaturas. ¿Desea modificar su elección? (s/n): ";
+                std::cout << "¿Desea agregar otra asignatura? (s/n): ";
                 std::cin >> opcion;
 
-                if (opcion == 's' || opcion == 'S') {
-                    std::cout << "\nIngrese las nuevas asignaturas que desea convalidar (máximo 6):\n";
-                    std::vector<std::string> asignaturas;
-                    std::string asignatura;
-                    for (int i = 0; i < 6; ++i) {
-                        std::cout << "\n\tAsignatura " << i + 1 << ":\n\t\t->";
-                        std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
-                        std::getline(std::cin, asignatura);
-                        std::replace(asignatura.begin(), asignatura.end(), ' ', '_');
-                        asignaturas.push_back(asignatura);
-                        char opcion;
-                        std::cout << "¿Desea agregar otra asignatura? (s/n): ";
-                        std::cin >> opcion;
-
-                        if (opcion == 'n' || opcion == 'N') {
-                            while (asignaturas.size() < 6) {
-                                asignaturas.push_back("asignatura");
-                            }
-                            break;
-                        }
+                if (opcion == 'n' || opcion == 'N') {
+                    while (asignaturas.size() < 6) {
+                        asignaturas.push_back("asignatura");
                     }
-
-                    it->SetAsignaturas(asignaturas);
-                    std::cout << "\n\t---Asignaturas convalidadas correctamente---\n\n";
-                } else {
-                    std::cout << "\n\t---No se realizaron cambios en las asignaturas---\n\n";
+                    break;
                 }
-            } else {
-                std::cout << "\n\t---Primero debe seleccionar las universidades---\n\n";
             }
+
+            alumno.SetAsignaturas(asignaturas);
+            std::cout << "\n\t---Asignaturas convalidadas correctamente---\n\n";
+        } else {
+            std::cout << "\n\t---No se realizaron cambios en las asignaturas---\n\n";
+        }
     } else {
-        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
+        std::cout << "\n\t---Primero debe seleccionar las universidades---\n\n";
     }
 }
 
+void consultarConvalidacion(Alumno& alumno) {
+    if (alumno.GetConsulta() == 1 || alumno.GetConsulta() == 2) {
+        std::cout << "\nAlumno encontrado. Consultando inscripción...\n";
+        std::string universidad_aceptada = getRandomElement(alumno.GetUniversidad(), 5);
+        std::cout << "\n\t-> Ha sido aceptado en la universidad: " << universidad_aceptada << "\n";
 
-void consultarConvalidacion(std::vector<Alumno>& alumnos) {
-    std::string nombre_usuario, contrasena;
-    std::cout << "Ingrese su nombre de usuario: \n\t->";
-    std::cin >> nombre_usuario;
-    std::cout << "Ingrese su contraseña: \n\t->";
-    std::cin >> contrasena;
-    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
-        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
-    });
-    if (it != alumnos.end()) {
-        if (it->GetConsulta() == 1 || it->GetConsulta() == 2) {
-            std::cout << "\nAlumno encontrado. Consultando inscripción...\n";
-            //srand(time(NULL)); -->sólo se debe iniciar una vez en el main
-            std::string universidad_aceptada = getRandomElement(it->GetUniversidad(), 5);
-            std::cout << "\n\t-> Ha sido aceptado en la universidad: " << universidad_aceptada << "\n";
+        if (alumno.GetConsulta() == 2) {
+            int num_asignaturas_aceptadas = rand() % 7; // Número aleatorio entre 0 y 6
 
-            if (it->GetConsulta() == 2) {
-                int num_asignaturas_aceptadas = rand() % 7; // Número aleatorio entre 0 y 6
-
-                if (num_asignaturas_aceptadas == 0) {
-                    std::cout << "\n\t-> No se han aceptado asignaturas.\n";
-                    return;
-                }
-
-                for (int i = 0; i < num_asignaturas_aceptadas; ++i) {
-                    if (it->GetAsignaturas()[i] != "asignatura") {
-                        std::cout << "\n\t-> Asignatura aceptada: " << it->GetAsignaturas()[i] << "\n";
-                    }
-                }
-            } else {
-                std::cout << "\n\t---No se han seleccionado las asignaturas para convalidar---\n\n";
+            if (num_asignaturas_aceptadas == 0) {
+                std::cout << "\n\t-> No se han aceptado asignaturas.\n";
+                return;
             }
-        } else if (it->GetConsulta() == -1) {
-            std::cout << "\n\t-> Su solicitud fue anulada por un administrador\n";
-            it->SetConsulta(0);
+
+            for (int i = 0; i < num_asignaturas_aceptadas; ++i) {
+                if (alumno.GetAsignaturas()[i] != "asignatura") {
+                    std::cout << "\n\t-> Asignatura aceptada: " << alumno.GetAsignaturas()[i] << "\n";
+                }
+            }
         } else {
-            std::cout << "\n\t---No hay ninguna solicitud en curso---\n\n";
+            std::cout << "\n\t---No se han seleccionado las asignaturas para convalidar---\n\n";
         }
+    } else if (alumno.GetConsulta() == -1) {
+        std::cout << "\n\t-> Su solicitud fue anulada por un administrador\n";
+        alumno.SetConsulta(0);
     } else {
-        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
+        std::cout << "\n\t---No hay ninguna solicitud en curso---\n\n";
     }
 }
 
-void anularInscripcion(std::vector<Alumno>& alumnos){
-    std::string nombre_usuario, contrasena;
-    std::cout << "Ingrese su nombre de usuario: \n\t->";
-    std::cin >> nombre_usuario;
-    std::cout << "Ingrese su contraseña: \n\t->";
-    std::cin >> contrasena;
+void anularInscripcion(Alumno& alumno) {
+    if (alumno.GetConsulta() == 0) {
+        std::cout << "\n\t---No hay ninguna solicitud en proceso para anular---\n\n";
+        return;
+    }
 
-    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
-        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
-    });
+    char confirmacion;
+    std::cout << "\nAlumno encontrado. ¿Está seguro de que desea anular la inscripción? (s/n): ";
+    std::cin >> confirmacion;
 
-    if (it != alumnos.end()) {
-        if (it->GetConsulta() == 0) {
-            std::cout << "\n\t---No hay ninguna solicitud en proceso para anular---\n\n";
-            return;
-        }
-
-        char confirmacion;
-        std::cout << "\nAlumno encontrado. ¿Está seguro de que desea anular la inscripción? (s/n): ";
-        std::cin >> confirmacion;
-
-        if (confirmacion == 's' || confirmacion == 'S') {
-            std::vector<std::string> universidades(5, "universidad");
-            std::vector<std::string> asignaturas(6, "asignatura");
-            it->SetUniversidad(universidades);
-            it->SetAsignaturas(asignaturas);
-            std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
-            it->SetConsulta(0);
-        } else {
-            std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
-        }
+    if (confirmacion == 's' || confirmacion == 'S') {
+        std::vector<std::string> universidades(5, "universidad");
+        std::vector<std::string> asignaturas(6, "asignatura");
+        alumno.SetUniversidad(universidades);
+        alumno.SetAsignaturas(asignaturas);
+        std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
+        alumno.SetConsulta(0);
     } else {
-        std::cout << "\n\t---Alumno no encontrado o credenciales incorrectas---\n\n";
+        std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
     }
 }
-
 /*==========================================================================================================
 ============================       FIN ALUMNO     ==========================================================
 ============================================================================================================*/
@@ -357,23 +299,12 @@ void anularInscripcion(std::vector<Alumno>& alumnos){
 /*==========================================================================================================
 ============================       FUNCIONES PROFESORES     ================================================
 ============================================================================================================*/
-void SICUEprofesor(std::vector<Profesor>& profesores){
-    std::string nombre_usuario, contrasena;
-    std::cout << "Ingrese su nombre de usuario: \n\t->";
-    std::cin >> nombre_usuario;
-    std::cout << "Ingrese su contraseña: \n\t->";
-    std::cin >> contrasena;
-
-    auto it = std::find_if(profesores.begin(), profesores.end(), [&](const Profesor& profesores) {
-        return profesores.GetNombreUsuario() == nombre_usuario && profesores.GetContrasena() == contrasena;
-    });
-
-    if (it != profesores.end()){
-        if (it->GetConsulta() == 0) {
-            std::cout << "\nProfesor encontrado. Ingrese las universidades a las que desea inscribirse (máximo 5):\n";
-            std::vector<std::string> universidades;
-            std::string universidad;
-            for (int i = 0; i < 5; ++i) {
+void SICUEprofesor(Profesor& profesor) {
+    if (profesor.GetConsulta() == 0) {
+        std::cout << "\nProfesor encontrado. Ingrese las universidades a las que desea inscribirse (máximo 5):\n";
+        std::vector<std::string> universidades;
+        std::string universidad;
+        for (int i = 0; i < 5; ++i) {
             std::cout << "\nUniversidad " << i + 1 << ": \n\t\t->";
             std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
             std::getline(std::cin, universidad);
@@ -385,85 +316,50 @@ void SICUEprofesor(std::vector<Profesor>& profesores){
 
             if (opcion == 'n' || opcion == 'N') {
                 while (universidades.size() < 5) {
-                universidades.push_back("universidad");
+                    universidades.push_back("universidad");
                 }
                 break;
             }
-            }
-            
-            it->SetConsulta(1);
-            it->SetUniversidad(universidades);
-            std::cout << "\n\t---Universidades inscritas correctamente---\n\n";
-            } else {
-                std::cout << "\n\t---Ya se ha realizado una solicitud---\n\n";
-            }
-        } else {
-        std::cout << "\n\t---Profesor no encontrado o credenciales incorrectas---\n\n";
         }
-}
 
-
-void consultarEstadoSolicitud(std::vector<Profesor>& profesores){
-    std::string nombre_usuario, contrasena;
-    std::cout << "Ingrese su nombre de usuario: \n\t->";
-    std::cin >> nombre_usuario;
-    std::cout << "Ingrese su contraseña: \n\t->";
-    std::cin >> contrasena;
-
-    auto it = std::find_if(profesores.begin(), profesores.end(), [&](const Profesor& profesor) {
-        return profesor.GetNombreUsuario() == nombre_usuario && profesor.GetContrasena() == contrasena;
-    });
-
-    if (it != profesores.end()){
-        std::cout << "\nProfesor encontrado. Consultando inscripción...\n";
-        if(it->GetConsulta() == 0) {
-            std::cout << "\n\t-> Aún no ha realizado ninguna inscripción al plan SICUE\n";
-            return;
-        } else if (it->GetConsulta() == -1) {
-            std::cout << "\n\t-> Su solicitud fue anulada por un administrador\n";
-            it->SetConsulta(0);
-            return;
-        }
-            //srand(time(NULL)); -->sólo se debe iniciar una vez en el main
-        std::string universidad_aceptada = getRandomElement(it->GetUniversidad(), 5);
-        std::cout << "\n\t-> Ha sido aceptado en la universidad: " << universidad_aceptada << "\n";
+        profesor.SetUniversidad(universidades);
+        std::cout << "\n\t---Universidades inscritas correctamente---\n\n";
+        profesor.SetConsulta(1);
     } else {
-        std::cout << "\n\t---Profesor no encontrado o credenciales incorrectas---\n\n";
+        std::cout << "\n\t---Ya hay una solicitud en progreso---\n\n";
     }
 }
 
-
-void anularInscripcionProfesor(std::vector<Profesor>& profesores){
-    std::string nombre_usuario, contrasena;
-    std::cout << "Ingrese su nombre de usuario: \n\t->";
-    std::cin >> nombre_usuario;
-    std::cout << "Ingrese su contraseña: \n\t->";
-    std::cin >> contrasena;
-
-    auto it = std::find_if(profesores.begin(), profesores.end(), [&](const Profesor& profesor) {
-        return profesor.GetNombreUsuario() == nombre_usuario && profesor.GetContrasena() == contrasena;
-    });
-
-    if (it != profesores.end()) {
-        char confirmacion;
-        std::cout << "\nProfesor encontrado.";
-        if(it->GetConsulta() == 0) {
-            std::cout << "\n\t-> Este profesor aún no ha realizado ninguna inscripción al plan de convalidación\n";
-            return;
-        }
-        std::cout << "¿Está seguro de que desea anular la inscripción? (s/n): ";
-        std::cin >> confirmacion;
-
-        if (confirmacion == 's' || confirmacion == 'S') {
-            std::vector<std::string> universidades(5, "universidad");
-            it->SetUniversidad(universidades);
-            it->SetConsulta(0);
-            std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
-        } else {
-            std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
-        }
+void consultarEstadoSolicitud(Profesor& profesor) {
+    if (profesor.GetConsulta() == 1) {
+        std::cout << "\nProfesor encontrado. Consultando inscripción...\n";
+        std::string universidad_aceptada = getRandomElement(profesor.GetUniversidad(), 5);
+        std::cout << "\n\t-> Ha sido aceptado en la universidad: " << universidad_aceptada << "\n";
+    } else if (profesor.GetConsulta() == -1) {
+        std::cout << "\n\t-> Su solicitud fue anulada por un administrador\n";
+        profesor.SetConsulta(0);
     } else {
-        std::cout << "\n\t---Profesor no encontrado o credenciales incorrectas---\n\n";
+        std::cout << "\n\t---No hay ninguna solicitud en curso---\n\n";
+    }
+}
+
+void anularInscripcionProfesor(Profesor& profesor) {
+    if (profesor.GetConsulta() == 0) {
+        std::cout << "\n\t---No hay ninguna solicitud en proceso para anular---\n\n";
+        return;
+    }
+
+    char confirmacion;
+    std::cout << "\nProfesor encontrado. ¿Está seguro de que desea anular la inscripción? (s/n): ";
+    std::cin >> confirmacion;
+
+    if (confirmacion == 's' || confirmacion == 'S') {
+        std::vector<std::string> universidades(5, "universidad");
+        profesor.SetUniversidad(universidades);
+        std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
+        profesor.SetConsulta(0);
+    } else {
+        std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
     }
 }
 

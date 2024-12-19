@@ -29,14 +29,26 @@ int main() {
 
             opcion=existeusuario(nombre_usuario, contrasena, alumnos, profesores, admins);
             switch (opcion) {
-                case 1:
+                case 1: {
                     std::cout << "\n\t---Bienvenido, alumno---\n";
-                    menuAlumno(alumnos);
+                    auto it = std::find_if(alumnos.begin(), alumnos.end(), [&](const Alumno& alumno) {
+                        return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
+                    });
+                    if (it != alumnos.end()) {
+                        menuAlumno(*it);
+                    }
                     break;
-                case 2:
+                }
+                case 2: {
                     std::cout << "\n\t---Bienvenido, profesor---\n";
-                    menuProfesor(profesores);
+                    auto it = std::find_if(profesores.begin(), profesores.end(), [&](const Profesor& profesor) {
+                        return profesor.GetNombreUsuario() == nombre_usuario && profesor.GetContrasena() == contrasena;
+                    });
+                    if (it != profesores.end()) {
+                        menuProfesor(*it);
+                    }
                     break;
+                }
                 case 3:
                     std::cout << "\n\t---Bienvenido, admin---\n";
                     menuAdmin(admins, alumnos, profesores);
