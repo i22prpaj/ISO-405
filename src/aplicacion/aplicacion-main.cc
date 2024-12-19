@@ -49,10 +49,16 @@ int main() {
                     }
                     break;
                 }
-                case 3:
+                case 3: {
                     std::cout << "\n\t---Bienvenido, admin---\n";
-                    menuAdmin(admins, alumnos, profesores);
+                    auto it = std::find_if(admins.begin(), admins.end(), [&](const Admin& admin) {
+                        return admin.GetNombreUsuario() == nombre_usuario && admin.GetContrasena() == contrasena;
+                    });
+                    if (it != admins.end()) {
+                        menuAdmin(*it, alumnos, profesores);
+                    }
                     break;
+                }
                 case 4:
                     std::cout << "\nSaliendo del programa...\n";
                     break;
