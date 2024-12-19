@@ -18,7 +18,7 @@
 //Menus
 void menuAlumno(std::vector<Alumno> &alumnos);
 void menuProfesor(std::vector<Profesor> &profesores);
-void menuAdmin(std::vector<Admin> &admins);
+void menuAdmin(std::vector<Admin> &admins, std::vector<Alumno> &alumnos, std::vector<Profesor> &profesores);
 //Fin Menus
 
 
@@ -35,6 +35,12 @@ void SICUEprofesor(std::vector<Profesor>& profesores);
 void consultarEstadoSolicitud(std::vector<Profesor>& profesores);
 void anularInscripcionProfesor(std::vector<Profesor>& profesores);
 //Fin Profesor
+
+
+//Admin
+void consultarSolicitudesenProceso(std::vector<Admin>& admins, std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores);
+void anularInscripcionAdmin(std::vector<Admin>& admins, std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores);
+//Fin Admin
 
 
 //Auxiliares

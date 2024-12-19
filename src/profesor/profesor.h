@@ -12,7 +12,7 @@ class Profesor: public Usuario{
         }
         
         void SetUniversidad(std::vector<std::string> universidad){universidad_=universidad;}
-        std::vector<std::string> GetUniversidad(){return universidad_;}
+        std::vector<std::string> GetUniversidad()const{return universidad_;}
 };
 
 #endif

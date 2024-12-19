@@ -11,8 +11,10 @@ std::vector<Admin> admins;
 
 int main() {
     cargarBD(alumnos, profesores, admins);
+    srand(time(NULL));
     int opcion, o;
     do{
+        
         std::cout << "\n\t---Bienvenido al sistema de gestión SICUE---\n\n";
         std::cout << "1. Iniciar sesión\n";
         std::cout << "2. Salir\n";
@@ -37,7 +39,7 @@ int main() {
                     break;
                 case 3:
                     std::cout << "\n\t---Bienvenido, admin---\n";
-                    menuAdmin(admins);
+                    menuAdmin(admins, alumnos, profesores);
                     break;
                 case 4:
                     std::cout << "\nSaliendo del programa...\n";
@@ -52,10 +54,12 @@ int main() {
         else{
             std::cout << "\n\t---Opción no válida---\n";
         }
+
     }while(opcion!=4);
 
     std::cout << "\n\t---Saliendo del sistema de gestión SICUE---\n";
     std::cout << "\n\t---Guardando cambios en la base de datos---\n";
     guardarBD(alumnos, profesores, admins);
+
     return 0;
 }

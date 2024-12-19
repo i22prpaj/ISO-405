@@ -23,17 +23,17 @@ class Alumno: public Usuario{
         }
         
         void SetMatricula(int matricula){matricula_ = matricula;}
-        int GetMatricula(){return matricula_;}
+        int GetMatricula()const{return matricula_;}
         void SetCuatrimestre(int cuatrimestre){cuatrimestre_ = cuatrimestre;}
-        int GetCuatrimestre(){return cuatrimestre_;}
+        int GetCuatrimestre()const{return cuatrimestre_;}
         void SetCarrera(std::string carrera){carrera_ = carrera;}
-        std::string GetCarrera(){return carrera_;}
+        std::string GetCarrera()const{return carrera_;}
         void SetAsignaturas(std::vector<std::string> asignaturas){asignaturas_ = asignaturas;};
-        std::vector<std::string> GetAsignaturas(){return asignaturas_;}
+        std::vector<std::string> GetAsignaturas()const{return asignaturas_;}
         void SetUniversidad(std::vector<std::string> universidad){universidad_ = universidad;};
-        std::vector<std::string> GetUniversidad(){return universidad_;}
+        std::vector<std::string> GetUniversidad()const{return universidad_;}
         void SetCurso(int curso){curso_ = curso;}
-        int GetCurso(){return curso_;}
+        int GetCurso()const{return curso_;}
 };
 
 #endif

@@ -30,11 +30,11 @@ class Usuario{
 
         }
 
-        std::string GetDNI(){return dni_;}
-        std::string GetNombre(){return nombre_;}
-        std::string GetApellidos(){return apellidos_;}
-        std::string GetSexo(){return sexo_;}
-        int GetEdad(){return edad_;}
+        std::string GetDNI()const {return dni_;}
+        std::string GetNombre()const {return nombre_;}
+        std::string GetApellidos()const {return apellidos_;}
+        std::string GetSexo()const {return sexo_;}
+        int GetEdad()const {return edad_;}
         void SetDNI(std::string dni){dni_ = dni;}
         void SetNombre(std::string nombre){nombre_ = nombre;}
         void SetApellidos(std::string apellidos){apellidos_ = apellidos;}
@@ -52,7 +52,7 @@ class Usuario{
             return false;
         }
         void SetConsulta(int consulta){consulta_ = consulta;}
-        int GetConsulta(){return consulta_;}
+        int GetConsulta()const {return consulta_;}
 
         void SetNombreUsuario(std::string nombre_usuario){nombre_usuario_ = nombre_usuario;}
         std::string GetNombreUsuario() const {return nombre_usuario_;}
