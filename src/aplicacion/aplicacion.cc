@@ -6,13 +6,13 @@
 ============================================================================================================*/
 
 
-void menuAlumno(Alumno& alumno) {
+void menuAlumno(Alumno& alumno, std::vector<PlanConvalidacion> planes) {
     int opcion;
     do {
         std::cout << "\nMenu Alumno (" << alumno.GetNombreUsuario() << "):\n";
         std::cout << "\t1. Inscribirse al SICUE\n";
         std::cout << "\t2. Inscribirse a un plan de Convalidación\n";
-        std::cout << "\t3. Consultar los Planes de Convalidación según la carrera\n";
+        std::cout << "\t3. Consultar los Planes de Convalidación\n";
         std::cout << "\t4. Consultar la inscripción al plan de Convalidación\n";
         std::cout << "\t5. Anular inscripción\n";
         std::cout << "\t6. Salir\n";
@@ -30,11 +30,13 @@ void menuAlumno(Alumno& alumno) {
                 // Implementar inscripción a un plan de Convalidación
                 std::cout << "2. Inscribirse a un plan de Convalidación\n";
                 plandeConvalidacion(alumno);
+                inscribirEnPlanConvalidacion(alumno, planes);
                 break;            
             case 3:
                 // Implementar consulta de Planes de Convalidación según la carrera
-                std::cout << "3. Consultar los Planes de Convalidación según la carrera\n";
+                std::cout << "3. Consultar los Planes de Convalidación\n";
                 std::cout << "\n\t->Se podrán seleccionar 6 asignaturas a convalidar\n\n";
+                mostrarPlanesConvalidacion(planes);
                 break;
             case 4:
                 // Implementar consulta de la inscripción al plan de Convalidación
@@ -100,13 +102,14 @@ void menuProfesor(Profesor& profesor) {
     } while (opcion != 4);
 }
 
-void menuAdmin(Admin& admin, std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores) {
+void menuAdmin(Admin& admin, std::vector<Alumno>& alumnos, std::vector<Profesor>& profesores, std::vector<PlanConvalidacion> planes) {
     int opcion;
     do {
         std::cout << "\nMenu Admin (" << admin.GetNombreUsuario() << "):\n";
         std::cout << "1. Consultar Solicitudes en Proceso\n";
         std::cout << "2. Anular una solicitud en Proceso\n";
-        std::cout << "3. Salir\n";
+        std::cout << "3. Crear Plan de Convalidación\n";
+        std::cout << "4. Salir\n";
         std::cout << "Seleccione una opción: ";
         std::cin >> opcion;
         if(true)
@@ -121,6 +124,10 @@ void menuAdmin(Admin& admin, std::vector<Alumno>& alumnos, std::vector<Profesor>
                 anularInscripcionAdmin(admin, alumnos, profesores);
                 break;
             case 3:
+                crearPlanConvalidacion(admin, planes);
+                guardarPlanesConvalidacion(planes);
+                break;
+            case 4:
                 std::cout << "Saliendo del menú Admin...\n";
                 break;
             default:
@@ -130,7 +137,7 @@ void menuAdmin(Admin& admin, std::vector<Alumno>& alumnos, std::vector<Profesor>
         std::cin.ignore();
         std::cin.get();
         system("clear"); // Para sistemas Unix/Linux
-    } while (opcion != 3);
+    } while (opcion != 4);
 }
 
 /*==========================================================================================================
@@ -650,3 +657,119 @@ void guardarBD(const std::vector<Alumno>& alumnos, const std::vector<Profesor>& 
 /*==========================================================================================================
 ===================================       FIN BD    ========================================================
 ============================================================================================================*/
+
+//Planes de convalidación
+void crearPlanConvalidacion(Admin& admin, std::vector<PlanConvalidacion>& planes) {
+    PlanConvalidacion nuevo_plan;
+    nuevo_plan.id = planes.size() + 1; // Asignar un ID único
+    std::cout << "Ingrese la universidad de origen: ";
+    std::cin >> nuevo_plan.universidad_origen;
+    std::cout << "Ingrese la universidad de destino: ";
+    std::cin >> nuevo_plan.universidad_destino;
+
+    int num_asignaturas;
+    std::cout << "Ingrese el número de asignaturas a convalidar: ";
+    std::cin >> num_asignaturas;
+
+    for (int i = 0; i < num_asignaturas; ++i) {
+        std::string asignatura_origen, asignatura_destino;
+        std::cout << "Ingrese la asignatura de origen: ";
+        std::cin >> asignatura_origen;
+        std::cout << "Ingrese la asignatura de destino: ";
+        std::cin >> asignatura_destino;
+        nuevo_plan.asignaturas_convalidadas.push_back({asignatura_origen, asignatura_destino});
+    }
+
+    planes.push_back(nuevo_plan);
+    std::cout << "Plan de convalidación creado exitosamente con ID: " << nuevo_plan.id << "\n";
+}
+
+void guardarPlanesConvalidacion(const std::vector<PlanConvalidacion>& planes) {
+    std::ofstream archivo_planes("/workspaces/ISO-405/build/src/aplicacion/planes_convalidacion.txt", std::ofstream::trunc);
+    std::cout<<"Guardando planes-convalidacion.txt\n";
+    if (archivo_planes.is_open()) {
+        for (const auto& plan : planes) {
+            archivo_planes << plan.id << " " << plan.universidad_origen << " " << plan.universidad_destino;
+            for (const auto& asignatura : plan.asignaturas_convalidadas) {
+                archivo_planes << asignatura.first << " " << asignatura.second << "\n";
+            }
+            archivo_planes << "---\n"; // Separador de planes
+        }
+        archivo_planes.close();
+    } else {
+        std::cout << "\tError al abrir el archivo de planes de convalidación.\n";
+    }
+}
+
+bool inscribirEnPlanConvalidacion(Alumno& alumno, const std::vector<PlanConvalidacion>& planes) {
+    int id_plan;
+    std::cout << "Ingrese el ID del plan de convalidación al que desea inscribirse: ";
+    std::cin >> id_plan;
+
+    auto it = std::find_if(planes.begin(), planes.end(), [id_plan](const PlanConvalidacion& plan) {
+        return plan.id == id_plan;
+    });
+
+    if (it == planes.end()) {
+        std::cout << "El plan de convalidación con ID " << id_plan << " no existe.\n";
+        return false;
+    }
+
+    const PlanConvalidacion& plan = *it;
+    std::vector<std::string> asignaturas_alumno = alumno.GetAsignaturas();
+    for (const auto& asignatura : plan.asignaturas_convalidadas) {
+        if (std::find(asignaturas_alumno.begin(), asignaturas_alumno.end(), asignatura.first) == asignaturas_alumno.end()) {
+            std::cout << "El alumno no puede convalidar la asignatura " << asignatura.first << " porque no la tiene registrada.\n";
+            return false;
+        }
+    }
+
+    std::cout << "El alumno se ha inscrito exitosamente en el plan de convalidación con ID: " << id_plan << "\n";
+    return true;
+}
+
+void mostrarPlanesConvalidacion(const std::vector<PlanConvalidacion>& planes) {
+    if (planes.empty()) {
+        std::cout << "No hay planes de convalidación disponibles.\n";
+        return;
+    }
+
+    std::cout << "Planes de convalidación disponibles:\n";
+    for (const auto& plan : planes) {
+        std::cout << "ID: " << plan.id << "\n";
+        std::cout << "Universidad de Origen: " << plan.universidad_origen << "\n";
+        std::cout << "Universidad de Destino: " << plan.universidad_destino << "\n";
+        std::cout << "Asignaturas Convalidadas:\n";
+        for (const auto& asignatura : plan.asignaturas_convalidadas) {
+            std::cout << "  - " << asignatura.first << " -> " << asignatura.second << "\n";
+        }
+        std::cout << "--------------------------\n";
+    }
+}
+
+void cargarPlanesConvalidacion(std::vector<PlanConvalidacion>& planes) {
+    std::ifstream archivo_planes("/workspaces/ISO-405/build/src/aplicacion/planes_convalidacion.txt");
+    std::cout<<"Leyendo planes-convalidacion.txt\n";
+    if (archivo_planes.is_open()) {
+        PlanConvalidacion plan;
+        std::string line;
+        while (std::getline(archivo_planes, line)) {
+            if (line == "---") {
+                planes.push_back(plan);
+                plan = PlanConvalidacion();
+            } else {
+                std::istringstream iss(line);
+                if (plan.id == 0) {
+                    iss >> plan.id >> plan.universidad_origen >> plan.universidad_destino;
+                } else {
+                    std::string asignatura_origen, asignatura_destino;
+                    iss >> asignatura_origen >> asignatura_destino;
+                    plan.asignaturas_convalidadas.push_back({asignatura_origen, asignatura_destino});
+                }
+            }
+        }
+        archivo_planes.close();
+    } else {
+        std::cout << "\tError al abrir el archivo de planes de convalidación.\n";
+    }
+}

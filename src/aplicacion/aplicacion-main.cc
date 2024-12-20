@@ -1,16 +1,13 @@
 #include "aplicacion.h"
 
-
 std::vector<Alumno> alumnos;
 std::vector<Profesor> profesores;
 std::vector<Admin> admins;
-
-
-
-
+std::vector<PlanConvalidacion> planes;
 
 int main() {
     cargarBD(alumnos, profesores, admins);
+    cargarPlanesConvalidacion(planes);
     srand(time(NULL));
     int opcion, o;
     do{
@@ -35,7 +32,7 @@ int main() {
                         return alumno.GetNombreUsuario() == nombre_usuario && alumno.GetContrasena() == contrasena;
                     });
                     if (it != alumnos.end()) {
-                        menuAlumno(*it);
+                        menuAlumno(*it, planes);
                     }
                     break;
                 }
@@ -55,7 +52,7 @@ int main() {
                         return admin.GetNombreUsuario() == nombre_usuario && admin.GetContrasena() == contrasena;
                     });
                     if (it != admins.end()) {
-                        menuAdmin(*it, alumnos, profesores);
+                        menuAdmin(*it, alumnos, profesores, planes);
                     }
                     break;
                 }
