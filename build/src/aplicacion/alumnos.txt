@@ -1,2 +1,2 @@
 32733756H Álvaro Villalba_Aranda H 20 2 p22vilaa aaa Informatica 2 2 1234 Universidad_de_Albacete Universidad_de_Cordoba Universidad_de_Sevilla universidad universidad Calculo Economia Estadistica Base_de_Datos asignatura asignatura
-26827577D Juan_Luis Prieto_Panadero H 20 0 i22prpaj juanlu04 Informatica 2 2 12203 universidad universidad universidad universidad universidad asignatura asignatura asignatura asignatura asignatura asignatura
+26827577D Juan_Luis Prieto_Panadero H 20 -1 i22prpaj juanlu04 Informatica 2 2 12203 universidad universidad universidad universidad universidad asignatura asignatura asignatura asignatura asignatura asignatura

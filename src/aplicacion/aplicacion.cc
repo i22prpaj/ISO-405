@@ -425,19 +425,23 @@ void anularInscripcionAdmin(Admin& admin, std::vector<Alumno>& alumnos, std::vec
     });
 
     if (it_alumno != alumnos.end()) {
-        char confirmacion;
-        std::cout << "Alumno encontrado. ¿Está seguro de que desea anular la inscripción? (s/n): ";
-        std::cin >> confirmacion;
+        if (it_alumno->GetConsulta() > 0) {
+            char confirmacion;
+            std::cout << "Alumno encontrado con solicitud en proceso. ¿Está seguro de que desea anular la inscripción? (s/n): ";
+            std::cin >> confirmacion;
 
-        if (confirmacion == 's' || confirmacion == 'S') {
-            std::vector<std::string> universidades(5, "universidad");
-            std::vector<std::string> asignaturas(6, "asignatura");
-            it_alumno->SetUniversidad(universidades);
-            it_alumno->SetAsignaturas(asignaturas);
-            it_alumno->SetConsulta(-1);
-            std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
+            if (confirmacion == 's' || confirmacion == 'S') {
+                std::vector<std::string> universidades(5, "universidad");
+                std::vector<std::string> asignaturas(6, "asignatura");
+                it_alumno->SetUniversidad(universidades);
+                it_alumno->SetAsignaturas(asignaturas);
+                it_alumno->SetConsulta(-1);
+                std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
+            } else {
+                std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
+            }
         } else {
-            std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
+            std::cout << "\n\t---El alumno no tiene ninguna solicitud en proceso---\n\n";
         }
         return;
     }
@@ -447,24 +451,27 @@ void anularInscripcionAdmin(Admin& admin, std::vector<Alumno>& alumnos, std::vec
     });
 
     if (it_profesor != profesores.end()) {
-        char confirmacion;
-        std::cout << "Profesor encontrado. ¿Está seguro de que desea anular la inscripción? (s/n): ";
-        std::cin >> confirmacion;
+        if (it_profesor->GetConsulta() > 0) {
+            char confirmacion;
+            std::cout << "Profesor encontrado con solicitud en proceso. ¿Está seguro de que desea anular la inscripción? (s/n): ";
+            std::cin >> confirmacion;
 
-        if (confirmacion == 's' || confirmacion == 'S') {
-            std::vector<std::string> universidades(5, "universidad");
-            it_profesor->SetUniversidad(universidades);
-            it_profesor->SetConsulta(-1);
-            std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
+            if (confirmacion == 's' || confirmacion == 'S') {
+                std::vector<std::string> universidades(5, "universidad");
+                it_profesor->SetUniversidad(universidades);
+                it_profesor->SetConsulta(-1);
+                std::cout << "\n\t---Inscripción anulada correctamente---\n\n";
+            } else {
+                std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
+            }
         } else {
-            std::cout << "\n\t---Anulación de inscripción cancelada---\n\n";
+            std::cout << "\n\t---El profesor no tiene ninguna solicitud en proceso---\n\n";
         }
         return;
     }
 
     std::cout << "\n\t---Usuario no encontrado---\n\n";
 }
-
 /*==========================================================================================================
 ============================       FIN ADMINS     ==========================================================
 ============================================================================================================*/
