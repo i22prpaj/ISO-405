@@ -1,6 +1,6 @@
 # ISO-405
 Este es el repositorio que se va a utilzar para almacenar, supervisar y trabajar con el proyecto.
-Co-worked with 
+Co-authored-by: Alvaro394 <Alvaro394@users.noreply.github.com>
 
 System Usage: ./build/src/aplicacion/aplicacion-main
 
